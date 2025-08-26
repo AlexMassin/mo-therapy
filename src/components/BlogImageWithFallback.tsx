@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import { FileText, Heart, Activity, Shield } from 'lucide-react';
+import { getImagePath } from '@/lib/utils';
 
 interface BlogImageWithFallbackProps {
   src?: string;
@@ -77,7 +78,7 @@ export default function BlogImageWithFallback({
   // Try to load the actual image (normal Next.js Image behavior)
   return (
     <Image
-      src={src}
+      src={getImagePath(src)}
       alt={alt}
       fill={fill}
       width={width}

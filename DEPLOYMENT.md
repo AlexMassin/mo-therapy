@@ -1,89 +1,106 @@
-# M.O. Therapy - GitHub Pages Deployment Guide
+# GitHub Pages Deployment Guide
 
-## 🚀 Deployment Steps
+This guide explains how to deploy your Next.js application to GitHub Pages and fix the common issue of broken images.
 
-### 1. Push to GitHub
+## Why Images Break on GitHub Pages
+
+GitHub Pages doesn't support Next.js's built-in image optimization and routing system. When you deploy a Next.js app to GitHub Pages:
+
+1. The app is served as static files from the root of your repository
+2. Next.js Image components expect the app to be running on a Next.js server
+3. Image paths like `/logo.png`, `/team/dillon.png`, etc. don't resolve correctly
+
+## Solution: Static Export with Base Path
+
+We've configured the app to:
+- Export as static files (`output: 'export'`)
+- Use the correct base path for GitHub Pages (`/mo-therapy`)
+- Disable image optimization (`unoptimized: true`)
+- Handle asset paths dynamically
+
+## Deployment Steps
+
+### 1. Enable GitHub Pages
+
+1. Go to your repository settings
+2. Navigate to "Pages" in the left sidebar
+3. Set source to "GitHub Actions"
+
+### 2. Push Your Changes
+
+The GitHub Actions workflow will automatically:
+- Build your Next.js app
+- Export it as static files
+- Deploy to GitHub Pages
+
+### 3. Verify Deployment
+
+After deployment, your site should be available at:
+`https://alexmassin.github.io/mo-therapy`
+
+## How the Fix Works
+
+### Base Path Configuration
+
+```typescript
+// next.config.ts
+const nextConfig: NextConfig = {
+  output: 'export',
+  basePath: process.env.NODE_ENV === 'production' ? '/mo-therapy' : '',
+  images: {
+    unoptimized: true,
+  },
+};
+```
+
+### Dynamic Asset Paths
+
+```typescript
+// src/lib/utils.ts
+export function getAssetPath(path: string): string {
+  if (typeof window !== 'undefined') {
+    const isGitHubPages = window.location.hostname === 'alexmassin.github.io';
+    if (isGitHubPages) {
+      return `/mo-therapy${path}`;
+    }
+  }
+  return path;
+}
+```
+
+### Updated Components
+
+All image components now use `getImagePath()` to ensure correct paths in both development and production.
+
+## Troubleshooting
+
+### Images Still Broken?
+
+1. Check that the GitHub Actions workflow completed successfully
+2. Verify the base path in `next.config.ts` matches your repository name
+3. Ensure all image components use `getImagePath()`
+4. Clear browser cache and hard refresh
+
+### Build Errors?
+
+1. Check that `output: 'export'` is set in `next.config.ts`
+2. Ensure all pages are compatible with static export
+3. Remove any server-side only features
+
+## Local Development
+
+For local development, run:
 ```bash
-git add .
-git commit -m "Setup GitHub Pages deployment"
-git push origin main
+npm run dev
 ```
 
-### 2. Enable GitHub Pages
-1. Go to your GitHub repository
-2. Click **Settings** → **Pages**
-3. Under **Source**, select **GitHub Actions**
-4. The workflow will automatically deploy your site
+The base path will be empty in development, so images will work normally.
 
-### 3. Update Repository Name
-**Important:** Update the `basePath` and `assetPrefix` in `next.config.js` to match your repository name:
+## Production Build
 
-```javascript
-basePath: process.env.NODE_ENV === 'production' ? '/your-repo-name' : '',
-assetPrefix: process.env.NODE_ENV === 'production' ? '/your-repo-name' : '',
-```
-
-### 4. Update Site URLs
-Update the `siteUrl` in `next-sitemap.config.js`:
-```javascript
-siteUrl: process.env.SITE_URL || 'https://yourusername.github.io/your-repo-name',
-```
-
-## 📂 What's Configured
-
-### ✅ Next.js Static Export
-- `output: 'export'` for static generation
-- `images: { unoptimized: true }` for GitHub Pages compatibility
-- `trailingSlash: true` for proper routing
-
-### ✅ GitHub Actions Workflow
-- Automatically builds and deploys on push to main
-- Uses Node.js 18 with npm caching
-- Deploys to GitHub Pages
-
-### ✅ GitHub Pages Optimization
-- `.nojekyll` file to prevent Jekyll processing
-- Proper asset paths for subdirectory hosting
-- SEO-optimized sitemap generation
-
-## 🌐 Your Site Will Be Available At:
-```
-https://yourusername.github.io/your-repo-name
-```
-
-## 🔧 Local Testing
-Test the static build locally:
+For production builds:
 ```bash
 npm run build
-npx serve out
 ```
 
-## 📝 Important Notes
-
-1. **Repository Name**: Make sure to update the repository name in config files
-2. **Custom Domain**: If you want a custom domain, add a `CNAME` file to the `public` folder
-3. **Analytics**: Google Analytics will work automatically on the deployed site
-4. **Blog Images**: All blog images in `public/blog/` will be included in the deployment
-
-## 🐛 Troubleshooting
-
-### Build Fails
-- Check that all imports are correct
-- Ensure no server-side only code is used in client components
-
-### Images Not Loading
-- Verify images are in the `public` folder
-- Check that image paths don't include `/public/`
-
-### Routing Issues
-- Make sure `trailingSlash: true` is set in next.config.js
-- All internal links should use relative paths
-
-## 📈 SEO Features Included
-
-- ✅ Automated sitemap generation
-- ✅ Robots.txt file
-- ✅ OpenGraph meta tags
-- ✅ Twitter Card support
-- ✅ JSON-LD structured data
-- ✅ Proper canonical URLs
+This will create an `out/` directory with static files ready for deployment.

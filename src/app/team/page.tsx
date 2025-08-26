@@ -4,6 +4,7 @@ import Footer from '@/components/Footer';
 import BookingButton from '@/components/BookingButton';
 import { Users, Award, Heart, Star, Mail } from 'lucide-react';
 import Image from 'next/image';
+import { getImagePath } from '@/lib/utils';
 
 export const metadata: Metadata = {
   title: 'Our Expert Team - M.O. Therapy Markham | Physiotherapists & RMTs',
@@ -156,7 +157,7 @@ export default function TeamPage() {
                   {/* Team Member Image */}
                   <div className="aspect-square bg-gradient-to-br from-blue-100 to-blue-50 rounded-xl mb-6 overflow-hidden relative">
                     <Image
-                      src={member.image}
+                      src={getImagePath(member.image)}
                       alt={`${member.name} - ${member.title} at M.O. Therapy`}
                       fill
                       className="object-cover group-hover:scale-110 transition-transform duration-300"
