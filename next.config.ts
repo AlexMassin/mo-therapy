@@ -2,14 +2,12 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   output: 'export',
-  basePath: '/mo-therapy',
+  basePath: process.env.NODE_ENV === 'production' ? '/mo-therapy' : '',
   trailingSlash: true,
   images: {
     unoptimized: true,
   },
-  assetPrefix: '/mo-therapy',
-  // Ensure static assets are copied correctly
-  distDir: 'out',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/mo-therapy' : '',
 };
 
 export default nextConfig;
