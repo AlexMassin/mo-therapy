@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: process.env.SITE_URL || 'https://yourusername.github.io/mo-therapy',
+  siteUrl: process.env.SITE_URL || 'https://alexmassin.github.io/mo-therapy',
   generateRobotsTxt: true,
   generateIndexSitemap: false,
   exclude: ['/admin/*', '/api/*'],
@@ -13,7 +13,7 @@ module.exports = {
       },
     ],
     additionalSitemaps: [
-      'https://yourusername.github.io/mo-therapy/sitemap.xml',
+      'https://alexmassin.github.io/mo-therapy/sitemap.xml',
     ],
   },
   changefreq: 'weekly',
