@@ -64,7 +64,7 @@ export default function AboutPage() {
                   Founded with a passion for helping athletes and active individuals achieve their peak potential, 
                   M.O. Therapy has become Markham&apos;s trusted destination for comprehensive athletic care.
                 </p>
-                <p className="text-lg text-gray-600 leading-relaxed">
+                <p className="text-lg text-blue-100 leading-relaxed">
                   Our mission is simple: to provide exceptional, evidence-based therapeutic services that not only 
                   treat injuries but optimize performance and prevent future setbacks. We believe that everyone 
                   deserves to live and perform pain-free.
@@ -122,7 +122,7 @@ export default function AboutPage() {
           <div className="container-custom">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <h2 className="heading-lg text-gray-900 mb-6">
-                Our <span className="gradient-text">Core Values</span>
+                Our <span className="text-blue-600 font-bold">Core Values</span>
               </h2>
               <p className="text-xl text-gray-600">
                 These principles guide everything we do and ensure every patient receives the highest quality care.
