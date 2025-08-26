@@ -1,0 +1,6 @@
+<svg width="400" height="300" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="300" fill="#f3f4f6"/>
+  <text x="200" y="150" text-anchor="middle" fill="#6b7280" font-family="Arial, sans-serif" font-size="18">Blog Image Placeholder</text>
+  <circle cx="200" cy="120" r="30" fill="#e5e7eb" stroke="#9ca3af" stroke-width="2"/>
+  <path d="M185 115 L215 115 M185 125 L215 125" stroke="#6b7280" stroke-width="2"/>
+</svg>
