@@ -189,7 +189,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 <div className="lg:col-span-1">
                   <div className="sticky top-32 space-y-8">
                     {/* Share */}
-                    <ShareButtons title={post.title} excerpt={post.excerpt} />
+                    <ShareButtons title={post.title} excerpt={post.excerpt} category={post.category} />
 
                     {/* Quick Contact */}
                     <div className="card bg-blue-50 border-blue-200">

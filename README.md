@@ -65,7 +65,7 @@ A modern, SEO-optimized website for M.O. Therapy - a premier physiotherapy, mass
 ## 🚀 Getting Started
 
 ### Prerequisites
-- Node.js 18+ installed
+- Node.js ^18.18.0 || ^19.8.0 || >= 20.0.0 installed
 - Git for version control
 
 ### Installation
