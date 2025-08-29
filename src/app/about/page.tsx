@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import BookingButton from '@/components/BookingButton';
+import ReviewsCarousel from '@/components/ReviewsCarousel';
 import { Shield, Award, Users, Target, Heart, CheckCircle } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -210,8 +211,28 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* CTA Section */}
+        {/* Google Reviews */}
         <section className="section-padding bg-gray-50">
+          <div className="container-custom text-center">
+            <h2 className="heading-lg text-gray-900 mb-6">
+              Don't take our word for it?
+            </h2>
+            <div className="mb-4">
+              <a
+              href="https://www.google.com/maps/search/?api=1&query=M.O.+Therapy+Markham"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xl font-medium leading-6 text-gray-900 hover:text-blue-600 transition-colors duration-200"
+              >
+                See what others are saying about us.
+              </a>
+            </div>
+            <ReviewsCarousel />
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="section-padding bg-white">
           <div className="container-custom text-center">
             <h2 className="heading-lg text-gray-900 mb-6">
               Ready to Experience the M.O. Therapy Difference?
