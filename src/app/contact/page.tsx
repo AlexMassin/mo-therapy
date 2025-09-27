@@ -6,15 +6,44 @@ import { Phone, Mail, MapPin, Clock, Calendar, MessageCircle } from 'lucide-reac
 
 export const metadata: Metadata = {
   title: 'Contact M.O. Therapy - Book Your Appointment in Markham',
-  description: 'Contact M.O. Therapy for physiotherapy, massage therapy, and chiropractic care in Markham. Call (905) 201-5827 or book online. Located at 20 Apple Creek Blvd.',
+  description: 'Contact M.O. Therapy for physiotherapy, massage therapy, and chiropractic care in Markham. Call (905) 201-5827 or book online. Located at 20 Apple Creek Blvd. Same-day appointments available.',
   keywords: [
     'contact M.O. Therapy',
     'book appointment Markham',
     'physiotherapy clinic contact',
     'M.O. Therapy phone number',
     'M.O. Therapy address',
-    'Apple Creek Blvd Markham'
+    'Apple Creek Blvd Markham',
+    'same day appointments Markham',
+    'direct billing available',
+    'Markham sports medicine contact',
+    'physiotherapy booking Markham'
   ],
+  alternates: {
+    canonical: '/contact',
+  },
+  openGraph: {
+    title: 'Contact M.O. Therapy - Book Your Appointment in Markham',
+    description: 'Ready to start your recovery? Contact M.O. Therapy for expert physiotherapy, massage therapy, and chiropractic care. Same-day appointments available.',
+    type: 'website',
+    locale: 'en_CA',
+    url: 'https://motherapy.ca/contact',
+    siteName: 'M.O. Therapy',
+    images: [
+      {
+        url: '/og-contact.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Contact M.O. Therapy - Book Your Appointment in Markham',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Contact M.O. Therapy - Book Your Appointment',
+    description: 'Ready to start your recovery? Same-day appointments available in Markham.',
+    images: ['/og-contact.jpg'],
+  },
 };
 
 const contactInfo = [

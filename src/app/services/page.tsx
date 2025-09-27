@@ -8,12 +8,12 @@ import { getImagePath } from '@/lib/assets';
 
 export const metadata: Metadata = {
   title: 'Our Services - Physiotherapy, Massage & Chiropractic Care | M.O. Therapy',
-  description: 'Comprehensive therapeutic services for athletes in Markham. Physiotherapy, registered massage therapy, chiropractic care, and osteopathy for peak performance.',
+  description: 'Comprehensive therapeutic services for athletes in Markham. Physiotherapy, registered massage therapy, chiropractic care, and osteopathy for peak performance. Book your appointment today.',
   keywords: [
     'physiotherapy services Markham',
-    'massage therapy services',
+    'massage therapy services Markham',
     'chiropractic care Markham',
-    'osteopathy services',
+    'osteopathy services Markham',
     'sports therapy Markham',
     'athletic treatment services',
     'MMA physiotherapy Markham',
@@ -21,8 +21,35 @@ export const metadata: Metadata = {
     'Muay Thai therapy services',
     'combat sports physiotherapy',
     'martial arts injury treatment',
-    'fighter rehabilitation Markham'
+    'fighter rehabilitation Markham',
+    'Apple Creek Blvd physiotherapy',
+    'Markham sports medicine clinic'
   ],
+  alternates: {
+    canonical: '/services',
+  },
+  openGraph: {
+    title: 'Expert Therapeutic Services - M.O. Therapy Markham',
+    description: 'Comprehensive physiotherapy, massage therapy, chiropractic care, and osteopathy services for athletes in Markham. Specialized in sports injury treatment and performance optimization.',
+    type: 'website',
+    locale: 'en_CA',
+    url: 'https://motherapy.ca/services',
+    siteName: 'M.O. Therapy',
+    images: [
+      {
+        url: '/og-services.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'M.O. Therapy Services - Physiotherapy, Massage & Chiropractic Care',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Expert Therapeutic Services - M.O. Therapy Markham',
+    description: 'Comprehensive care for athletes. Physiotherapy, massage therapy, chiropractic & osteopathy services.',
+    images: ['/og-services.jpg'],
+  },
 };
 
 const serviceDetails = [
@@ -116,9 +143,32 @@ const serviceDetails = [
   }
 ];
 
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://motherapy.ca"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Services",
+      "item": "https://motherapy.ca/services"
+    }
+  ]
+};
+
 export default function ServicesPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       <Header />
       <main className="pt-20">
         {/* Hero Section */}

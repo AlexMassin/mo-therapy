@@ -14,17 +14,40 @@ export const metadata: Metadata = {
     'registered massage therapists Markham',
     'chiropractor Markham',
     'sports medicine team',
-    'licensed physiotherapists',
+    'licensed physiotherapists Markham',
     'resident physiotherapist',
-    'RMT team',
+    'RMT team Markham',
     'healthcare professionals Markham',
     'injury rehabilitation specialists',
-    'M.O. Therapy staff'
+    'M.O. Therapy staff',
+    'Apple Creek Blvd therapists',
+    'certified massage therapists',
+    'experienced chiropractors'
   ],
+  alternates: {
+    canonical: '/team',
+  },
   openGraph: {
     title: 'Expert Healthcare Team - M.O. Therapy Markham',
-    description: 'Meet our skilled physiotherapists, RMTs, and chiropractors dedicated to helping you achieve optimal health and performance.',
+    description: 'Meet our skilled physiotherapists, RMTs, and chiropractors dedicated to helping you achieve optimal health and performance. Book with our expert team today.',
     type: 'website',
+    locale: 'en_CA',
+    url: 'https://motherapy.ca/team',
+    siteName: 'M.O. Therapy',
+    images: [
+      {
+        url: '/og-team.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'M.O. Therapy Expert Team - Physiotherapists, RMTs & Chiropractors',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Expert Healthcare Team - M.O. Therapy Markham',
+    description: 'Meet our skilled physiotherapists, RMTs, and chiropractors dedicated to your recovery.',
+    images: ['/og-team.jpg'],
   },
 };
 

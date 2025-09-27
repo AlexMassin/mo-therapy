@@ -7,15 +7,15 @@ import { getImagePath } from '@/lib/assets';
 
 export const metadata: Metadata = {
   title: 'Conditions We Treat - M.O. Therapy Markham | Sports Injuries & Pain Relief',
-  description: 'Comprehensive treatment for sports injuries, back pain, neck pain, joint pain, and more. Expert physiotherapy, massage therapy, and chiropractic care in Markham for optimal recovery.',
+  description: 'Comprehensive treatment for sports injuries, back pain, neck pain, joint pain, and more. Expert physiotherapy, massage therapy, and chiropractic care in Markham for optimal recovery. Book your assessment today.',
   keywords: [
     'sports injuries treatment Markham',
-    'back pain physiotherapy',
-    'neck pain treatment',
+    'back pain physiotherapy Markham',
+    'neck pain treatment Markham',
     'knee injury rehabilitation',
     'shoulder pain therapy',
     'ankle sprain treatment',
-    'hip pain relief',
+    'hip pain relief Markham',
     'headache treatment',
     'TMJ therapy Markham',
     'concussion rehabilitation',
@@ -23,12 +23,34 @@ export const metadata: Metadata = {
     'tennis elbow therapy',
     'ACL injury physiotherapy',
     'plantar fasciitis treatment',
-    'pelvic floor physiotherapy Markham'
+    'pelvic floor physiotherapy Markham',
+    'Apple Creek Blvd treatment',
+    'Markham pain management'
   ],
+  alternates: {
+    canonical: '/conditions',
+  },
   openGraph: {
     title: 'Sports Injuries & Conditions Treatment - M.O. Therapy Markham',
-    description: 'Expert treatment for a wide range of musculoskeletal conditions. From acute sports injuries to chronic pain management.',
+    description: 'Expert treatment for a wide range of musculoskeletal conditions. From acute sports injuries to chronic pain management. Personalized care for optimal recovery.',
     type: 'website',
+    locale: 'en_CA',
+    url: 'https://motherapy.ca/conditions',
+    siteName: 'M.O. Therapy',
+    images: [
+      {
+        url: '/og-conditions.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'M.O. Therapy Conditions Treatment - Sports Injuries & Pain Relief',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Sports Injuries & Conditions Treatment - M.O. Therapy',
+    description: 'Expert treatment for sports injuries and chronic pain. Personalized care for optimal recovery.',
+    images: ['/og-conditions.jpg'],
   },
 };
 
