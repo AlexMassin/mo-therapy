@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M.O. Therapy - OpenGraph Preview</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: #0a171b;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .preview-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        .preview-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: transform 0.2s ease;
+        }
+        .preview-card:hover {
+            transform: translateY(-4px);
+        }
+        .og-image {
+            width: 100%;
+            height: 210px;
+            object-fit: cover;
+            background: linear-gradient(135deg, #0a171b, #40c6e5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 18px;
+            font-weight: 600;
+        }
+        .og-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .card-content {
+            padding: 20px;
+        }
+        .card-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #0a171b;
+            margin: 0 0 8px 0;
+        }
+        .card-description {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.4;
+            margin: 0 0 12px 0;
+        }
+        .card-url {
+            font-size: 12px;
+            color: #40c6e5;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+        .platform-section {
+            margin-bottom: 50px;
+        }
+        .platform-title {
+            font-size: 24px;
+            color: #0a171b;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #40c6e5;
+        }
+        .instructions {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .instructions h2 {
+            color: #0a171b;
+            margin-top: 0;
+        }
+        .instructions ul {
+            color: #666;
+            line-height: 1.6;
+        }
+        .instructions li {
+            margin-bottom: 8px;
+        }
+        .brand-colors {
+            display: flex;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .color-swatch {
+            width: 60px;
+            height: 60px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 12px;
+            font-weight: 600;
+            text-align: center;
+            line-height: 1.2;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>M.O. Therapy - OpenGraph Image Preview</h1>
+        
+        <div class="instructions">
+            <h2>🎨 Brand Guidelines</h2>
+            <div class="brand-colors">
+                <div class="color-swatch" style="background: #40c6e5;">#40c6e5<br>Primary</div>
+                <div class="color-swatch" style="background: #0a171b;">#0a171b<br>Dark</div>
+                <div class="color-swatch" style="background: #ffffff; color: #333; border: 1px solid #ddd;">#ffffff<br>White</div>
+            </div>
+            <ul>
+                <li><strong>Size:</strong> 1200x630 pixels (1.91:1 aspect ratio)</li>
+                <li><strong>File Size:</strong> Under 1MB for optimal loading</li>
+                <li><strong>Fonts:</strong> Poppins (headlines), Inter (body text)</li>
+                <li><strong>Logo:</strong> Use /public/logo.png in top-left corner</li>
+            </ul>
+        </div>
+
+        <div class="platform-section">
+            <h2 class="platform-title">Facebook/LinkedIn Preview</h2>
+            <div class="preview-grid">
+                <div class="preview-card">
+                    <div class="og-image">
+                        <img src="./public/og-image.jpg" alt="Homepage OG" onerror="this.parentElement.innerHTML='Homepage OG Image<br><small>Replace with: Your M.O. is your hustle. Do it pain free.</small>'">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-title">M.O. Therapy - Premier Sports Medicine & Physiotherapy in Markham</div>
+                        <div class="card-description">Expert care for athletes. Physiotherapy, massage therapy, and chiropractic services designed for peak performance. Same-day appointments available.</div>
+                        <div class="card-url">motherapy.ca</div>
+                    </div>
+                </div>
+
+                <div class="preview-card">
+                    <div class="og-image">
+                        <img src="./public/og-services.jpg" alt="Services OG" onerror="this.parentElement.innerHTML='Services OG Image<br><small>Show: 4 service icons + Comprehensive Therapeutic Services</small>'">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-title">Expert Therapeutic Services - M.O. Therapy Markham</div>
+                        <div class="card-description">Comprehensive physiotherapy, massage therapy, chiropractic care, and osteopathy services for athletes in Markham.</div>
+                        <div class="card-url">motherapy.ca/services</div>
+                    </div>
+                </div>
+
+                <div class="preview-card">
+                    <div class="og-image">
+                        <img src="./public/og-about.jpg" alt="About OG" onerror="this.parentElement.innerHTML='About OG Image<br><small>Use: mo-team-celebration.jpg + About M.O. Therapy</small>'">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-title">About M.O. Therapy - Expert Athletic Care Team in Markham</div>
+                        <div class="card-description">Meet our expert team of physiotherapists, massage therapists, and chiropractors dedicated to helping athletes achieve peak performance.</div>
+                        <div class="card-url">motherapy.ca/about</div>
+                    </div>
+                </div>
+
+                <div class="preview-card">
+                    <div class="og-image">
+                        <img src="./public/og-team.jpg" alt="Team OG" onerror="this.parentElement.innerHTML='Team OG Image<br><small>Show: Team member photos + Meet Our Expert Team</small>'">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-title">Expert Healthcare Team - M.O. Therapy Markham</div>
+                        <div class="card-description">Meet our skilled physiotherapists, RMTs, and chiropractors dedicated to helping you achieve optimal health and performance.</div>
+                        <div class="card-url">motherapy.ca/team</div>
+                    </div>
+                </div>
+
+                <div class="preview-card">
+                    <div class="og-image">
+                        <img src="./public/og-contact.jpg" alt="Contact OG" onerror="this.parentElement.innerHTML='Contact OG Image<br><small>Show: Contact info + Book Your Appointment Today</small>'">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-title">Contact M.O. Therapy - Book Your Appointment in Markham</div>
+                        <div class="card-description">Ready to start your recovery? Contact M.O. Therapy for expert physiotherapy, massage therapy, and chiropractic care.</div>
+                        <div class="card-url">motherapy.ca/contact</div>
+                    </div>
+                </div>
+
+                <div class="preview-card">
+                    <div class="og-image">
+                        <img src="./public/og-conditions.jpg" alt="Conditions OG" onerror="this.parentElement.innerHTML='Conditions OG Image<br><small>Show: Body part icons + Conditions We Treat</small>'">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-title">Sports Injuries & Conditions Treatment - M.O. Therapy Markham</div>
+                        <div class="card-description">Expert treatment for a wide range of musculoskeletal conditions. From acute sports injuries to chronic pain management.</div>
+                        <div class="card-url">motherapy.ca/conditions</div>
+                    </div>
+                </div>
+
+                <div class="preview-card">
+                    <div class="og-image">
+                        <img src="./public/og-blog.jpg" alt="Blog OG" onerror="this.parentElement.innerHTML='Blog OG Image<br><small>Show: Educational icons + Health & Sports Medicine Blog</small>'">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-title">Health & Sports Medicine Blog - M.O. Therapy Markham</div>
+                        <div class="card-description">Expert insights on sports injuries, recovery, and performance optimization from our licensed healthcare professionals.</div>
+                        <div class="card-url">motherapy.ca/blog</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="instructions">
+            <h2>📋 Next Steps</h2>
+            <ul>
+                <li><strong>Create Images:</strong> Use Canva with the provided templates</li>
+                <li><strong>Replace Files:</strong> Upload your created images to replace the placeholder files</li>
+                <li><strong>Test:</strong> Use Facebook Sharing Debugger and LinkedIn Post Inspector</li>
+                <li><strong>Optimize:</strong> Ensure all images are under 1MB file size</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
