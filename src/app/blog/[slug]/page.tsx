@@ -70,20 +70,20 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       <Header />
       <main className="pt-24">
         {/* Hero Section */}
-        <section className="section-padding bg-gradient-to-br from-gray-900 via-blue-900 to-blue-600">
+        <section className="section-padding bg-gradient-to-br from-primary-900 via-primary-800 to-primary-400">
           <div className="container-custom">
             <div className="max-w-4xl mx-auto">
               {/* Back Link */}
               <Link
                 href="/blog"
-                className="inline-flex items-center gap-2 text-blue-200 hover:text-white transition-colors mb-8"
+                className="inline-flex items-center gap-2 text-primary-200 hover:text-white transition-colors mb-8"
               >
                 <ArrowLeft className="h-4 w-4" />
                 Back to Blog
               </Link>
 
               {/* Post Meta */}
-              <div className="flex flex-wrap items-center gap-4 text-blue-200 mb-6">
+              <div className="flex flex-wrap items-center gap-4 text-primary-200 mb-6">
                 <div className="flex items-center gap-1">
                   <Calendar className="h-4 w-4" />
                   {new Date(post.date).toLocaleDateString('en-CA', {
@@ -103,7 +103,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               </div>
 
               {/* Category */}
-              <div className="inline-block px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium mb-6">
+              <div className="inline-block px-3 py-1 bg-primary-100 text-primary-800 rounded-full text-sm font-medium mb-6">
                 {post.category}
               </div>
 
@@ -113,7 +113,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               </h1>
 
               {/* Excerpt */}
-              <p className="text-xl text-blue-100 leading-relaxed mb-8">
+              <p className="text-xl text-primary-100 leading-relaxed mb-8">
                 {post.excerpt}
               </p>
 
@@ -123,7 +123,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                   {post.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="inline-flex items-center gap-1 px-3 py-1 bg-blue-800 text-blue-100 rounded-full text-sm"
+                      className="inline-flex items-center gap-1 px-3 py-1 bg-primary-800 text-primary-100 rounded-full text-sm"
                     >
                       <Tag className="h-3 w-3" />
                       {tag}
@@ -192,7 +192,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                     <ShareButtons title={post.title} excerpt={post.excerpt} />
 
                     {/* Quick Contact */}
-                    <div className="card bg-blue-50 border-blue-200">
+                    <div className="card bg-primary-50 border-primary-200">
                       <h3 className="text-lg font-semibold text-gray-900 mb-4">
                         Need Expert Care?
                       </h3>
@@ -219,7 +219,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             <div className="container-custom">
               <div className="max-w-4xl mx-auto">
                 <h2 className="heading-lg text-gray-900 mb-12 text-center">
-                  Related <span className="text-blue-600 font-bold">Articles</span>
+                  Related <span className="text-primary-600 font-bold">Articles</span>
                 </h2>
                 
                 <div className="grid md:grid-cols-3 gap-8">
@@ -236,11 +236,11 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                       </div>
                       
                       <div className="space-y-3">
-                        <div className="inline-block px-2 py-1 bg-blue-100 text-blue-800 rounded text-xs font-medium">
+                        <div className="inline-block px-2 py-1 bg-primary-100 text-primary-800 rounded text-xs font-medium">
                           {relatedPost.category}
                         </div>
                         
-                        <h3 className="text-lg font-semibold text-gray-900 hover:text-blue-600 transition-colors">
+                        <h3 className="text-lg font-semibold text-gray-900 hover:text-primary-600 transition-colors">
                           <Link href={`/blog/${relatedPost.slug}`}>
                             {relatedPost.title}
                           </Link>

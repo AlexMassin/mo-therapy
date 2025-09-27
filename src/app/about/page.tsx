@@ -3,6 +3,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import BookingButton from '@/components/BookingButton';
 import { Shield, Award, Users, Target, Heart, CheckCircle } from 'lucide-react';
+import { getImagePath } from '@/lib/assets';
 
 export const metadata: Metadata = {
   title: 'About M.O. Therapy - Expert Athletic Care Team in Markham',
@@ -53,32 +54,44 @@ export default function AboutPage() {
       <Header />
       <main className="pt-20">
         {/* Hero Section */}
-        <section className="section-padding bg-gradient-to-br from-gray-900 via-blue-900 to-blue-600">
+        <section className="section-padding bg-gradient-to-br from-primary-900 via-primary-800 to-primary-400">
           <div className="container-custom">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 xl:gap-24 items-center">
               <div>
                 <h1 className="heading-xl text-white mb-6">
                   About <span className="gradient-text">M.O. Therapy</span>
                 </h1>
-                <p className="text-xl text-blue-100 leading-relaxed mb-8">
+                <p className="text-xl text-primary-100 leading-relaxed mb-8">
                   Founded with a passion for helping athletes and active individuals achieve their peak potential, 
                   M.O. Therapy has become Markham&apos;s trusted destination for comprehensive athletic care.
                 </p>
-                <p className="text-lg text-blue-100 leading-relaxed">
+                <p className="text-lg text-primary-100 leading-relaxed">
                   Our mission is simple: to provide exceptional, evidence-based therapeutic services that not only 
                   treat injuries but optimize performance and prevent future setbacks. We believe that everyone 
                   deserves to live and perform pain-free.
                 </p>
               </div>
-              <div className="relative">
-                <div className="aspect-square bg-gradient-to-br from-gray-800 to-blue-600 rounded-2xl p-8 shadow-soft">
-                  <div className="w-full h-full bg-white rounded-xl shadow-soft flex items-center justify-center">
-                    <div className="text-center space-y-4">
-                      <div className="w-20 h-20 bg-blue-600 rounded-full mx-auto flex items-center justify-center">
-                        <Award className="h-10 w-10 text-white" />
+              <div className="relative transform scale-110 lg:scale-125">
+                <div className="aspect-[4/3] bg-gradient-to-br from-primary-800 to-primary-400 rounded-2xl p-6 shadow-soft">
+                  <div className="w-full h-full bg-white rounded-xl shadow-soft overflow-hidden relative">
+                    <img 
+                      src={getImagePath("/team/mo-team-celebration.jpg")}
+                      alt="M.O. Therapy team celebrating together in the clinic"
+                      className="w-full h-full object-cover"
+                    />
+                    {/* Overlay with team info */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent">
+                      <div className="absolute bottom-4 left-4 right-4">
+                        <div className="flex items-center gap-3">
+                          <div className="w-10 h-10 bg-primary-400 rounded-full flex items-center justify-center">
+                            <Award className="h-5 w-5 text-white" />
+                          </div>
+                          <div>
+                            <h3 className="text-lg font-bold text-white">Our Team</h3>
+                            <p className="text-primary-100 text-sm">Excellence in Care</p>
+                          </div>
+                        </div>
                       </div>
-                      <h3 className="text-xl font-semibold text-gray-900">Excellence in Care</h3>
-                      <p className="text-gray-600">Dedicated to your success</p>
                     </div>
                   </div>
                 </div>
@@ -122,7 +135,7 @@ export default function AboutPage() {
           <div className="container-custom">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <h2 className="heading-lg text-gray-900 mb-6">
-                Our <span className="text-blue-600 font-bold">Core Values</span>
+                Our <span className="text-primary-600 font-bold">Core Values</span>
               </h2>
               <p className="text-xl text-gray-600">
                 These principles guide everything we do and ensure every patient receives the highest quality care.
@@ -134,8 +147,8 @@ export default function AboutPage() {
                 const Icon = value.icon;
                 return (
                   <div key={value.title} className="text-center group">
-                    <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-50 rounded-2xl mb-6 group-hover:bg-blue-100 transition-colors duration-300">
-                      <Icon className="h-8 w-8 text-blue-600" />
+                    <div className="inline-flex items-center justify-center w-16 h-16 bg-primary-50 rounded-2xl mb-6 group-hover:bg-primary-100 transition-colors duration-300">
+                      <Icon className="h-8 w-8 text-primary-600" />
                     </div>
                     <h3 className="heading-sm text-gray-900 mb-4">{value.title}</h3>
                     <p className="text-body">{value.description}</p>
@@ -147,13 +160,13 @@ export default function AboutPage() {
         </section>
 
         {/* Statistics */}
-        <section className="section-padding bg-gradient-to-r from-gray-900 to-blue-600">
+        <section className="section-padding bg-gradient-to-r from-primary-900 to-primary-400">
           <div className="container-custom">
             <div className="text-center mb-12">
               <h2 className="heading-lg text-white mb-4">
                 Our Impact by the Numbers
               </h2>
-              <p className="text-xl text-blue-100">
+              <p className="text-xl text-primary-100">
                 These statistics reflect our commitment to excellence and the trust our patients place in us.
               </p>
             </div>
@@ -162,7 +175,7 @@ export default function AboutPage() {
               {stats.map((stat, index) => (
                 <div key={stat.label}>
                   <div className="text-5xl font-bold text-white mb-2">{stat.number}</div>
-                  <div className="text-blue-100 text-lg">{stat.label}</div>
+                  <div className="text-primary-100 text-lg">{stat.label}</div>
                 </div>
               ))}
             </div>
@@ -194,7 +207,7 @@ export default function AboutPage() {
                 </div>
               </div>
               <div className="relative">
-                <div className="aspect-square bg-gradient-to-br from-gray-800 to-blue-600 rounded-2xl p-8 shadow-soft">
+                <div className="aspect-square bg-gradient-to-br from-primary-800 to-primary-400 rounded-2xl p-8 shadow-soft">
                   <div className="w-full h-full bg-white rounded-xl shadow-soft flex items-center justify-center">
                     <div className="text-center space-y-4">
                       <div className="w-20 h-20 bg-green-600 rounded-full mx-auto flex items-center justify-center">

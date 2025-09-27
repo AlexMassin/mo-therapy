@@ -61,10 +61,10 @@ const services = [
 
 const colorVariants = {
   blue: {
-    bg: 'bg-blue-50',
-    icon: 'text-blue-600',
-    button: 'text-blue-600 hover:text-blue-700',
-    accent: 'bg-blue-100'
+    bg: 'bg-primary-50',
+    icon: 'text-primary-600',
+    button: 'text-primary-600 hover:text-primary-700',
+    accent: 'bg-primary-100'
   },
   green: {
     bg: 'bg-green-50',
@@ -97,7 +97,7 @@ export default function Services() {
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="heading-lg text-gray-900 mb-6">
-            Comprehensive Care for <span className="text-blue-600 font-bold">Peak Athletic Performance</span>
+            Comprehensive Care for <span className="text-primary-600 font-bold">Peak Athletic Performance</span>
           </h2>
           <p className="text-xl text-gray-600">
             Our integrated approach combines multiple therapeutic disciplines to address the root cause of your concerns 

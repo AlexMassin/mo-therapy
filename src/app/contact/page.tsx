@@ -57,13 +57,13 @@ export default function ContactPage() {
       <Header />
       <main className="pt-20">
         {/* Hero Section */}
-        <section className="section-padding bg-gradient-to-br from-gray-900 via-blue-900 to-blue-600">
+        <section className="section-padding bg-gradient-to-br from-primary-900 via-primary-800 to-primary-400">
           <div className="container-custom">
             <div className="text-center max-w-4xl mx-auto">
               <h1 className="heading-xl text-white mb-6">
                 Contact <span className="gradient-text">M.O. Therapy</span>
               </h1>
-              <p className="text-xl text-blue-100 leading-relaxed mb-8">
+              <p className="text-xl text-primary-100 leading-relaxed mb-8">
                 Ready to start your journey to better health and performance? We&apos;re here to help you every step of the way.
               </p>
               <BookingButton
@@ -85,15 +85,15 @@ export default function ContactPage() {
                 const Icon = info.icon;
                 return (
                   <div key={info.title} className="card text-center group hover:scale-105 transition-all duration-300">
-                    <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-50 rounded-2xl mb-6 group-hover:bg-blue-100 transition-colors duration-300">
-                      <Icon className="h-8 w-8 text-blue-600" />
+                    <div className="inline-flex items-center justify-center w-16 h-16 bg-primary-50 rounded-2xl mb-6 group-hover:bg-primary-100 transition-colors duration-300">
+                      <Icon className="h-8 w-8 text-primary-600" />
                     </div>
                     <h3 className="heading-sm text-gray-900 mb-3">{info.title}</h3>
                     <a
                       href={info.href}
                       target={info.href.startsWith('http') ? '_blank' : undefined}
                       rel={info.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                      className="text-blue-600 hover:text-blue-700 font-medium block mb-3 transition-colors duration-200"
+                      className="text-primary-600 hover:text-primary-700 font-medium block mb-3 transition-colors duration-200"
                     >
                       {info.value}
                     </a>
@@ -108,7 +108,7 @@ export default function ContactPage() {
               {/* Hours */}
               <div className="card">
                 <div className="flex items-center gap-3 mb-6">
-                  <Clock className="h-6 w-6 text-blue-600" />
+                  <Clock className="h-6 w-6 text-primary-600" />
                   <h2 className="heading-md text-gray-900">Hours of Operation</h2>
                 </div>
                 <div className="space-y-3">
@@ -119,8 +119,8 @@ export default function ContactPage() {
                     </div>
                   ))}
                 </div>
-                <div className="mt-6 p-4 bg-blue-50 rounded-lg">
-                  <p className="text-sm text-blue-800 font-medium">
+                <div className="mt-6 p-4 bg-primary-50 rounded-lg">
+                  <p className="text-sm text-primary-800 font-medium">
                     📅 We are booking by appointment only
                   </p>
                 </div>
@@ -129,15 +129,19 @@ export default function ContactPage() {
               {/* Map placeholder and directions */}
               <div className="card">
                 <h2 className="heading-md text-gray-900 mb-6">Find Us</h2>
-                <div className="aspect-video bg-gray-100 rounded-lg mb-6 flex items-center justify-center">
-                  <div className="text-center">
-                    <MapPin className="h-12 w-12 text-gray-400 mx-auto mb-3" />
-                    <p className="text-gray-600">Interactive map will be embedded here</p>
-                    <p className="text-sm text-gray-500 mt-2">20 Apple Creek Blvd. Unit A1</p>
-                    <p className="text-sm text-gray-500">Markham, ON L3R5Z1</p>
-                  </div>
+                <div className="aspect-video bg-gray-100 rounded-lg mb-6 overflow-hidden">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2879.8234567890123!2d-79.3456789!3d43.8567890!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2s20%20Apple%20Creek%20Blvd%2C%20Markham%2C%20ON%20L3R%205Z1!5e0!3m2!1sen!2sca!4v1234567890123!5m2!1sen!2sca"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="M.O. Therapy Location - 20 Apple Creek Blvd, Markham"
+                  ></iframe>
                 </div>
-                <div className="space-y-3 text-sm text-gray-600">
+                <div className="space-y-3 text-sm text-gray-600 mb-6">
                   <p><strong>Parking:</strong> Free parking available on-site</p>
                   <p><strong>Transit:</strong> Close to YRT bus routes</p>
                   <p><strong>Accessibility:</strong> Wheelchair accessible entrance</p>
@@ -146,7 +150,7 @@ export default function ContactPage() {
                   href="https://maps.google.com/?q=20+Apple+Creek+Blvd+Unit+A1+Markham+ON"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn-outline w-full mt-4 justify-center"
+                  className="btn-outline w-full justify-center"
                 >
                   Get Directions
                 </a>
@@ -180,7 +184,7 @@ export default function ContactPage() {
                         id="firstName"
                         name="firstName"
                         required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors duration-200"
                         placeholder="Enter your first name"
                       />
                     </div>
@@ -193,7 +197,7 @@ export default function ContactPage() {
                         id="lastName"
                         name="lastName"
                         required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors duration-200"
                         placeholder="Enter your last name"
                       />
                     </div>
@@ -209,7 +213,7 @@ export default function ContactPage() {
                         id="email"
                         name="email"
                         required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors duration-200"
                         placeholder="Enter your email"
                       />
                     </div>
@@ -221,7 +225,7 @@ export default function ContactPage() {
                         type="tel"
                         id="phone"
                         name="phone"
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors duration-200"
                         placeholder="Enter your phone number"
                       />
                     </div>
@@ -234,7 +238,7 @@ export default function ContactPage() {
                     <select
                       id="service"
                       name="service"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors duration-200"
                     >
                       <option value="">Select a service</option>
                       <option value="physiotherapy">Physiotherapy</option>
@@ -255,7 +259,7 @@ export default function ContactPage() {
                       name="message"
                       rows={5}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors duration-200"
                       placeholder="Tell us about your condition, goals, or any questions you have..."
                     ></textarea>
                   </div>
@@ -266,7 +270,7 @@ export default function ContactPage() {
                       id="consent"
                       name="consent"
                       required
-                      className="mt-1 h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+                      className="mt-1 h-4 w-4 text-primary-600 focus:ring-primary-500 border-gray-300 rounded"
                     />
                     <label htmlFor="consent" className="text-sm text-gray-600">
                       I consent to being contacted by M.O. Therapy regarding my inquiry. *

@@ -37,17 +37,17 @@ export default function BlogPage() {
       <Header />
       <main className="pt-24">
         {/* Hero Section */}
-        <section className="section-padding bg-gradient-to-br from-gray-900 via-blue-900 to-blue-600">
+        <section className="section-padding bg-gradient-to-br from-primary-900 via-primary-800 to-primary-400">
           <div className="container-custom">
             <div className="text-center max-w-4xl mx-auto">
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-medium mb-6">
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary-100 text-primary-800 rounded-full text-sm font-medium mb-6">
                 <BookOpen className="h-4 w-4" />
                 Expert Insights
               </div>
               <h1 className="heading-xl text-white mb-6">
-                Health & <span className="text-blue-300 font-bold">Sports Medicine Blog</span>
+                Health & <span className="text-primary-300 font-bold">Sports Medicine Blog</span>
               </h1>
-              <p className="text-xl text-blue-100 leading-relaxed mb-8">
+              <p className="text-xl text-primary-100 leading-relaxed mb-8">
                 Get expert insights on sports injuries, recovery techniques, injury prevention, and performance 
                 optimization from our licensed healthcare professionals.
               </p>
@@ -74,19 +74,19 @@ export default function BlogPage() {
                     <h3 className="text-lg font-medium text-gray-900">What to expect:</h3>
                     <ul className="text-left space-y-2 text-gray-600">
                       <li className="flex items-center gap-2">
-                        <Tag className="h-4 w-4 text-blue-600" />
+                        <Tag className="h-4 w-4 text-primary-600" />
                         Sports injury prevention tips
                       </li>
                       <li className="flex items-center gap-2">
-                        <Tag className="h-4 w-4 text-blue-600" />
+                        <Tag className="h-4 w-4 text-primary-600" />
                         Recovery and rehabilitation guides
                       </li>
                       <li className="flex items-center gap-2">
-                        <Tag className="h-4 w-4 text-blue-600" />
+                        <Tag className="h-4 w-4 text-primary-600" />
                         Exercise and movement advice
                       </li>
                       <li className="flex items-center gap-2">
-                        <Tag className="h-4 w-4 text-blue-600" />
+                        <Tag className="h-4 w-4 text-primary-600" />
                         Latest research insights
                       </li>
                     </ul>
@@ -101,7 +101,7 @@ export default function BlogPage() {
                   <div className="flex flex-wrap gap-3 mb-12 justify-center">
                     <Link
                       href="/blog"
-                      className="px-4 py-2 bg-blue-600 text-white rounded-full text-sm font-medium hover:bg-blue-700 transition-colors"
+                      className="px-4 py-2 bg-primary-600 text-white rounded-full text-sm font-medium hover:bg-primary-700 transition-colors"
                     >
                       All Posts
                     </Link>
@@ -151,12 +151,12 @@ export default function BlogPage() {
                         </div>
 
                         {/* Category */}
-                        <div className="inline-block px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-medium w-fit">
+                        <div className="inline-block px-3 py-1 bg-primary-100 text-primary-800 rounded-full text-xs font-medium w-fit">
                           {post.category}
                         </div>
 
                         {/* Title */}
-                        <h2 className="text-xl font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">
+                        <h2 className="text-xl font-semibold text-gray-900 group-hover:text-primary-600 transition-colors">
                           {post.title}
                         </h2>
 
@@ -193,7 +193,7 @@ export default function BlogPage() {
                           
                           <Link
                             href={`/blog/${post.slug}`}
-                            className="inline-flex items-center gap-1 text-blue-600 font-medium text-sm hover:text-blue-700 transition-colors group/link whitespace-nowrap flex-shrink-0"
+                            className="inline-flex items-center gap-1 text-primary-600 font-medium text-sm hover:text-primary-700 transition-colors group/link whitespace-nowrap flex-shrink-0"
                           >
                             Read More
                             <ArrowRight className="h-4 w-4 group-hover/link:translate-x-1 transition-transform" />
@@ -213,7 +213,7 @@ export default function BlogPage() {
           <div className="container-custom text-center">
             <div className="max-w-3xl mx-auto">
               <h2 className="heading-lg text-gray-900 mb-6">
-                Have Questions About <span className="text-blue-600 font-bold">Your Health?</span>
+                Have Questions About <span className="text-primary-600 font-bold">Your Health?</span>
               </h2>
               <p className="text-xl text-gray-600 mb-8">
                 Our expert team is here to help. Don't let questions about your health go unanswered.

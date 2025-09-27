@@ -66,7 +66,7 @@ export default function Footer() {
                 onClick={() => handleContactClick('phone')}
                 className="flex items-center gap-3 text-gray-300 hover:text-white transition-colors duration-200"
               >
-                <Phone className="h-5 w-5 text-blue-400" />
+                <Phone className="h-5 w-5 text-primary-400" />
                 (905) 201-5827
               </a>
               <a
@@ -74,11 +74,11 @@ export default function Footer() {
                 onClick={() => handleContactClick('email')}
                 className="flex items-center gap-3 text-gray-300 hover:text-white transition-colors duration-200"
               >
-                <Mail className="h-5 w-5 text-blue-400" />
+                <Mail className="h-5 w-5 text-primary-400" />
                 motherapycanada@gmail.com
               </a>
               <div className="flex items-start gap-3 text-gray-300">
-                <MapPin className="h-5 w-5 text-blue-400 mt-0.5" />
+                <MapPin className="h-5 w-5 text-primary-400 mt-0.5" />
                 <div>
                   <div>20 Apple Creek Blvd. Unit A1</div>
                   <div>Markham, ON L3R5Z1</div>
@@ -146,7 +146,7 @@ export default function Footer() {
           {/* Hours & Booking */}
           <div>
             <h3 className="text-lg font-semibold mb-6 flex items-center gap-2">
-              <Clock className="h-5 w-5 text-blue-400" />
+              <Clock className="h-5 w-5 text-primary-400" />
               Hours of Operation
             </h3>
             <div className="space-y-2 mb-8">
@@ -160,7 +160,7 @@ export default function Footer() {
             
             <button
               onClick={handleBookingClick}
-              className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 flex items-center justify-center gap-2"
+              className="w-full bg-primary-600 hover:bg-primary-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 flex items-center justify-center gap-2"
             >
               <Calendar className="h-4 w-4" />
               Book Appointment

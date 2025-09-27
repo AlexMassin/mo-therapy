@@ -3,7 +3,8 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Services from '@/components/Services';
 import BookingButton from '@/components/BookingButton';
-import { Activity, Heart, Zap, Compass } from 'lucide-react';
+import { Activity, Heart, Zap, Compass, Shield, Target } from 'lucide-react';
+import { getImagePath } from '@/lib/assets';
 
 export const metadata: Metadata = {
   title: 'Our Services - Physiotherapy, Massage & Chiropractic Care | M.O. Therapy',
@@ -14,7 +15,13 @@ export const metadata: Metadata = {
     'chiropractic care Markham',
     'osteopathy services',
     'sports therapy Markham',
-    'athletic treatment services'
+    'athletic treatment services',
+    'MMA physiotherapy Markham',
+    'BJJ injury treatment',
+    'Muay Thai therapy services',
+    'combat sports physiotherapy',
+    'martial arts injury treatment',
+    'fighter rehabilitation Markham'
   ],
 };
 
@@ -115,13 +122,13 @@ export default function ServicesPage() {
       <Header />
       <main className="pt-20">
         {/* Hero Section */}
-        <section className="section-padding bg-gradient-to-br from-gray-900 via-blue-900 to-blue-600">
+        <section className="section-padding bg-gradient-to-br from-primary-900 via-primary-800 to-primary-400">
           <div className="container-custom">
             <div className="text-center max-w-4xl mx-auto">
               <h1 className="heading-xl text-white mb-6">
                 Comprehensive <span className="gradient-text">Athletic Care</span> Services
               </h1>
-              <p className="text-xl text-blue-100 leading-relaxed">
+              <p className="text-xl text-primary-100 leading-relaxed">
                 Our integrated approach combines multiple therapeutic disciplines to provide comprehensive care 
                 that addresses the root cause of your concerns and optimizes your athletic potential.
               </p>
@@ -142,8 +149,8 @@ export default function ServicesPage() {
                     {/* Content */}
                     <div className={isEven ? 'lg:pr-8' : 'lg:pl-8 lg:col-start-2'}>
                       <div className="flex items-center gap-4 mb-6">
-                        <div className="p-3 bg-blue-50 rounded-xl">
-                          <Icon className="h-8 w-8 text-blue-600" />
+                        <div className="p-3 bg-primary-50 rounded-xl">
+                          <Icon className="h-8 w-8 text-primary-600" />
                         </div>
                         <h2 className="heading-lg text-gray-900">{service.title}</h2>
                       </div>
@@ -159,7 +166,7 @@ export default function ServicesPage() {
                           <ul className="space-y-2">
                             {service.treatments.map((treatment, idx) => (
                               <li key={idx} className="flex items-start gap-2 text-gray-600">
-                                <div className="w-1.5 h-1.5 rounded-full bg-blue-600 mt-2.5 flex-shrink-0"></div>
+                                <div className="w-1.5 h-1.5 rounded-full bg-primary-600 mt-2.5 flex-shrink-0"></div>
                                 {treatment}
                               </li>
                             ))}
@@ -190,15 +197,43 @@ export default function ServicesPage() {
                       </div>
                     </div>
 
-                    {/* Image placeholder */}
+                    {/* Service Image */}
                     <div className={`${isEven ? '' : 'lg:col-start-1'}`}>
-                      <div className="aspect-square bg-gradient-to-br from-gray-800 to-blue-600 rounded-2xl p-8 shadow-soft">
-                        <div className="w-full h-full bg-white rounded-xl shadow-soft flex items-center justify-center">
-                          <div className="text-center">
-                            <Icon className="h-16 w-16 text-blue-600 mx-auto mb-4" />
-                            <h3 className="text-xl font-semibold text-gray-900">{service.title}</h3>
-                            <p className="text-gray-600 mt-2">Professional care for optimal results</p>
-                          </div>
+                      <div className="aspect-square bg-gradient-to-br from-primary-800 to-primary-400 rounded-2xl p-6 shadow-soft">
+                        <div className="w-full h-full bg-white rounded-xl shadow-soft overflow-hidden relative">
+                          {service.title === 'Physiotherapy' ? (
+                            <img 
+                              src={getImagePath("/services/physiotherapy.png")}
+                              alt="Professional physiotherapy treatment session at M.O. Therapy"
+                              className="w-full h-full object-cover"
+                            />
+                          ) : service.title === 'Registered Massage Therapy' ? (
+                            <img 
+                              src={getImagePath("/services/massage-therapy.png")}
+                              alt="Professional registered massage therapy session at M.O. Therapy"
+                              className="w-full h-full object-cover"
+                            />
+                          ) : service.title === 'Chiropractic Care' ? (
+                            <img 
+                              src={getImagePath("/services/chiropractor.png")}
+                              alt="Professional chiropractic care treatment at M.O. Therapy"
+                              className="w-full h-full object-cover"
+                            />
+                          ) : service.title === 'Osteopathy' ? (
+                            <img 
+                              src={getImagePath("/services/osteopath.png")}
+                              alt="Professional osteopathy treatment session at M.O. Therapy"
+                              className="w-full h-full object-cover"
+                            />
+                          ) : (
+                            <div className="w-full h-full flex items-center justify-center">
+                              <div className="text-center">
+                                <Icon className="h-16 w-16 text-primary-600 mx-auto mb-4" />
+                                <h3 className="text-xl font-semibold text-gray-900">{service.title}</h3>
+                                <p className="text-gray-600 mt-2">Professional care for optimal results</p>
+                              </div>
+                            </div>
+                          )}
                         </div>
                       </div>
                     </div>
@@ -209,18 +244,100 @@ export default function ServicesPage() {
           </div>
         </section>
 
+        {/* Combat Sports Specialization Section */}
+        <section className="section-padding bg-gray-50">
+          <div className="container-custom">
+            <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
+              {/* Content */}
+              <div>
+                <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary-100 text-primary-800 rounded-full text-sm font-medium mb-6">
+                  <Shield className="h-4 w-4" />
+                  Combat Sports Specialization
+                </div>
+                <h2 className="heading-lg text-gray-900 mb-6">
+                  <span className="text-primary-600 font-bold">MMA, BJJ, MUAY THAI</span> Fighter Treatment
+                </h2>
+                <p className="text-xl text-gray-600 mb-6">
+                  At M.O., our therapists specialize in catering to clients who have experienced pain and injuries 
+                  related to various combat sports, including <strong>Mixed Martial Arts (MMA)</strong>, <strong>Brazilian Jiu Jitsu (BJJ)</strong>, and <strong>Muay Thai</strong>.
+                </p>
+                <p className="text-lg text-gray-600 mb-8">
+                  Our therapists understand the physical demands and stresses of individuals of these sports, which is why 
+                  our team provides targeted care to address the specific challenges that comes with combat sports.
+                </p>
+
+                {/* Combat Sports Specific Treatments */}
+                <div className="space-y-4 mb-8">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-4">Specialized Combat Sports Treatments:</h3>
+                  <div className="grid gap-3">
+                    {[
+                      'Grappling injury rehabilitation and prevention',
+                      'Striking-related trauma and recovery therapy',
+                      'Joint mobility optimization for ground fighting',
+                      'Concussion management and return-to-training protocols',
+                      'Cauliflower ear treatment and prevention',
+                      'Combat sports-specific strength and conditioning',
+                      'Pre-fight preparation and post-fight recovery',
+                      'Martial arts movement pattern correction'
+                    ].map((treatment, index) => (
+                      <div key={index} className="flex items-start gap-3">
+                        <div className="w-1.5 h-1.5 rounded-full bg-primary-600 mt-2.5 flex-shrink-0"></div>
+                        <span className="text-gray-700">{treatment}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <BookingButton
+                  className="bg-primary-600 hover:bg-primary-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 shadow-soft hover:shadow-medium"
+                  trackingLabel="combat_sports_booking"
+                >
+                  Book Fighter Assessment
+                </BookingButton>
+              </div>
+
+              {/* Image Placeholder */}
+              <div className="relative">
+                <div className="aspect-[4/3] bg-gradient-to-br from-primary-800 to-primary-400 rounded-2xl p-6 shadow-soft">
+                  <div className="w-full h-full bg-white rounded-xl shadow-soft overflow-hidden relative">
+                    <img 
+                      src={getImagePath("/services/combat-sports-treatment.jpg")}
+                      alt="MMA, BJJ, and Muay Thai fighter receiving specialized physiotherapy treatment at M.O. Therapy in Markham"
+                      className="w-full h-full object-cover"
+                    />
+                    {/* Overlay with combat sports info */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent">
+                      <div className="absolute bottom-4 left-4 right-4">
+                        <div className="flex items-center gap-3">
+                          <div className="w-10 h-10 bg-primary-400 rounded-full flex items-center justify-center">
+                            <Target className="h-5 w-5 text-white" />
+                          </div>
+                          <div>
+                            <h3 className="text-lg font-bold text-white">Fighter Focused</h3>
+                            <p className="text-primary-100 text-sm">Combat Sports Expertise</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* CTA Section */}
-        <section className="section-padding bg-gradient-to-r from-gray-900 to-blue-600">
+        <section className="section-padding bg-gradient-to-r from-primary-900 to-primary-400">
           <div className="container-custom text-center">
             <h2 className="heading-lg text-white mb-6">
               Ready to Start Your Recovery Journey?
             </h2>
-            <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+            <p className="text-xl text-primary-100 mb-8 max-w-2xl mx-auto">
               Our expert team is ready to help you achieve your goals. Book an assessment today and 
               discover the difference comprehensive athletic care can make.
             </p>
             <BookingButton
-              className="bg-white text-blue-600 hover:bg-gray-50 font-semibold py-4 px-8 rounded-lg transition-all duration-200 shadow-soft hover:shadow-medium text-lg"
+              className="bg-white text-primary-600 hover:bg-gray-50 font-semibold py-4 px-8 rounded-lg transition-all duration-200 shadow-soft hover:shadow-medium text-lg"
               trackingLabel="services_page_cta"
             >
               Book Your Assessment

@@ -100,17 +100,17 @@ export default function TeamPage() {
       <Header />
       <main className="pt-24">
         {/* Hero Section */}
-        <section className="section-padding bg-gradient-to-br from-gray-900 via-blue-900 to-blue-600">
+        <section className="section-padding bg-gradient-to-br from-primary-900 via-primary-800 to-primary-400">
           <div className="container-custom">
             <div className="text-center max-w-4xl mx-auto">
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-medium mb-6">
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary-100 text-primary-800 rounded-full text-sm font-medium mb-6">
                 <Users className="h-4 w-4" />
                 Meet Our Team
               </div>
               <h1 className="heading-xl text-white mb-6">
-                Expert <span className="text-blue-300 font-bold">Healthcare Professionals</span> Dedicated to Your Recovery
+                Expert <span className="text-primary-300 font-bold">Healthcare Professionals</span> Dedicated to Your Recovery
               </h1>
-              <p className="text-xl text-blue-100 leading-relaxed mb-8">
+              <p className="text-xl text-primary-100 leading-relaxed mb-8">
                 Our multidisciplinary team of licensed physiotherapists, registered massage therapists, and chiropractors 
                 brings years of experience and specialized training to help you achieve optimal health and performance.
               </p>
@@ -119,8 +119,8 @@ export default function TeamPage() {
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
                 {teamStats.map((stat, index) => (
                   <div key={index} className="text-center">
-                    <div className="text-2xl md:text-3xl font-bold text-blue-300 mb-1">{stat.number}</div>
-                    <div className="text-sm text-blue-100">{stat.label}</div>
+                    <div className="text-2xl md:text-3xl font-bold text-primary-300 mb-1">{stat.number}</div>
+                    <div className="text-sm text-primary-100">{stat.label}</div>
                   </div>
                 ))}
               </div>
@@ -141,7 +141,7 @@ export default function TeamPage() {
           <div className="container-custom">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <h2 className="heading-lg text-gray-900 mb-6">
-                <span className="text-blue-600 font-bold">Your Focus</span> is Our Focus
+                <span className="text-primary-600 font-bold">Your Focus</span> is Our Focus
               </h2>
               <p className="text-xl text-gray-600 leading-relaxed">
                 Our team knows the importance of health and well-being, so we want to provide you with an environment 
@@ -155,7 +155,7 @@ export default function TeamPage() {
               {teamMembers.map((member, index) => (
                 <div key={member.name} className="card group hover:scale-105 transition-all duration-300 flex flex-col h-full">
                   {/* Team Member Image */}
-                  <div className="aspect-square bg-gradient-to-br from-blue-100 to-blue-50 rounded-xl mb-6 overflow-hidden relative">
+                  <div className="aspect-square bg-gradient-to-br from-primary-100 to-primary-50 rounded-xl mb-6 overflow-hidden relative">
                     <Image
                       src={getImagePath(member.image)}
                       alt={`${member.name} - ${member.title} at M.O. Therapy`}
@@ -170,8 +170,8 @@ export default function TeamPage() {
                   {/* Member Info */}
                   <div className="text-center flex flex-col flex-grow">
                     <h3 className="text-xl font-semibold text-gray-900 mb-2">{member.name}</h3>
-                    <div className="text-blue-600 font-medium mb-3">{member.title}</div>
-                    <div className="inline-flex items-center px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-sm font-medium mb-4 mx-auto">
+                    <div className="text-primary-600 font-medium mb-3">{member.title}</div>
+                    <div className="inline-flex items-center px-3 py-1 bg-primary-50 text-primary-700 rounded-full text-sm font-medium mb-4 mx-auto">
                       <Star className="h-3 w-3 mr-1" />
                       {member.specialty}
                     </div>
@@ -192,17 +192,17 @@ export default function TeamPage() {
         </section>
 
         {/* Join Our Team CTA */}
-        <section className="section-padding bg-gradient-to-r from-gray-900 to-blue-600">
+        <section className="section-padding bg-gradient-to-r from-primary-900 to-primary-400">
           <div className="container-custom text-center">
             <div className="max-w-3xl mx-auto">
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-medium mb-6">
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary-100 text-primary-800 rounded-full text-sm font-medium mb-6">
                 <Heart className="h-4 w-4" />
                 Join Our Mission
               </div>
               <h2 className="heading-lg text-white mb-6">
-                Interested in <span className="text-blue-300">Joining Our Team?</span>
+                Interested in <span className="text-primary-300">Joining Our Team?</span>
               </h2>
-              <p className="text-xl text-blue-100 mb-8 leading-relaxed">
+              <p className="text-xl text-primary-100 mb-8 leading-relaxed">
                 For the last four years, our team of practitioners focus on providing an environment where you can see 
                 the development of clients health and well-being. We are always looking for talented and passionate 
                 individuals who are committed to helping clients to join our team.
@@ -223,7 +223,7 @@ export default function TeamPage() {
                   Experience Our Clinic
                 </BookingButton>
               </div>
-              <p className="text-blue-200 text-sm mt-4">
+              <p className="text-primary-200 text-sm mt-4">
                 Send resume and documents to: motherapycanada@gmail.com
               </p>
             </div>

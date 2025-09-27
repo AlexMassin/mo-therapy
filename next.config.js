@@ -12,8 +12,13 @@ const nextConfig = {
   trailingSlash: true,
   output: 'export',
   distDir: 'out',
+  // GitHub Pages configuration
   basePath: process.env.NODE_ENV === 'production' ? '/mo-therapy' : '',
   assetPrefix: process.env.NODE_ENV === 'production' ? '/mo-therapy' : '',
+  // Ensure static assets are properly handled
+  experimental: {
+    optimizeCss: false,
+  },
 };
 
 module.exports = nextConfig;
