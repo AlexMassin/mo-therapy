@@ -197,7 +197,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                         Need Expert Care?
                       </h3>
                       <p className="text-gray-600 mb-4 text-sm">
-                        Don't wait for your symptoms to worsen. Get professional treatment today.
+                        Don&apos;t wait for your symptoms to worsen. Get professional treatment today.
                       </p>
                       <BookingButton
                         className="btn-primary w-full text-sm"
