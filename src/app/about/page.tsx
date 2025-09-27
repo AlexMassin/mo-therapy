@@ -71,7 +71,7 @@ export default function AboutPage() {
                   deserves to live and perform pain-free.
                 </p>
               </div>
-              <div className="relative transform scale-110 lg:scale-125">
+              <div className="relative transform scale-105 md:scale-100 lg:scale-110">
                 <div className="aspect-[4/3] bg-gradient-to-br from-primary-800 to-primary-400 rounded-2xl p-6 shadow-soft">
                   <div className="w-full h-full bg-white rounded-xl shadow-soft overflow-hidden relative">
                     <img 
