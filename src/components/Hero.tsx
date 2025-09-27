@@ -1,7 +1,8 @@
 'use client';
 
-import { Calendar, Play, Shield, Award, Users } from 'lucide-react';
+import { Calendar, Play, Shield, Award, Users, DollarSign } from 'lucide-react';
 import { trackEvent } from '@/components/Analytics';
+import { getVideoPath } from '@/lib/assets';
 
 export default function Hero() {
   const handleBookNowClick = () => {
@@ -15,110 +16,106 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-900 via-blue-900 to-blue-600">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-primary-900 via-primary-800 to-primary-400">
       {/* Background decorative elements */}
       <div className="absolute inset-0 opacity-40">
-        <div className="absolute top-20 left-10 w-20 h-20 bg-blue-200 rounded-full blur-xl"></div>
+        <div className="absolute top-20 left-10 w-20 h-20 bg-primary-200 rounded-full blur-xl"></div>
         <div className="absolute top-40 right-20 w-32 h-32 bg-green-200 rounded-full blur-xl"></div>
         <div className="absolute bottom-40 left-20 w-24 h-24 bg-orange-200 rounded-full blur-xl"></div>
-        <div className="absolute bottom-20 right-10 w-28 h-28 bg-blue-300 rounded-full blur-xl"></div>
+        <div className="absolute bottom-20 right-10 w-28 h-28 bg-primary-300 rounded-full blur-xl"></div>
       </div>
 
-      <div className="relative container-custom pt-20 pb-16">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Content */}
-          <div className="max-w-2xl">
+      <div className="relative container-custom pt-24 sm:pt-32 lg:pt-40 pb-16 sm:pb-24 lg:pb-32">
+        <div className="flex flex-col items-center text-center space-y-8 sm:space-y-12">
+          {/* Hero Video - Top */}
+          <div className="relative w-full max-w-6xl">
+            <div className="relative bg-gradient-to-br from-primary-800 to-primary-400 rounded-3xl p-6 shadow-2xl transform scale-105 sm:scale-110">
+              {/* Hero Video */}
+              <div className="aspect-[16/9] bg-white rounded-2xl shadow-soft overflow-hidden relative">
+                <video 
+                  src={getVideoPath("/homepage/mo-therapy-homepage-video.mp4")}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  className="w-full h-full object-cover"
+                >
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+          </div>
+
+          {/* Content - Bottom */}
+          <div className="max-w-4xl">
             <div className="mb-6">
-              <span className="inline-flex items-center gap-2 px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">
+              <span className="inline-flex items-center gap-2 px-4 py-2 bg-primary-100 text-primary-800 rounded-full text-sm font-medium">
                 <Shield className="h-4 w-4" />
                 Trusted Athletic Care Specialists
               </span>
             </div>
             
-            <h1 className="heading-xl text-white mb-6">
-              Your <span className="gradient-text">M.O.</span> is your hustle.{' '}
-              <span className="text-blue-300">Do it pain free.</span>
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-4 sm:mb-6 leading-tight">
+              Your <span className="gradient-text">M.O.</span> is your hustle.<br />
+              <span className="text-primary-300">Do it pain free.</span>
             </h1>
             
-            <p className="text-xl text-blue-100 mb-8 leading-relaxed">
+            <p className="text-base sm:text-lg lg:text-xl text-primary-100 mb-6 sm:mb-8 leading-relaxed max-w-3xl mx-auto px-4 sm:px-0">
               Expert physiotherapy, massage therapy, and chiropractic care designed specifically for athletes and active individuals. 
               We don&apos;t just treat injuries—we optimize your performance and prevent future setbacks.
             </p>
 
             {/* Stats */}
-            <div className="grid grid-cols-3 gap-6 mb-8">
+            <div className="grid grid-cols-3 gap-4 sm:gap-8 mb-6 sm:mb-8 max-w-2xl mx-auto px-4 sm:px-0">
               <div className="text-center">
-                <div className="text-2xl font-bold text-blue-300">500+</div>
-                <div className="text-sm text-blue-100">Athletes Treated</div>
+                <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary-300">500+</div>
+                <div className="text-xs sm:text-sm text-primary-100">Athletes Treated</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-green-300">95%</div>
-                <div className="text-sm text-blue-100">Return to Sport</div>
+                <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-green-300">95%</div>
+                <div className="text-xs sm:text-sm text-primary-100">Return to Sport</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-orange-300">10+</div>
-                <div className="text-sm text-blue-100">Years Experience</div>
+                <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-orange-300">10+</div>
+                <div className="text-xs sm:text-sm text-primary-100">Years Experience</div>
               </div>
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 mb-8">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6 sm:mb-8 justify-center px-4 sm:px-0">
               <button
                 onClick={handleBookNowClick}
-                className="btn-primary flex items-center justify-center gap-2 text-lg px-8 py-4"
+                className="btn-primary flex items-center justify-center gap-2 text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4"
               >
-                <Calendar className="h-5 w-5" />
+                <Calendar className="h-4 w-4 sm:h-5 sm:w-5" />
                 Book Assessment
               </button>
               <button
                 onClick={handleVideoClick}
-                className="btn-secondary flex items-center justify-center gap-2 text-lg px-8 py-4"
+                className="btn-secondary flex items-center justify-center gap-2 text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4"
               >
-                <Play className="h-5 w-5" />
+                <Play className="h-4 w-4 sm:h-5 sm:w-5" />
                 Watch Our Approach
               </button>
             </div>
 
             {/* Trust indicators */}
-            <div className="flex items-center gap-4 text-sm text-blue-100">
-              <div className="flex items-center gap-1">
-                <Award className="h-4 w-4 text-blue-300" />
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-6 text-xs sm:text-sm text-primary-100 px-4 sm:px-0 max-w-3xl mx-auto">
+              <div className="flex items-center justify-center gap-1">
+                <Calendar className="h-3 w-3 sm:h-4 sm:w-4 text-primary-300" />
+                Same Day Booking
+              </div>
+              <div className="flex items-center justify-center gap-1">
+                <DollarSign className="h-3 w-3 sm:h-4 sm:w-4 text-green-300" />
+                Direct Billing Available
+              </div>
+              <div className="flex items-center justify-center gap-1">
+                <Award className="h-3 w-3 sm:h-4 sm:w-4 text-primary-300" />
                 Licensed Professionals
               </div>
-              <div className="flex items-center gap-1">
-                <Users className="h-4 w-4 text-green-300" />
+              <div className="flex items-center justify-center gap-1">
+                <Users className="h-3 w-3 sm:h-4 sm:w-4 text-green-300" />
                 Insurance Accepted
-              </div>
-            </div>
-          </div>
-
-          {/* Hero Image/Video */}
-          <div className="relative">
-            <div className="relative bg-gradient-to-br from-gray-800 to-blue-600 rounded-2xl p-8 shadow-2xl">
-              {/* Placeholder for hero image - you can replace with actual image */}
-              <div className="aspect-square bg-white rounded-xl shadow-soft flex items-center justify-center">
-                <div className="text-center space-y-4">
-                  <div className="w-20 h-20 bg-blue-600 rounded-full mx-auto flex items-center justify-center">
-                    <Shield className="h-10 w-10 text-white" />
-                  </div>
-                  <h3 className="text-xl font-semibold text-gray-900">Professional Care</h3>
-                  <p className="text-gray-600">Expert treatment for optimal recovery</p>
-                </div>
-              </div>
-              
-              {/* Floating cards */}
-              <div className="absolute -top-4 -right-4 bg-white p-4 rounded-xl shadow-medium">
-                <div className="text-center">
-                  <div className="text-lg font-bold text-blue-600">Same Day</div>
-                  <div className="text-xs text-gray-600">Appointments</div>
-                </div>
-              </div>
-              
-              <div className="absolute -bottom-4 -left-4 bg-white p-4 rounded-xl shadow-medium">
-                <div className="text-center">
-                  <div className="text-lg font-bold text-green-600">Direct Billing</div>
-                  <div className="text-xs text-gray-600">Available</div>
-                </div>
               </div>
             </div>
           </div>

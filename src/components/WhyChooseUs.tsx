@@ -42,7 +42,7 @@ export default function WhyChooseUs() {
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="heading-lg text-gray-900 mb-6">
-            Why Athletes Choose <span className="text-blue-600 font-bold">M.O. Therapy</span>
+            Why Athletes Choose <span className="text-primary-600 font-bold">M.O. Therapy</span>
           </h2>
           <p className="text-xl text-gray-600">
             We understand the unique demands placed on your body. Our specialized approach goes beyond traditional therapy 
@@ -59,8 +59,8 @@ export default function WhyChooseUs() {
                 key={feature.title} 
                 className="text-center group hover:scale-105 transition-transform duration-300"
               >
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-50 rounded-2xl mb-6 group-hover:bg-blue-100 transition-colors duration-300">
-                  <Icon className="h-8 w-8 text-blue-600" />
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-primary-50 rounded-2xl mb-6 group-hover:bg-primary-100 transition-colors duration-300">
+                  <Icon className="h-8 w-8 text-primary-600" />
                 </div>
                 <h3 className="heading-sm text-gray-900 mb-4">{feature.title}</h3>
                 <p className="text-body">{feature.description}</p>
@@ -70,23 +70,23 @@ export default function WhyChooseUs() {
         </div>
 
         {/* Stats Section */}
-        <div className="bg-gradient-to-r from-gray-900 to-blue-600 rounded-3xl p-8 md:p-12 text-white">
+        <div className="bg-gradient-to-r from-primary-900 to-primary-400 rounded-3xl p-8 md:p-12 text-white">
           <div className="grid md:grid-cols-4 gap-8 text-center">
             <div>
               <div className="text-4xl font-bold mb-2">500+</div>
-              <div className="text-blue-100">Athletes Treated</div>
+              <div className="text-primary-100">Athletes Treated</div>
             </div>
             <div>
               <div className="text-4xl font-bold mb-2">95%</div>
-              <div className="text-blue-100">Return to Sport Rate</div>
+              <div className="text-primary-100">Return to Sport Rate</div>
             </div>
             <div>
               <div className="text-4xl font-bold mb-2">10+</div>
-              <div className="text-blue-100">Years Experience</div>
+              <div className="text-primary-100">Years Experience</div>
             </div>
             <div>
               <div className="text-4xl font-bold mb-2">4.9/5</div>
-              <div className="text-blue-100">Patient Satisfaction</div>
+              <div className="text-primary-100">Patient Satisfaction</div>
             </div>
           </div>
         </div>

@@ -3,6 +3,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import BookingButton from '@/components/BookingButton';
 import { Target, Heart, Shield, Activity, Users, ArrowRight, CheckCircle } from 'lucide-react';
+import { getImagePath } from '@/lib/assets';
 
 export const metadata: Metadata = {
   title: 'Conditions We Treat - M.O. Therapy Markham | Sports Injuries & Pain Relief',
@@ -35,7 +36,7 @@ const conditionCategories = [
   {
     title: 'Head & Neck Pain',
     icon: Target,
-    color: 'bg-blue-50 border-blue-200 text-blue-700',
+    image: '/conditions/head-neck-pain.jpg',
     conditions: [
       'Headaches',
       'Concussion',
@@ -48,7 +49,7 @@ const conditionCategories = [
   {
     title: 'Shoulder Pain',
     icon: Shield,
-    color: 'bg-green-50 border-green-200 text-green-700',
+    image: '/conditions/shoulder-pain.jpg',
     conditions: [
       'Subacromial Pain Syndrome (formally Subacromial Impingement Syndrome)',
       'Shoulder Instability',
@@ -60,7 +61,7 @@ const conditionCategories = [
   {
     title: 'Arm & Elbow Pain',
     icon: Activity,
-    color: 'bg-orange-50 border-orange-200 text-orange-700',
+    image: '/conditions/arm-elbow-pain.jpg',
     conditions: [
       'Tennis Elbow',
       'Golfer\'s Elbow',
@@ -70,7 +71,7 @@ const conditionCategories = [
   {
     title: 'Wrist & Hand Pain',
     icon: Heart,
-    color: 'bg-purple-50 border-purple-200 text-purple-700',
+    image: '/conditions/wrist-hand-pain.jpg',
     conditions: [
       'Carpal Tunnel Syndrome',
       'Cubital Tunnel Syndrome',
@@ -80,7 +81,7 @@ const conditionCategories = [
   {
     title: 'Low Back Pain',
     icon: Target,
-    color: 'bg-red-50 border-red-200 text-red-700',
+    image: '/conditions/low-back-pain.jpg',
     conditions: [
       'Non-Specific Mechanical Low Back Pain',
       'Disc Herniation/Discogenic Low Back Pain',
@@ -92,7 +93,7 @@ const conditionCategories = [
   {
     title: 'Knee Pain',
     icon: Activity,
-    color: 'bg-teal-50 border-teal-200 text-teal-700',
+    image: '/conditions/knee-pain.jpg',
     conditions: [
       'Knee OA',
       'Patellar Tendinopathy',
@@ -103,7 +104,7 @@ const conditionCategories = [
   {
     title: 'Hip Pain',
     icon: Shield,
-    color: 'bg-indigo-50 border-indigo-200 text-indigo-700',
+    image: '/conditions/hip-pain.jpg',
     conditions: [
       'Hip OA',
       'Femoral Acetabular Impingement',
@@ -113,7 +114,7 @@ const conditionCategories = [
   {
     title: 'Ankle & Foot Pain',
     icon: Heart,
-    color: 'bg-pink-50 border-pink-200 text-pink-700',
+    image: '/conditions/ankle-foot-pain.jpg',
     conditions: [
       'Ankle Sprains (Lateral, Medial, High)',
       'Plantar Fasciopathy',
@@ -123,7 +124,7 @@ const conditionCategories = [
   {
     title: 'General Conditions',
     icon: Users,
-    color: 'bg-gray-50 border-gray-200 text-gray-700',
+    image: '/conditions/general-conditions.jpg',
     conditions: [
       'Muscle strains',
       'Post-surgical Recovery'
@@ -137,14 +138,14 @@ const specialtyServices = [
     description: 'Pelvic floor physiotherapy is a specialized form of physiotherapy that focuses on the assessment and treatment of pelvic floor muscle dysfunction. Pelvic floor physiotherapy can be beneficial in restoring strength and function in your pelvis.',
     practitioner: 'Carrie Chou',
     icon: Heart,
-    color: 'bg-pink-100'
+    image: '/conditions/pelvic-health.jpg'
   },
   {
     title: 'Combat Sports Specialization',
     description: 'At M.O., our therapists specialize in catering to clients who have experienced pain and injuries related to various combat sports, including Mixed Martial Arts (MMA), Brazilian Jiu Jitsu (BJJ), and Muay Thai.',
     practitioner: 'Our Specialized Team',
     icon: Shield,
-    color: 'bg-red-100'
+    image: '/conditions/combat-sports.jpg'
   }
 ];
 
@@ -177,17 +178,17 @@ export default function ConditionsPage() {
       <Header />
       <main className="pt-24">
         {/* Hero Section */}
-        <section className="section-padding bg-gradient-to-br from-gray-900 via-blue-900 to-blue-600">
+        <section className="section-padding bg-gradient-to-br from-primary-900 via-primary-800 to-primary-400">
           <div className="container-custom">
             <div className="text-center max-w-4xl mx-auto">
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-medium mb-6">
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary-100 text-primary-800 rounded-full text-sm font-medium mb-6">
                 <Target className="h-4 w-4" />
                 Comprehensive Care
               </div>
               <h1 className="heading-xl text-white mb-6">
-                <span className="text-blue-300 font-bold">Conditions We Treat</span> & Specialized Care
+                <span className="text-primary-300 font-bold">Conditions We Treat</span> & Specialized Care
               </h1>
-              <p className="text-xl text-blue-100 leading-relaxed mb-8">
+              <p className="text-xl text-primary-100 leading-relaxed mb-8">
                 From acute sports injuries to chronic pain management, our expert team provides targeted treatment 
                 for a wide range of musculoskeletal conditions. Experience personalized care that gets you back to 
                 what you love doing.
@@ -217,7 +218,7 @@ export default function ConditionsPage() {
           <div className="container-custom text-center">
             <div className="max-w-3xl mx-auto">
               <h2 className="heading-lg text-gray-900 mb-6">
-                Our <span className="text-blue-600 font-bold">M.O.</span>
+                Our <span className="text-primary-600 font-bold">M.O.</span>
               </h2>
               <p className="text-xl text-gray-600 leading-relaxed mb-8">
                 Your M.O. is your hustle. <strong>Do it pain free.</strong>
@@ -237,7 +238,7 @@ export default function ConditionsPage() {
           <div className="container-custom">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <h2 className="heading-lg text-gray-900 mb-6">
-                <span className="text-blue-600 font-bold">Conditions</span> We Treat
+                <span className="text-primary-600 font-bold">Conditions</span> We Treat
               </h2>
               <p className="text-xl text-gray-600">
                 Our expert team provides specialized treatment for a comprehensive range of musculoskeletal conditions.
@@ -248,19 +249,35 @@ export default function ConditionsPage() {
               {conditionCategories.map((category, index) => {
                 const Icon = category.icon;
                 return (
-                  <div key={category.title} className={`card border-2 ${category.color} hover:scale-105 transition-all duration-300`}>
-                    <div className="flex items-center gap-3 mb-4">
-                      <Icon className="h-6 w-6" />
-                      <h3 className="text-xl font-semibold">{category.title}</h3>
+                  <div key={category.title} className="bg-white rounded-2xl shadow-soft hover:shadow-medium transition-all duration-300 overflow-hidden">
+                    {/* Image Section */}
+                    <div className="aspect-[4/3] bg-gray-100 relative">
+                      <img 
+                        src={getImagePath(category.image)}
+                        alt={`${category.title} treatment at M.O. Therapy`}
+                        className="w-full h-full object-cover"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent">
+                        <div className="absolute bottom-4 left-4 right-4">
+                          <div className="flex items-center gap-2 text-white">
+                            <Icon className="h-5 w-5" />
+                            <h3 className="text-lg font-semibold">{category.title}</h3>
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                    <ul className="space-y-2">
-                      {category.conditions.map((condition, conditionIndex) => (
-                        <li key={conditionIndex} className="flex items-start gap-2 text-sm">
-                          <CheckCircle className="h-4 w-4 mt-0.5 flex-shrink-0 opacity-60" />
-                          <span>{condition}</span>
-                        </li>
-                      ))}
-                    </ul>
+                    
+                    {/* Content Section */}
+                    <div className="p-6">
+                      <ul className="space-y-2">
+                        {category.conditions.map((condition, conditionIndex) => (
+                          <li key={conditionIndex} className="flex items-start gap-2 text-sm text-gray-700">
+                            <CheckCircle className="h-4 w-4 mt-0.5 flex-shrink-0 text-primary-600" />
+                            <span>{condition}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
                 );
               })}
@@ -283,7 +300,7 @@ export default function ConditionsPage() {
           <div className="container-custom">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <h2 className="heading-lg text-gray-900 mb-6">
-                <span className="text-blue-600 font-bold">Specialties</span> at M.O.
+                <span className="text-primary-600 font-bold">Specialties</span> at M.O.
               </h2>
               <p className="text-xl text-gray-600">
                 Specialized care for unique conditions and specific populations.
@@ -294,24 +311,40 @@ export default function ConditionsPage() {
               {specialtyServices.map((service, index) => {
                 const Icon = service.icon;
                 return (
-                  <div key={service.title} className={`card ${service.color} hover:scale-105 transition-all duration-300`}>
-                    <div className="flex items-center gap-3 mb-4">
-                      <Icon className="h-6 w-6 text-gray-700" />
-                      <h3 className="text-xl font-semibold text-gray-900">{service.title}</h3>
-                    </div>
-                    <p className="text-gray-600 leading-relaxed mb-4">
-                      {service.description}
-                    </p>
-                    <div className="flex items-center justify-between">
-                      <div className="text-sm text-gray-500">
-                        <strong>Practitioner:</strong> {service.practitioner}
+                  <div key={service.title} className="bg-white rounded-2xl shadow-soft hover:shadow-medium transition-all duration-300 overflow-hidden">
+                    {/* Image Section */}
+                    <div className="aspect-[16/9] bg-gray-100 relative">
+                      <img 
+                        src={getImagePath(service.image)}
+                        alt={`${service.title} at M.O. Therapy`}
+                        className="w-full h-full object-cover"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent">
+                        <div className="absolute bottom-4 left-4 right-4">
+                          <div className="flex items-center gap-2 text-white">
+                            <Icon className="h-5 w-5" />
+                            <h3 className="text-xl font-semibold">{service.title}</h3>
+                          </div>
+                        </div>
                       </div>
-                      <BookingButton
-                        className="btn-outline"
-                        trackingLabel={`specialty_${service.title.toLowerCase().replace(' ', '_')}`}
-                      >
-                        Book Now
-                      </BookingButton>
+                    </div>
+                    
+                    {/* Content Section */}
+                    <div className="p-6">
+                      <p className="text-gray-600 leading-relaxed mb-4">
+                        {service.description}
+                      </p>
+                      <div className="flex items-center justify-between">
+                        <div className="text-sm text-gray-500">
+                          <strong>Practitioner:</strong> {service.practitioner}
+                        </div>
+                        <BookingButton
+                          className="btn-outline"
+                          trackingLabel={`specialty_${service.title.toLowerCase().replace(' ', '_')}`}
+                        >
+                          Book Now
+                        </BookingButton>
+                      </div>
                     </div>
                   </div>
                 );
@@ -325,7 +358,7 @@ export default function ConditionsPage() {
           <div className="container-custom">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <h2 className="heading-lg text-gray-900 mb-6">
-                Advanced <span className="text-blue-600 font-bold">Treatment Techniques</span>
+                Advanced <span className="text-primary-600 font-bold">Treatment Techniques</span>
               </h2>
               <p className="text-xl text-gray-600">
                 Our practitioners utilize a variety of specialized techniques to provide optimal care.
@@ -338,8 +371,8 @@ export default function ConditionsPage() {
                 return (
                   <div key={technique.title} className="card hover:scale-105 transition-all duration-300">
                     <div className="text-center">
-                      <div className="inline-flex items-center justify-center w-12 h-12 bg-blue-100 rounded-xl mb-4">
-                        <Icon className="h-6 w-6 text-blue-600" />
+                      <div className="inline-flex items-center justify-center w-12 h-12 bg-primary-100 rounded-xl mb-4">
+                        <Icon className="h-6 w-6 text-primary-600" />
                       </div>
                       <h3 className="text-lg font-semibold text-gray-900 mb-3">{technique.title}</h3>
                       <p className="text-gray-600 text-sm leading-relaxed mb-4">
@@ -360,13 +393,13 @@ export default function ConditionsPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="section-padding bg-gradient-to-r from-gray-900 to-blue-600">
+        <section className="section-padding bg-gradient-to-r from-primary-900 to-primary-400">
           <div className="container-custom text-center">
             <div className="max-w-3xl mx-auto">
               <h2 className="heading-lg text-white mb-6">
-                Ready to Start Your <span className="text-blue-300">Recovery Journey?</span>
+                Ready to Start Your <span className="text-primary-300">Recovery Journey?</span>
               </h2>
-              <p className="text-xl text-blue-100 mb-8 leading-relaxed">
+              <p className="text-xl text-primary-100 mb-8 leading-relaxed">
                 Don't let pain hold you back from doing what you love. Our expert team is here to help you 
                 recover, perform better, and prevent future injuries.
               </p>
@@ -386,7 +419,7 @@ export default function ConditionsPage() {
                   Contact Our Team
                 </a>
               </div>
-              <p className="text-blue-200 text-sm mt-6">
+              <p className="text-primary-200 text-sm mt-6">
                 Have questions? Visit our FAQs page or contact us directly!
               </p>
             </div>

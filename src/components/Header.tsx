@@ -103,7 +103,7 @@ export default function Header() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="text-sm font-medium leading-6 text-gray-900 hover:text-blue-600 transition-colors duration-200"
+                  className="text-sm font-medium leading-6 text-gray-900 hover:text-primary-600 transition-colors duration-200"
                 >
                   {item.name}
                 </Link>
@@ -115,7 +115,7 @@ export default function Header() {
               <a
                 href="tel:+19052015827"
                 onClick={handlePhoneClick}
-                className="flex items-center gap-2 text-sm font-medium text-gray-900 hover:text-blue-600 transition-colors duration-200"
+                className="flex items-center gap-2 text-sm font-medium text-gray-900 hover:text-primary-600 transition-colors duration-200"
               >
                 <Phone className="h-4 w-4" />
                 (905) 201-5827

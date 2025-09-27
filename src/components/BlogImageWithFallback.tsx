@@ -29,7 +29,7 @@ const categoryIcons = {
 
 const categoryColors = {
   'Pain Management': 'bg-red-100 text-red-600',
-  'Sports Medicine': 'bg-blue-100 text-blue-600',
+  'Sports Medicine': 'bg-primary-100 text-primary-600',
   'Rehabilitation': 'bg-green-100 text-green-600',
   'Injury Prevention': 'bg-orange-100 text-orange-600',
   'Sports Performance': 'bg-purple-100 text-purple-600',

@@ -15,7 +15,7 @@ const conditionCategories = [
       'Hamstring Strains',
       'IT Band Syndrome'
     ],
-    color: 'bg-blue-50 text-blue-600'
+    color: 'bg-primary-50 text-primary-600'
   },
   {
     title: 'Back & Neck Pain',
@@ -65,12 +65,12 @@ export default function Conditions() {
       <div className="container-custom">
         {/* Header */}
         <div className="text-center max-w-5xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-medium mb-6">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary-100 text-primary-800 rounded-full text-sm font-medium mb-6">
             <Target className="h-4 w-4" />
             Specialized Treatment
           </div>
           <h2 className="heading-lg text-gray-900 mb-6">
-            Sports Injuries & Conditions We <span className="text-blue-600 font-bold">Specialize In</span>
+            Sports Injuries & Conditions We <span className="text-primary-600 font-bold">Specialize In</span>
           </h2>
           <p className="text-xl text-gray-600">
             From acute sports injuries to chronic pain management, our expert team provides targeted treatment 
