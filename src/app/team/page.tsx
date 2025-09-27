@@ -125,7 +125,7 @@ const teamMembers = [
     bookingLink: "https://modeofoperation.janeapp.com/#/staff_member/34"
   },
   {
-    name: "Dr. Taylor Chan",
+    name: "Taylor Chan",
     title: "Chiropractor & Clinical Acupuncture Provider",
     description: "Dr. Taylor Chan is passionate about helping people move with ease, recover from pain, and feel confident in their bodies. She earned her Doctor of Chiropractic degree from CMCC, graduating Summa Cum Laude. Her approach is rooted in evidence-based care, tailoring treatments to each individual's needs and goals.",
     image: "/team/taylor.png",
