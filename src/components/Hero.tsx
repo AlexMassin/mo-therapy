@@ -123,7 +123,7 @@ export default function Hero() {
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-12 animate-bounce">
+      <div className="absolute bottom-2 animate-bounce">
         <div className="w-6 h-10 border-2 border-gray-400 rounded-full flex items-start justify-center">
           <div className="w-1 h-3 bg-gray-400 rounded-full mt-2" style={{ marginLeft: '0', marginRight: '0' }}></div>
         </div>
