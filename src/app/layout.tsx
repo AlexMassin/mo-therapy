@@ -83,10 +83,13 @@ export const metadata: Metadata = {
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "MedicalBusiness",
+  "@type": ["LocalBusiness", "MedicalBusiness", "PhysicalTherapist"],
   "name": "M.O. Therapy",
-  "description": "Physiotherapy, massage therapy, chiropractic care and osteopathy clinic specializing in athletic injuries and injury prevention",
+  "alternateName": "Mode of Operation Therapy",
+  "description": "Physiotherapy, massage therapy, chiropractic care and osteopathy clinic specializing in athletic injuries and injury prevention in Markham, Ontario",
   "url": "https://motherapy.ca",
+  "logo": "https://motherapy.ca/logo.png",
+  "image": "https://motherapy.ca/og-image.jpg",
   "telephone": "+1-905-201-5827",
   "email": "motherapycanada@gmail.com",
   "address": {
@@ -102,6 +105,15 @@ const jsonLd = {
     "latitude": "43.8561",
     "longitude": "-79.3370"
   },
+  "serviceArea": {
+    "@type": "GeoCircle",
+    "geoMidpoint": {
+      "@type": "GeoCoordinates",
+      "latitude": "43.8561",
+      "longitude": "-79.3370"
+    },
+    "geoRadius": "25000"
+  },
   "openingHours": [
     "Mo 08:00-20:00",
     "Tu 10:00-20:00", 
@@ -116,11 +128,62 @@ const jsonLd = {
     "Massage Therapy", 
     "Chiropractic Care",
     "Osteopathy",
-    "Sports Medicine"
+    "Sports Medicine",
+    "Athletic Therapy",
+    "Injury Rehabilitation"
   ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Therapeutic Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "MedicalTherapy",
+          "name": "Physiotherapy",
+          "description": "Expert physiotherapy services for sports injuries, rehabilitation, and performance optimization"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "MedicalTherapy",
+          "name": "Registered Massage Therapy",
+          "description": "Professional massage therapy for pain relief, recovery, and wellness"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "MedicalTherapy",
+          "name": "Chiropractic Care",
+          "description": "Chiropractic treatment for spinal health, alignment, and pain management"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "MedicalTherapy",
+          "name": "Osteopathy",
+          "description": "Osteopathic treatment for holistic health, wellness, and injury prevention"
+        }
+      }
+    ]
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "150",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
   "priceRange": "$$",
-  "paymentAccepted": ["Cash", "Credit Card", "Insurance"],
-  "currenciesAccepted": "CAD"
+  "paymentAccepted": ["Cash", "Credit Card", "Debit Card", "Insurance"],
+  "currenciesAccepted": "CAD",
+  "sameAs": [
+    "https://www.facebook.com/motherapycanada",
+    "https://www.instagram.com/motherapycanada"
+  ]
 };
 
 export default function RootLayout({

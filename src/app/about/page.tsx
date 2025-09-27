@@ -7,15 +7,44 @@ import { getImagePath } from '@/lib/assets';
 
 export const metadata: Metadata = {
   title: 'About M.O. Therapy - Expert Athletic Care Team in Markham',
-  description: 'Learn about M.O. Therapy\'s mission to provide exceptional physiotherapy, massage therapy, and chiropractic care for athletes and active individuals in Markham.',
+  description: 'Learn about M.O. Therapy\'s mission to provide exceptional physiotherapy, massage therapy, and chiropractic care for athletes and active individuals in Markham. Meet our expert team.',
   keywords: [
     'about M.O. Therapy',
     'physiotherapy team Markham',
     'athletic care specialists',
     'sports medicine clinic Markham',
-    'registered therapists',
-    'healthcare professionals'
+    'registered therapists Markham',
+    'healthcare professionals Markham',
+    'Apple Creek Blvd clinic',
+    'Markham physiotherapy clinic',
+    'licensed massage therapists',
+    'certified chiropractors Markham'
   ],
+  alternates: {
+    canonical: '/about',
+  },
+  openGraph: {
+    title: 'About M.O. Therapy - Expert Athletic Care Team in Markham',
+    description: 'Meet our expert team of physiotherapists, massage therapists, and chiropractors dedicated to helping athletes achieve peak performance in Markham.',
+    type: 'website',
+    locale: 'en_CA',
+    url: 'https://motherapy.ca/about',
+    siteName: 'M.O. Therapy',
+    images: [
+      {
+        url: '/og-about.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'M.O. Therapy Team - Expert Healthcare Professionals in Markham',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'About M.O. Therapy - Expert Athletic Care Team',
+    description: 'Meet our expert team dedicated to helping athletes achieve peak performance.',
+    images: ['/og-about.jpg'],
+  },
 };
 
 const values = [
