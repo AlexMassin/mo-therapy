@@ -4,9 +4,10 @@ interface BookingButtonProps {
   children: React.ReactNode;
   className?: string;
   trackingLabel?: string;
+  bookingUrl?: string;
 }
 
-export default function BookingButton({ children, className = '', trackingLabel = 'generic' }: BookingButtonProps) {
+export default function BookingButton({ children, className = '', trackingLabel = 'generic', bookingUrl }: BookingButtonProps) {
   const handleClick = () => {
     // Track the event if analytics is available
     if (typeof window !== 'undefined' && (window as any).gtag) {
@@ -16,8 +17,9 @@ export default function BookingButton({ children, className = '', trackingLabel 
       });
     }
     
-    // Open Jane booking system
-    window.open('https://modeofoperation.janeapp.com/', '_blank');
+    // Open specific booking URL or default Jane booking system
+    const targetUrl = bookingUrl || 'https://modeofoperation.janeapp.com/';
+    window.open(targetUrl, '_blank');
   };
 
   return (
