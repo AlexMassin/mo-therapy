@@ -28,8 +28,8 @@ export default function Hero() {
       <div className="relative container-custom pt-32 sm:pt-32 lg:pt-40 pb-16 sm:pb-24 lg:pb-32">
         <div className="flex flex-col items-center text-center space-y-8 sm:space-y-12">
           {/* Hero Video - Top */}
-          <div className="relative w-full max-w-6xl">
-            <div className="relative bg-gradient-to-br from-primary-800 to-primary-400 rounded-3xl p-6 shadow-2xl transform scale-105 sm:scale-110">
+          <div className="relative w-full max-w-6xl px-4 sm:px-6 lg:px-8">
+            <div className="relative bg-gradient-to-br from-primary-800 to-primary-400 rounded-3xl p-6 shadow-2xl transform scale-105 sm:scale-100 md:scale-105 lg:scale-110">
               {/* Hero Video */}
               <div className="aspect-[16/9] bg-white rounded-2xl shadow-soft overflow-hidden relative">
                 <video 
@@ -100,22 +100,22 @@ export default function Hero() {
             </div>
 
             {/* Trust indicators */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-6 text-xs sm:text-sm text-primary-100 px-4 sm:px-0 max-w-3xl mx-auto">
-              <div className="flex items-center justify-center gap-1">
-                <Calendar className="h-3 w-3 sm:h-4 sm:w-4 text-primary-300" />
-                Same Day Booking
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-6 text-xs sm:text-sm text-primary-100 px-4 sm:px-0 max-w-3xl mx-auto">
+              <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-3 py-2 sm:px-4 sm:py-3 flex items-center justify-center gap-2 min-h-[44px] sm:min-h-[52px]">
+                <Calendar className="h-3 w-3 sm:h-4 sm:w-4 text-primary-300 flex-shrink-0" />
+                <span className="text-xs sm:text-sm text-white font-medium whitespace-nowrap">Same Day Booking</span>
               </div>
-              <div className="flex items-center justify-center gap-1">
-                <DollarSign className="h-3 w-3 sm:h-4 sm:w-4 text-green-300" />
-                Direct Billing Available
+              <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-3 py-2 sm:px-4 sm:py-3 flex items-center justify-center gap-2 min-h-[44px] sm:min-h-[52px]">
+                <DollarSign className="h-3 w-3 sm:h-4 sm:w-4 text-green-300 flex-shrink-0" />
+                <span className="text-xs sm:text-sm text-white font-medium whitespace-nowrap">Direct Billing</span>
               </div>
-              <div className="flex items-center justify-center gap-1">
-                <Award className="h-3 w-3 sm:h-4 sm:w-4 text-primary-300" />
-                Licensed Professionals
+              <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-3 py-2 sm:px-4 sm:py-3 flex items-center justify-center gap-2 min-h-[44px] sm:min-h-[52px]">
+                <Award className="h-3 w-3 sm:h-4 sm:w-4 text-primary-300 flex-shrink-0" />
+                <span className="text-xs sm:text-sm text-white font-medium whitespace-nowrap">Licensed Pros</span>
               </div>
-              <div className="flex items-center justify-center gap-1">
-                <Users className="h-3 w-3 sm:h-4 sm:w-4 text-green-300" />
-                Insurance Accepted
+              <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-3 py-2 sm:px-4 sm:py-3 flex items-center justify-center gap-2 min-h-[44px] sm:min-h-[52px]">
+                <Users className="h-3 w-3 sm:h-4 sm:w-4 text-green-300 flex-shrink-0" />
+                <span className="text-xs sm:text-sm text-white font-medium whitespace-nowrap">Insurance Accepted</span>
               </div>
             </div>
           </div>
@@ -123,9 +123,9 @@ export default function Hero() {
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-gray-400 rounded-full mt-2"></div>
+      <div className="absolute bottom-4 animate-bounce">
+        <div className="w-6 h-10 border-2 border-gray-400 rounded-full flex items-start justify-center">
+          <div className="w-1 h-3 bg-gray-400 rounded-full mt-2" style={{ marginLeft: '0', marginRight: '0' }}></div>
         </div>
       </div>
     </section>
