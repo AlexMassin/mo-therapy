@@ -189,13 +189,13 @@ export default function ServicesPage() {
         {/* Detailed Services */}
         <section className="section-padding bg-white">
           <div className="container-custom">
-            <div className="space-y-20">
+            <div className="space-y-16 sm:space-y-20">
               {serviceDetails.map((service, index) => {
                 const Icon = service.icon;
                 const isEven = index % 2 === 0;
                 
                 return (
-                  <div key={service.title} className="grid lg:grid-cols-2 gap-12 items-center">
+                  <div key={service.title} className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
                     {/* Service Image - Always first on mobile, alternates on desktop */}
                     <div className={`order-1 ${isEven ? 'lg:order-2' : 'lg:order-1'}`}>
                       <div className="aspect-square bg-gradient-to-br from-primary-800 to-primary-400 rounded-2xl p-6 shadow-soft">
@@ -238,7 +238,7 @@ export default function ServicesPage() {
                     </div>
 
                     {/* Content - Always second on mobile, alternates on desktop */}
-                    <div className={`order-2 ${isEven ? 'lg:order-1 lg:pr-8' : 'lg:order-2 lg:pl-8'}`}>
+                    <div className={`order-2 px-4 sm:px-6 lg:px-0 ${isEven ? 'lg:order-1 lg:pr-8' : 'lg:order-2 lg:pl-8'}`}>
                       <div className="flex items-center gap-4 mb-6">
                         <div className="p-3 bg-primary-50 rounded-xl">
                           <Icon className="h-8 w-8 text-primary-600" />
@@ -297,7 +297,7 @@ export default function ServicesPage() {
         {/* Combat Sports Specialization Section */}
         <section className="section-padding bg-gray-50">
           <div className="container-custom">
-            <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 xl:gap-20 items-center">
               {/* Image - First on mobile, second on desktop */}
               <div className="order-1 lg:order-2">
                 <div className="aspect-[4/3] bg-gradient-to-br from-primary-800 to-primary-400 rounded-2xl p-6 shadow-soft">
@@ -326,7 +326,7 @@ export default function ServicesPage() {
               </div>
 
               {/* Content - Second on mobile, first on desktop */}
-              <div className="order-2 lg:order-1">
+              <div className="order-2 lg:order-1 px-4 sm:px-6 lg:px-0">
                 <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary-100 text-primary-800 rounded-full text-sm font-medium mb-6">
                   <Shield className="h-4 w-4" />
                   Combat Sports Specialization
