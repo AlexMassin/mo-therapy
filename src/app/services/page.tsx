@@ -195,9 +195,50 @@ export default function ServicesPage() {
                 const isEven = index % 2 === 0;
                 
                 return (
-                  <div key={service.title} className={`grid lg:grid-cols-2 gap-12 items-center ${!isEven ? 'lg:grid-flow-col-dense' : ''}`}>
-                    {/* Content */}
-                    <div className={isEven ? 'lg:pr-8' : 'lg:pl-8 lg:col-start-2'}>
+                  <div key={service.title} className="grid lg:grid-cols-2 gap-12 items-center">
+                    {/* Service Image - Always first on mobile, alternates on desktop */}
+                    <div className={`order-1 ${isEven ? 'lg:order-2' : 'lg:order-1'}`}>
+                      <div className="aspect-square bg-gradient-to-br from-primary-800 to-primary-400 rounded-2xl p-6 shadow-soft">
+                        <div className="w-full h-full bg-white rounded-xl shadow-soft overflow-hidden relative">
+                          {service.title === 'Physiotherapy' ? (
+                            <img 
+                              src={getImagePath("/services/physiotherapy.png")}
+                              alt="Professional physiotherapy treatment session at M.O. Therapy"
+                              className="w-full h-full object-cover"
+                            />
+                          ) : service.title === 'Registered Massage Therapy' ? (
+                            <img 
+                              src={getImagePath("/services/massage-therapy.png")}
+                              alt="Professional registered massage therapy session at M.O. Therapy"
+                              className="w-full h-full object-cover"
+                            />
+                          ) : service.title === 'Chiropractic Care' ? (
+                            <img 
+                              src={getImagePath("/services/chiropractor.png")}
+                              alt="Professional chiropractic care treatment at M.O. Therapy"
+                              className="w-full h-full object-cover"
+                            />
+                          ) : service.title === 'Osteopathy' ? (
+                            <img 
+                              src={getImagePath("/services/osteopath.png")}
+                              alt="Professional osteopathy treatment session at M.O. Therapy"
+                              className="w-full h-full object-cover"
+                            />
+                          ) : (
+                            <div className="w-full h-full flex items-center justify-center">
+                              <div className="text-center">
+                                <Icon className="h-16 w-16 text-primary-600 mx-auto mb-4" />
+                                <h3 className="text-xl font-semibold text-gray-900">{service.title}</h3>
+                                <p className="text-gray-600 mt-2">Professional care for optimal results</p>
+                              </div>
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Content - Always second on mobile, alternates on desktop */}
+                    <div className={`order-2 ${isEven ? 'lg:order-1 lg:pr-8' : 'lg:order-2 lg:pl-8'}`}>
                       <div className="flex items-center gap-4 mb-6">
                         <div className="p-3 bg-primary-50 rounded-xl">
                           <Icon className="h-8 w-8 text-primary-600" />
@@ -246,47 +287,6 @@ export default function ServicesPage() {
                         </BookingButton>
                       </div>
                     </div>
-
-                    {/* Service Image */}
-                    <div className={`${isEven ? '' : 'lg:col-start-1'}`}>
-                      <div className="aspect-square bg-gradient-to-br from-primary-800 to-primary-400 rounded-2xl p-6 shadow-soft">
-                        <div className="w-full h-full bg-white rounded-xl shadow-soft overflow-hidden relative">
-                          {service.title === 'Physiotherapy' ? (
-                            <img 
-                              src={getImagePath("/services/physiotherapy.png")}
-                              alt="Professional physiotherapy treatment session at M.O. Therapy"
-                              className="w-full h-full object-cover"
-                            />
-                          ) : service.title === 'Registered Massage Therapy' ? (
-                            <img 
-                              src={getImagePath("/services/massage-therapy.png")}
-                              alt="Professional registered massage therapy session at M.O. Therapy"
-                              className="w-full h-full object-cover"
-                            />
-                          ) : service.title === 'Chiropractic Care' ? (
-                            <img 
-                              src={getImagePath("/services/chiropractor.png")}
-                              alt="Professional chiropractic care treatment at M.O. Therapy"
-                              className="w-full h-full object-cover"
-                            />
-                          ) : service.title === 'Osteopathy' ? (
-                            <img 
-                              src={getImagePath("/services/osteopath.png")}
-                              alt="Professional osteopathy treatment session at M.O. Therapy"
-                              className="w-full h-full object-cover"
-                            />
-                          ) : (
-                            <div className="w-full h-full flex items-center justify-center">
-                              <div className="text-center">
-                                <Icon className="h-16 w-16 text-primary-600 mx-auto mb-4" />
-                                <h3 className="text-xl font-semibold text-gray-900">{service.title}</h3>
-                                <p className="text-gray-600 mt-2">Professional care for optimal results</p>
-                              </div>
-                            </div>
-                          )}
-                        </div>
-                      </div>
-                    </div>
                   </div>
                 );
               })}
@@ -298,8 +298,35 @@ export default function ServicesPage() {
         <section className="section-padding bg-gray-50">
           <div className="container-custom">
             <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
-              {/* Content */}
-              <div>
+              {/* Image - First on mobile, second on desktop */}
+              <div className="order-1 lg:order-2">
+                <div className="aspect-[4/3] bg-gradient-to-br from-primary-800 to-primary-400 rounded-2xl p-6 shadow-soft">
+                  <div className="w-full h-full bg-white rounded-xl shadow-soft overflow-hidden relative">
+                    <img 
+                      src={getImagePath("/services/combat-sports-treatment.jpg")}
+                      alt="MMA, BJJ, and Muay Thai fighter receiving specialized physiotherapy treatment at M.O. Therapy in Markham"
+                      className="w-full h-full object-cover"
+                    />
+                    {/* Overlay with combat sports info */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent">
+                      <div className="absolute bottom-4 left-4 right-4">
+                        <div className="flex items-center gap-3">
+                          <div className="w-10 h-10 bg-primary-400 rounded-full flex items-center justify-center">
+                            <Target className="h-5 w-5 text-white" />
+                          </div>
+                          <div>
+                            <h3 className="text-lg font-bold text-white">Fighter Focused</h3>
+                            <p className="text-primary-100 text-sm">Combat Sports Expertise</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Content - Second on mobile, first on desktop */}
+              <div className="order-2 lg:order-1">
                 <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary-100 text-primary-800 rounded-full text-sm font-medium mb-6">
                   <Shield className="h-4 w-4" />
                   Combat Sports Specialization
@@ -344,33 +371,6 @@ export default function ServicesPage() {
                 >
                   Book Fighter Assessment
                 </BookingButton>
-              </div>
-
-              {/* Image Placeholder */}
-              <div className="relative">
-                <div className="aspect-[4/3] bg-gradient-to-br from-primary-800 to-primary-400 rounded-2xl p-6 shadow-soft">
-                  <div className="w-full h-full bg-white rounded-xl shadow-soft overflow-hidden relative">
-                    <img 
-                      src={getImagePath("/services/combat-sports-treatment.jpg")}
-                      alt="MMA, BJJ, and Muay Thai fighter receiving specialized physiotherapy treatment at M.O. Therapy in Markham"
-                      className="w-full h-full object-cover"
-                    />
-                    {/* Overlay with combat sports info */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent">
-                      <div className="absolute bottom-4 left-4 right-4">
-                        <div className="flex items-center gap-3">
-                          <div className="w-10 h-10 bg-primary-400 rounded-full flex items-center justify-center">
-                            <Target className="h-5 w-5 text-white" />
-                          </div>
-                          <div>
-                            <h3 className="text-lg font-bold text-white">Fighter Focused</h3>
-                            <p className="text-primary-100 text-sm">Combat Sports Expertise</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
