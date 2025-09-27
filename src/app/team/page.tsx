@@ -4,7 +4,7 @@ import Footer from '@/components/Footer';
 import BookingButton from '@/components/BookingButton';
 import { Users, Award, Heart, Star, Mail } from 'lucide-react';
 import Image from 'next/image';
-import { getImagePath } from '@/lib/utils';
+import { getImagePath } from '@/lib/assets';
 
 export const metadata: Metadata = {
   title: 'Our Expert Team - M.O. Therapy Markham | Physiotherapists & RMTs',
