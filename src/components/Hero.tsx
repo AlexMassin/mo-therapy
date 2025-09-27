@@ -25,7 +25,7 @@ export default function Hero() {
         <div className="absolute bottom-20 right-10 w-28 h-28 bg-primary-300 rounded-full blur-xl"></div>
       </div>
 
-      <div className="relative container-custom pt-24 sm:pt-32 lg:pt-40 pb-16 sm:pb-24 lg:pb-32">
+      <div className="relative container-custom pt-32 sm:pt-32 lg:pt-40 pb-16 sm:pb-24 lg:pb-32">
         <div className="flex flex-col items-center text-center space-y-8 sm:space-y-12">
           {/* Hero Video - Top */}
           <div className="relative w-full max-w-6xl">
