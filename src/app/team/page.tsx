@@ -57,61 +57,85 @@ const teamMembers = [
     title: "Registered Massage Therapist",
     description: "Dillon is an RMT who focuses to provide a positive experience for clients seeking therapy. His goal is to identify the root cause of your pain so that you can continue doing the things you love pain free.",
     image: "/team/dillon.png",
-    specialty: "Pain Management & Recovery"
+    specialty: "Pain Management & Recovery",
+    bookingLink: "https://modeofoperation.janeapp.com/#/staff_member/1"
   },
   {
     name: "Damian Koo", 
     title: "Registered Massage Therapist",
     description: "Damian is an RMT who focuses to regain confidence that you might have lost through an injury or lifestyle changes. He uses massage techniques and exercises to increase your movement and quality of life.",
     image: "/team/damian.png",
-    specialty: "Movement & Confidence Building"
+    specialty: "Movement & Confidence Building",
+    bookingLink: "https://modeofoperation.janeapp.com/#/staff_member/2"
   },
   {
     name: "Carrie Chou",
     title: "Physiotherapist",
     description: "Carrie is a registered PT whose mission is to educate you on the importance of rehab. She guides her clients through a rehabilitation and strengthening program to prevent future and chronic recurring injuries.",
     image: "/team/carrie.png",
-    specialty: "Rehabilitation & Education"
+    specialty: "Rehabilitation & Education",
+    bookingLink: "https://modeofoperation.janeapp.com/#/staff_member/5"
   },
   {
     name: "Smit Desai",
     title: "Chiropractor", 
     description: "Smit is a registered chiropractor who specializes in personalized and goal-oriented functional rehabilitation. Smit combines manual therapy, such as adjustments, to ensure that you achieve your personal goals.",
     image: "/team/smit.png",
-    specialty: "Functional Rehabilitation"
+    specialty: "Functional Rehabilitation",
+    bookingLink: "https://modeofoperation.janeapp.com/#/staff_member/19"
   },
   {
     name: "Jeremy Chan",
     title: "Registered Massage Therapist & FST",
     description: "Jeremy is a skilled Registered Massage Therapist and Fascial Stretch Therapist (FST) dedicated to helping clients recover, enhance mobility, and achieve optimal health. Jeremy thoughtfully customizes each session to help clients relieve tension, improve flexibility, and recover from injuries.",
     image: "/team/jeremy.png",
-    specialty: "Fascial Stretch Therapy"
+    specialty: "Fascial Stretch Therapy",
+    bookingLink: "https://modeofoperation.janeapp.com/#/staff_member/28"
   },
   {
     name: "Shruti Chudasama",
     title: "Registered Massage Therapist",
     description: "Shruti is an RMT who focuses on restoring movement and reducing pain through a combination of soft-tissue techniques and therapeutic exercise. She is dedicated to helping clients recover from injuries, manage chronic conditions, and enhance their overall physical well-being.",
     image: "/team/shruti.png",
-    specialty: "Chronic Condition Management"
+    specialty: "Chronic Condition Management",
+    bookingLink: "https://modeofoperation.janeapp.com/#/staff_member/29"
   },
   {
     name: "Leo Huang",
     title: "Resident Physiotherapist",
     description: "Leo is a Resident Physiotherapist committed to helping clients recover, restore movement, and optimize their physical health. He tailors each treatment plan to address individual needs, focusing on injury rehabilitation, pain management, and performance enhancement.",
     image: "/team/leo.png",
-    specialty: "Performance Enhancement"
+    specialty: "Performance Enhancement",
+    bookingLink: "https://modeofoperation.janeapp.com/#/staff_member/31"
   },
   {
     name: "Nadeem Mamajiwalla",
     title: "Resident Physiotherapist", 
     description: "Nadeem is a Resident Physiotherapist who prioritizes personalized care to support recovery and improve overall function. He takes a hands-on approach to treatment, focusing on injury rehabilitation, mobility restoration, and long-term physical wellness tailored to each client's goals.",
     image: "/team/nadeem.png",
-    specialty: "Personalized Care"
+    specialty: "Personalized Care",
+    bookingLink: "https://modeofoperation.janeapp.com/#/staff_member/33"
+  },
+  {
+    name: "Nathan Tien-Kai Wu",
+    title: "Resident Physiotherapist",
+    description: "Nathan is a Resident Physiotherapist who provides comprehensive care focused on helping clients achieve their rehabilitation goals. He combines evidence-based treatment approaches with personalized care to support recovery and optimize physical function.",
+    image: "/team/nathan.png",
+    specialty: "Evidence-Based Rehabilitation",
+    bookingLink: "https://modeofoperation.janeapp.com/#/staff_member/34"
+  },
+  {
+    name: "Dr. Taylor Chan",
+    title: "Chiropractor & Clinical Acupuncture Provider",
+    description: "Dr. Taylor Chan is passionate about helping people move with ease, recover from pain, and feel confident in their bodies. She earned her Doctor of Chiropractic degree from CMCC, graduating Summa Cum Laude. Her approach is rooted in evidence-based care, tailoring treatments to each individual's needs and goals.",
+    image: "/team/taylor.png",
+    specialty: "Chiropractic Care & Acupuncture",
+    bookingLink: "https://modeofoperation.janeapp.com/#/staff_member/36"
   }
 ];
 
 const teamStats = [
-  { number: '8+', label: 'Expert Practitioners' },
+  { number: '10+', label: 'Expert Practitioners' },
   { number: '15+', label: 'Years Combined Experience' },
   { number: '100%', label: 'Licensed Professionals' },
   { number: '500+', label: 'Happy Clients' }
@@ -204,6 +228,7 @@ export default function TeamPage() {
                     <BookingButton
                       className="btn-outline w-full mt-auto"
                       trackingLabel={`team_book_${member.name.toLowerCase().replace(' ', '_')}`}
+                      bookingUrl={member.bookingLink}
                     >
                       Book with {member.name.split(' ')[0]}
                     </BookingButton>
