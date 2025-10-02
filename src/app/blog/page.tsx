@@ -5,6 +5,7 @@ import Footer from '@/components/Footer';
 import BlogImageWithFallback from '@/components/BlogImageWithFallback';
 import { getAllPosts, getAllCategories } from '../../../lib/blog';
 import { Calendar, Clock, User, Tag, ArrowRight, BookOpen } from 'lucide-react';
+import GradientText from '@/components/GradientText';
 
 export const metadata: Metadata = {
   title: 'Expert Health & Sports Blog - M.O. Therapy Markham | Injury Prevention Tips',
@@ -67,7 +68,7 @@ export default function BlogPage() {
                 Expert Insights
               </div>
               <h1 className="heading-xl text-white mb-6">
-                Health & <span className="text-primary-300 font-bold">Sports Medicine Blog</span>
+                Health & <GradientText animationSpeed={3} colors={['#0ea5e9', '#40c6e5', '#5ce3fa', '#0284c7', '#000000']} className="inline font-bold">Sports Medicine Blog</GradientText>
               </h1>
               <p className="text-xl text-primary-100 leading-relaxed mb-8">
                 Get expert insights on sports injuries, recovery techniques, injury prevention, and performance 
@@ -89,7 +90,7 @@ export default function BlogPage() {
                     Blog Coming Soon!
                   </h2>
                   <p className="text-gray-600 mb-8">
-                    We're working on creating valuable content about sports medicine, injury prevention, 
+                    We&apos;re working on creating valuable content about sports medicine, injury prevention, 
                     and recovery techniques. Check back soon for expert insights from our team.
                   </p>
                   <div className="space-y-4">
@@ -238,7 +239,7 @@ export default function BlogPage() {
                 Have Questions About <span className="text-primary-600 font-bold">Your Health?</span>
               </h2>
               <p className="text-xl text-gray-600 mb-8">
-                Our expert team is here to help. Don't let questions about your health go unanswered.
+                Our expert team is here to help. Don&apos;t let questions about your health go unanswered.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link

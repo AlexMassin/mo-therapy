@@ -3,6 +3,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import BookingButton from '@/components/BookingButton';
 import { Phone, Mail, MapPin, Clock, Calendar, MessageCircle } from 'lucide-react';
+import GradientText from '@/components/GradientText';
 
 export const metadata: Metadata = {
   title: 'Contact M.O. Therapy - Book Your Appointment in Markham',
@@ -90,7 +91,7 @@ export default function ContactPage() {
           <div className="container-custom">
             <div className="text-center max-w-4xl mx-auto">
               <h1 className="heading-xl text-white mb-6">
-                Contact <span className="text-primary-300">M.O. Therapy</span>
+                Contact <GradientText animationSpeed={3} colors={['#0ea5e9', '#40c6e5', '#5ce3fa', '#0284c7', '#000000']} className="inline font-bold">M.O. Therapy</GradientText>
               </h1>
               <p className="text-xl text-primary-100 leading-relaxed mb-8">
                 Ready to start your journey to better health and performance? We&apos;re here to help you every step of the way.
@@ -194,7 +195,7 @@ export default function ContactPage() {
             <div className="max-w-4xl mx-auto">
               <div className="text-center mb-12">
                 <h2 className="heading-lg text-gray-900 mb-6">
-                  Send Us a <span className="text-primary-600">Message</span>
+                  Send Us a <GradientText animationSpeed={3} colors={['#0ea5e9', '#40c6e5', '#5ce3fa', '#0284c7', '#000000']} className="inline font-bold">Message</GradientText>
                 </h2>
                 <p className="text-xl text-gray-600">
                   Have a question about our services? We&apos;d love to hear from you.
