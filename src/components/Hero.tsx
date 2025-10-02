@@ -99,56 +99,42 @@ export default function Hero() {
               </motion.h1>
             </LayoutGroup>
             
-            <p className="text-base sm:text-lg lg:text-xl text-white mb-6 sm:mb-8 leading-relaxed max-w-3xl mx-auto px-4 sm:px-0 drop-shadow-lg bg-black/20 backdrop-blur-sm rounded-lg p-4">
-              Expert physiotherapy, massage therapy, and chiropractic care designed specifically for athletes and active individuals. 
-              We don&apos;t just treat injuries—we optimize your performance and prevent future setbacks.
-            </p>
-
+           
             {/* Stats */}
             <div className="grid grid-cols-3 gap-4 sm:gap-8 mb-6 sm:mb-8 max-w-2xl mx-auto px-4 sm:px-0">
-              <div className="text-center bg-black/20 backdrop-blur-sm rounded-lg p-3">
-                <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary-300 drop-shadow-lg">500+</div>
-                <div className="text-xs sm:text-sm text-white drop-shadow-md">Athletes Treated</div>
+              <div className="text-center bg-black/40 backdrop-blur-md rounded-lg p-4 border border-white/10">
+                <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary-300 drop-shadow-2xl">500+</div>
+                <div className="text-xs sm:text-sm text-white drop-shadow-lg font-medium">Athletes Treated</div>
               </div>
-              <div className="text-center bg-black/20 backdrop-blur-sm rounded-lg p-3">
-                <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-green-300 drop-shadow-lg">95%</div>
-                <div className="text-xs sm:text-sm text-white drop-shadow-md">Return to Sport</div>
+              <div className="text-center bg-black/40 backdrop-blur-md rounded-lg p-4 border border-white/10">
+                <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-green-300 drop-shadow-2xl">95%</div>
+                <div className="text-xs sm:text-sm text-white drop-shadow-lg font-medium">Return to Sport</div>
               </div>
-              <div className="text-center bg-black/20 backdrop-blur-sm rounded-lg p-3">
-                <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-orange-300 drop-shadow-lg">10+</div>
-                <div className="text-xs sm:text-sm text-white drop-shadow-md">Years Experience</div>
+              <div className="text-center bg-black/40 backdrop-blur-md rounded-lg p-4 border border-white/10">
+                <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-orange-300 drop-shadow-2xl">10+</div>
+                <div className="text-xs sm:text-sm text-white drop-shadow-lg font-medium">Years Experience</div>
               </div>
             </div>
 
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6 sm:mb-8 justify-center px-4 sm:px-0 pointer-events-auto">
-              <button
-                onClick={handleBookNowClick}
-                className="btn-primary flex items-center justify-center gap-2 text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4"
-              >
-                <Calendar className="h-4 w-4 sm:h-5 sm:w-5" />
-                Book Assessment
-              </button>
-             
-            </div>
+           
 
             {/* Trust indicators */}
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-6 text-xs sm:text-sm text-primary-100 px-4 sm:px-0 max-w-3xl mx-auto">
-              <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-3 py-2 sm:px-4 sm:py-3 flex items-center justify-center gap-2 min-h-[44px] sm:min-h-[52px]">
-                <Calendar className="h-3 w-3 sm:h-4 sm:w-4 text-primary-300 flex-shrink-0" />
-                <span className="text-xs sm:text-sm text-white font-medium whitespace-nowrap">Same Day Booking</span>
+              <div className="bg-black/40 backdrop-blur-md border border-white/20 rounded-full px-3 py-2 sm:px-4 sm:py-3 flex items-center justify-center gap-2 min-h-[44px] sm:min-h-[52px]">
+                <Calendar className="h-3 w-3 sm:h-4 sm:w-4 text-primary-300 flex-shrink-0 drop-shadow-md" />
+                <span className="text-xs sm:text-sm text-white font-semibold whitespace-nowrap drop-shadow-md">Same Day Booking</span>
               </div>
-              <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-3 py-2 sm:px-4 sm:py-3 flex items-center justify-center gap-2 min-h-[44px] sm:min-h-[52px]">
-                <DollarSign className="h-3 w-3 sm:h-4 sm:w-4 text-green-300 flex-shrink-0" />
-                <span className="text-xs sm:text-sm text-white font-medium whitespace-nowrap">Direct Billing</span>
+              <div className="bg-black/40 backdrop-blur-md border border-white/20 rounded-full px-3 py-2 sm:px-4 sm:py-3 flex items-center justify-center gap-2 min-h-[44px] sm:min-h-[52px]">
+                <DollarSign className="h-3 w-3 sm:h-4 sm:w-4 text-green-300 flex-shrink-0 drop-shadow-md" />
+                <span className="text-xs sm:text-sm text-white font-semibold whitespace-nowrap drop-shadow-md">Direct Billing</span>
               </div>
-              <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-3 py-2 sm:px-4 sm:py-3 flex items-center justify-center gap-2 min-h-[44px] sm:min-h-[52px]">
-                <Award className="h-3 w-3 sm:h-4 sm:w-4 text-primary-300 flex-shrink-0" />
-                <span className="text-xs sm:text-sm text-white font-medium whitespace-nowrap">Licensed Pros</span>
+              <div className="bg-black/40 backdrop-blur-md border border-white/20 rounded-full px-3 py-2 sm:px-4 sm:py-3 flex items-center justify-center gap-2 min-h-[44px] sm:min-h-[52px]">
+                <Award className="h-3 w-3 sm:h-4 sm:w-4 text-primary-300 flex-shrink-0 drop-shadow-md" />
+                <span className="text-xs sm:text-sm text-white font-semibold whitespace-nowrap drop-shadow-md">Licensed Pros</span>
               </div>
-              <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-3 py-2 sm:px-4 sm:py-3 flex items-center justify-center gap-2 min-h-[44px] sm:min-h-[52px]">
-                <Users className="h-3 w-3 sm:h-4 sm:w-4 text-green-300 flex-shrink-0" />
-                <span className="text-xs sm:text-sm text-white font-medium whitespace-nowrap">Insurance Accepted</span>
+              <div className="bg-black/40 backdrop-blur-md border border-white/20 rounded-full px-3 py-2 sm:px-4 sm:py-3 flex items-center justify-center gap-2 min-h-[44px] sm:min-h-[52px]">
+                <Users className="h-3 w-3 sm:h-4 sm:w-4 text-green-300 flex-shrink-0 drop-shadow-md" />
+                <span className="text-xs sm:text-sm text-white font-semibold whitespace-nowrap drop-shadow-md">Insurance Accepted</span>
               </div>
             </div>
           </div>
