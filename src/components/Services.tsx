@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { Activity, Heart, Zap, Compass, ArrowRight } from 'lucide-react';
 import { trackEvent } from '@/components/Analytics';
+import GradientText from '@/components/GradientText';
 
 const services = [
   {
@@ -97,7 +98,7 @@ export default function Services() {
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="heading-lg text-gray-900 mb-6">
-            Comprehensive Care for <span className="text-primary-600 font-bold">Peak Athletic Performance</span>
+            Comprehensive Care for <GradientText animationSpeed={3} colors={['#0ea5e9', '#40c6e5', '#5ce3fa', '#0284c7', '#000000']} className="inline font-bold">Peak Athletic Performance</GradientText>
           </h2>
           <p className="text-xl text-gray-600">
             Our integrated approach combines multiple therapeutic disciplines to address the root cause of your concerns 

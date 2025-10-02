@@ -90,7 +90,7 @@ export default function ContactPage() {
           <div className="container-custom">
             <div className="text-center max-w-4xl mx-auto">
               <h1 className="heading-xl text-white mb-6">
-                Contact <span className="gradient-text">M.O. Therapy</span>
+                Contact <span className="text-primary-300">M.O. Therapy</span>
               </h1>
               <p className="text-xl text-primary-100 leading-relaxed mb-8">
                 Ready to start your journey to better health and performance? We&apos;re here to help you every step of the way.
@@ -194,7 +194,7 @@ export default function ContactPage() {
             <div className="max-w-4xl mx-auto">
               <div className="text-center mb-12">
                 <h2 className="heading-lg text-gray-900 mb-6">
-                  Send Us a <span className="gradient-text">Message</span>
+                  Send Us a <span className="text-primary-600">Message</span>
                 </h2>
                 <p className="text-xl text-gray-600">
                   Have a question about our services? We&apos;d love to hear from you.

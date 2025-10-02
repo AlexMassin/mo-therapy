@@ -88,7 +88,7 @@ export default function AboutPage() {
             <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 xl:gap-24 items-center">
               <div>
                 <h1 className="heading-xl text-white mb-6">
-                  About <span className="gradient-text">M.O. Therapy</span>
+                  About <span className="text-primary-300">M.O. Therapy</span>
                 </h1>
                 <p className="text-xl text-primary-100 leading-relaxed mb-8">
                   Founded with a passion for helping athletes and active individuals achieve their peak potential, 
