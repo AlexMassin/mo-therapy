@@ -52,7 +52,7 @@ export default function Footer() {
         <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-8">
           {/* Company Info */}
           <div className="lg:col-span-1">
-            <Link href="/" className="text-2xl font-bold gradient-text mb-4 block">
+            <Link href="/" className="text-2xl font-bold text-primary-300 mb-4 block">
               M.O. Therapy
             </Link>
             <p className="text-gray-300 mb-6 leading-relaxed">

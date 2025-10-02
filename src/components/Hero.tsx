@@ -3,6 +3,10 @@
 import { Calendar, Play, Shield, Award, Users, DollarSign } from 'lucide-react';
 import { trackEvent } from '@/components/Analytics';
 import { getVideoPath } from '@/lib/assets';
+import GradientBlinds from './GradientBlinds';
+import RotatingText from './RotatingText';
+import { motion, LayoutGroup } from 'framer-motion';
+
 
 export default function Hero() {
   const handleBookNowClick = () => {
@@ -17,15 +21,28 @@ export default function Hero() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-primary-900 via-primary-800 to-primary-400">
-      {/* Background decorative elements */}
-      <div className="absolute inset-0 opacity-40">
-        <div className="absolute top-20 left-10 w-20 h-20 bg-primary-200 rounded-full blur-xl"></div>
-        <div className="absolute top-40 right-20 w-32 h-32 bg-green-200 rounded-full blur-xl"></div>
-        <div className="absolute bottom-40 left-20 w-24 h-24 bg-orange-200 rounded-full blur-xl"></div>
-        <div className="absolute bottom-20 right-10 w-28 h-28 bg-primary-300 rounded-full blur-xl"></div>
+      {/* Gradient Blinds Background - positioned behind content */}
+      <div className="absolute inset-0 z-0">
+        <GradientBlinds
+          className=""
+          dpr={typeof window !== 'undefined' ? window.devicePixelRatio || 1 : 1}
+          gradientColors={['#0ea5e9', '#40c6e5', '#5ce3fa', '#0284c7', '#000000']}
+          angle={0}
+          noise={0.25}
+          blindCount={12}
+          blindMinWidth={50}
+          spotlightRadius={0.5}
+          spotlightSoftness={1}
+          spotlightOpacity={1}
+          mouseDampening={0.35}
+          distortAmount={40}
+          shineDirection="left"
+          mixBlendMode="lighten"
+        />
       </div>
 
-      <div className="relative container-custom pt-32 sm:pt-32 lg:pt-40 pb-16 sm:pb-24 lg:pb-32">
+      {/* Content layer with pointer-events-none to allow mouse events to pass through */}
+      <div className="relative container-custom pt-32 sm:pt-32 lg:pt-40 pb-16 sm:pb-24 lg:pb-32 z-10 pointer-events-none">
         <div className="flex flex-col items-center text-center space-y-8 sm:space-y-12">
           {/* Hero Video - Top */}
           <div className="relative w-full max-w-6xl px-4 sm:px-6 lg:px-8">
@@ -55,34 +72,56 @@ export default function Hero() {
               </span>
             </div>
             
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-4 sm:mb-6 leading-tight">
-              Your <span className="gradient-text">M.O.</span> is your hustle.<br />
-              <span className="text-primary-300">Do it pain free.</span>
-            </h1>
+            <LayoutGroup>
+              <motion.h1 
+                className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-4 sm:mb-6 leading-tight drop-shadow-2xl flex items-center justify-center gap-2"
+                layout
+              >
+                <motion.span
+                  className="pt-0.5 sm:pt-1 md:pt-2"
+                  layout
+                  transition={{ type: 'spring', damping: 30, stiffness: 400 }}
+                >
+                  Your M.O. is{' '}
+                </motion.span>
+                <RotatingText
+                  texts={['your hustle', 'pain free', 'in your control', 'here']}
+                  mainClassName="px-2 sm:px-2 md:px-3 bg-primary-300 text-black overflow-hidden py-1 sm:py-1 md:py-2 justify-center rounded-lg"
+                  staggerFrom={'last'}
+                  initial={{ y: '100%' }}
+                  animate={{ y: 0 }}
+                  exit={{ y: '-120%' }}
+                  staggerDuration={0.025}
+                  splitLevelClassName="overflow-hidden pb-0.5 sm:pb-1 md:pb-1"
+                  transition={{ type: 'spring', damping: 30, stiffness: 400 }}
+                  rotationInterval={2000}
+                />
+              </motion.h1>
+            </LayoutGroup>
             
-            <p className="text-base sm:text-lg lg:text-xl text-primary-100 mb-6 sm:mb-8 leading-relaxed max-w-3xl mx-auto px-4 sm:px-0">
+            <p className="text-base sm:text-lg lg:text-xl text-white mb-6 sm:mb-8 leading-relaxed max-w-3xl mx-auto px-4 sm:px-0 drop-shadow-lg bg-black/20 backdrop-blur-sm rounded-lg p-4">
               Expert physiotherapy, massage therapy, and chiropractic care designed specifically for athletes and active individuals. 
               We don&apos;t just treat injuries—we optimize your performance and prevent future setbacks.
             </p>
 
             {/* Stats */}
             <div className="grid grid-cols-3 gap-4 sm:gap-8 mb-6 sm:mb-8 max-w-2xl mx-auto px-4 sm:px-0">
-              <div className="text-center">
-                <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary-300">500+</div>
-                <div className="text-xs sm:text-sm text-primary-100">Athletes Treated</div>
+              <div className="text-center bg-black/20 backdrop-blur-sm rounded-lg p-3">
+                <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary-300 drop-shadow-lg">500+</div>
+                <div className="text-xs sm:text-sm text-white drop-shadow-md">Athletes Treated</div>
               </div>
-              <div className="text-center">
-                <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-green-300">95%</div>
-                <div className="text-xs sm:text-sm text-primary-100">Return to Sport</div>
+              <div className="text-center bg-black/20 backdrop-blur-sm rounded-lg p-3">
+                <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-green-300 drop-shadow-lg">95%</div>
+                <div className="text-xs sm:text-sm text-white drop-shadow-md">Return to Sport</div>
               </div>
-              <div className="text-center">
-                <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-orange-300">10+</div>
-                <div className="text-xs sm:text-sm text-primary-100">Years Experience</div>
+              <div className="text-center bg-black/20 backdrop-blur-sm rounded-lg p-3">
+                <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-orange-300 drop-shadow-lg">10+</div>
+                <div className="text-xs sm:text-sm text-white drop-shadow-md">Years Experience</div>
               </div>
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6 sm:mb-8 justify-center px-4 sm:px-0">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6 sm:mb-8 justify-center px-4 sm:px-0 pointer-events-auto">
               <button
                 onClick={handleBookNowClick}
                 className="btn-primary flex items-center justify-center gap-2 text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4"

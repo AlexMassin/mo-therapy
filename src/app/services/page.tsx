@@ -176,7 +176,7 @@ export default function ServicesPage() {
           <div className="container-custom">
             <div className="text-center max-w-4xl mx-auto">
               <h1 className="heading-xl text-white mb-6">
-                Comprehensive <span className="gradient-text">Athletic Care</span> Services
+                Comprehensive <span className="text-primary-300">Athletic Care</span> Services
               </h1>
               <p className="text-xl text-primary-100 leading-relaxed">
                 Our integrated approach combines multiple therapeutic disciplines to provide comprehensive care 
