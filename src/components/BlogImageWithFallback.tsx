@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import { FileText, Heart, Activity, Shield } from 'lucide-react';
-import { getImagePath } from '@/lib/utils';
+import { getImagePath } from '@/lib/assets';
 
 interface BlogImageWithFallbackProps {
   src?: string;
