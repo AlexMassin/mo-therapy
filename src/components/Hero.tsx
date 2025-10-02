@@ -129,13 +129,7 @@ export default function Hero() {
                 <Calendar className="h-4 w-4 sm:h-5 sm:w-5" />
                 Book Assessment
               </button>
-              <button
-                onClick={handleVideoClick}
-                className="btn-secondary flex items-center justify-center gap-2 text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4"
-              >
-                <Play className="h-4 w-4 sm:h-5 sm:w-5" />
-                Watch Our Approach
-              </button>
+             
             </div>
 
             {/* Trust indicators */}
