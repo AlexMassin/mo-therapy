@@ -2,8 +2,9 @@ import { Metadata } from 'next';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import BookingButton from '@/components/BookingButton';
-import { Quote, Star, Play, Award, Users, Heart } from 'lucide-react';
+import { Quote, Star, Award, Users, Heart } from 'lucide-react';
 import GradientText from '@/components/GradientText';
+import VideoPlayer from '@/components/VideoPlayer';
 
 export const metadata: Metadata = {
   title: 'Patient Testimonials - M.O. Therapy Markham | Success Stories',
@@ -28,56 +29,74 @@ export const metadata: Metadata = {
 const videoTestimonials = [
   {
     id: 1,
-    name: "Sarah Mitchell",
-    sport: "Marathon Runner",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ", // Replace with actual video
-    thumbnail: "/testimonials/sarah-thumbnail.jpg",
-    quote: "M.O. Therapy helped me recover from a stress fracture and get back to competitive running faster than I expected.",
+    name: "DJ",
+    sport: "Patient Success Story",
+    videoUrl: "/testimonials/Dj VO IG.mp4",
+    quote: "Hear from DJ about their experience with M.O. Therapy",
     rating: 5
   },
   {
     id: 2,
-    name: "James Chen",
-    sport: "Basketball Player",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ", // Replace with actual video
-    thumbnail: "/testimonials/james-thumbnail.jpg",
-    quote: "The integrated approach combining physiotherapy and massage therapy was exactly what I needed.",
+    name: "Jimmy",
+    sport: "Running Athlete",
+    videoUrl: "/testimonials/Jimmy Running Ad(1).mp4",
+    quote: "Running performance improvement with M.O. Therapy",
     rating: 5
   },
   {
     id: 3,
-    name: "Emily Rodriguez",
-    sport: "CrossFit Athlete",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ", // Replace with actual video
-    thumbnail: "/testimonials/emily-thumbnail.jpg",
-    quote: "Professional, knowledgeable, and genuinely caring. They got me back to lifting at my best.",
+    name: "Josh",
+    sport: "Athlete Recovery",
+    videoUrl: "/testimonials/Josh Ad Final.mp4",
+    quote: "Josh's journey to recovery and peak performance",
     rating: 5
   },
   {
     id: 4,
-    name: "Michael Park",
-    sport: "Soccer Player",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ", // Replace with actual video
-    thumbnail: "/testimonials/michael-thumbnail.jpg",
-    quote: "After my ACL injury, the team at M.O. helped me return to the field stronger than ever.",
+    name: "Josh",
+    sport: "Personal Perspective",
+    videoUrl: "/testimonials/Josh POV Ad.mp4",
+    quote: "A personal look at Josh's treatment experience",
     rating: 5
   },
   {
     id: 5,
-    name: "Lisa Thompson",
-    sport: "Yoga Instructor",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ", // Replace with actual video
-    thumbnail: "/testimonials/lisa-thumbnail.jpg",
-    quote: "Their holistic approach to treating my chronic back pain changed my life and my practice.",
+    name: "Nadeem & Ron",
+    sport: "Treatment Success",
+    videoUrl: "/testimonials/Nadeem Ron IG.mp4",
+    quote: "Collaborative care and successful outcomes",
     rating: 5
   },
   {
     id: 6,
-    name: "David Kumar",
-    sport: "Hockey Player",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ", // Replace with actual video
-    thumbnail: "/testimonials/david-thumbnail.jpg",
-    quote: "The personalized treatment plan was key to my recovery. Highly recommend!",
+    name: "Nadeem",
+    sport: "SI Joint Pain Relief",
+    videoUrl: "/testimonials/Nadeem SI Joint Pain IG.mp4",
+    quote: "Overcoming SI joint pain with expert treatment",
+    rating: 5
+  },
+  {
+    id: 7,
+    name: "Rivka",
+    sport: "Patient Testimonial",
+    videoUrl: "/testimonials/Rivka.mp4",
+    quote: "Rivka shares her recovery story",
+    rating: 5
+  },
+  {
+    id: 8,
+    name: "Winnie",
+    sport: "Patient Journey",
+    videoUrl: "/testimonials/Winnie POV IG.mp4",
+    quote: "Winnie's perspective on treatment and recovery",
+    rating: 5
+  },
+  {
+    id: 9,
+    name: "Patient Stories",
+    sport: "Community Testimonials",
+    videoUrl: "/testimonials/Testimonials.mp4",
+    quote: "Collection of patient success stories",
     rating: 5
   }
 ];
@@ -159,7 +178,7 @@ const partners = [
 const stats = [
   { number: '500+', label: 'Happy Patients' },
   { number: '4.9/5', label: 'Average Rating' },
-  { number: '95%', label: 'Would Recommend' },
+  { number: '9+', label: 'Video Testimonials' },
   { number: '10+', label: 'Years of Trust' }
 ];
 
@@ -223,31 +242,24 @@ export default function TestimonialsPage() {
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {videoTestimonials.map((testimonial) => (
-                <div key={testimonial.id} className="card group hover:scale-105 transition-all duration-300">
-                  {/* Video Thumbnail */}
-                  <div className="relative aspect-video bg-gray-200 rounded-xl overflow-hidden mb-6">
-                    <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/40 transition-colors duration-300 cursor-pointer">
-                      <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                        <Play className="h-8 w-8 text-primary-600 ml-1" />
-                      </div>
-                    </div>
-                    {/* Placeholder for video thumbnail - replace with actual thumbnail */}
-                    <div className="w-full h-full bg-gradient-to-br from-primary-200 to-primary-400" />
+                <div key={testimonial.id} className="group">
+                  {/* Video Player */}
+                  <div className="mb-4">
+                    <VideoPlayer
+                      videoUrl={testimonial.videoUrl}
+                      name={testimonial.name}
+                      sport={testimonial.sport}
+                    />
                   </div>
 
                   {/* Testimonial Content */}
-                  <div className="mb-4">
+                  <div className="bg-white rounded-xl p-6 shadow-md">
                     <div className="flex items-center gap-1 mb-3">
                       {[...Array(testimonial.rating)].map((_, i) => (
                         <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
                       ))}
                     </div>
-                    <p className="text-gray-600 italic mb-4">&ldquo;{testimonial.quote}&rdquo;</p>
-                  </div>
-
-                  <div>
-                    <h3 className="font-semibold text-gray-900">{testimonial.name}</h3>
-                    <p className="text-sm text-primary-600">{testimonial.sport}</p>
+                    <p className="text-gray-600 italic">&ldquo;{testimonial.quote}&rdquo;</p>
                   </div>
                 </div>
               ))}
