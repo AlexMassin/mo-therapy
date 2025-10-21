@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Play, Pause, Volume2, VolumeX, Maximize } from 'lucide-react';
 import { getVideoPath } from '@/lib/assets';
 
@@ -14,7 +14,21 @@ export default function VideoPlayer({ videoUrl, name, sport }: VideoPlayerProps)
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
   const [showControls, setShowControls] = useState(true);
+  const [isPortrait, setIsPortrait] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (video) {
+      const handleLoadedMetadata = () => {
+        const aspectRatio = video.videoWidth / video.videoHeight;
+        setIsPortrait(aspectRatio < 1); // Portrait if height > width
+      };
+      
+      video.addEventListener('loadedmetadata', handleLoadedMetadata);
+      return () => video.removeEventListener('loadedmetadata', handleLoadedMetadata);
+    }
+  }, []);
 
   const togglePlay = () => {
     if (videoRef.current) {
@@ -48,7 +62,9 @@ export default function VideoPlayer({ videoUrl, name, sport }: VideoPlayerProps)
 
   return (
     <div 
-      className="relative aspect-[9/16] md:aspect-video bg-black rounded-xl overflow-hidden group cursor-pointer"
+      className={`relative bg-black rounded-xl overflow-hidden group cursor-pointer ${
+        isPortrait ? 'aspect-[9/16]' : 'aspect-video'
+      }`}
       onMouseEnter={() => setShowControls(true)}
       onMouseLeave={() => setShowControls(isPlaying ? false : true)}
       onClick={handleVideoClick}
@@ -56,7 +72,7 @@ export default function VideoPlayer({ videoUrl, name, sport }: VideoPlayerProps)
       <video
         ref={videoRef}
         src={getVideoPath(videoUrl)}
-        className="w-full h-full object-cover"
+        className={`w-full h-full ${isPortrait ? 'object-contain' : 'object-cover'}`}
         playsInline
         onEnded={() => setIsPlaying(false)}
       >
