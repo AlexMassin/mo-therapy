@@ -11,6 +11,7 @@ const navigation = [
   { name: 'Services', href: '/services' },
   { name: 'Conditions', href: '/conditions' },
   { name: 'Our Team', href: '/team' },
+  { name: 'Testimonials', href: '/testimonials' },
   { name: 'Blog', href: '/blog' },
   { name: 'Contact', href: '/contact' },
 ];
