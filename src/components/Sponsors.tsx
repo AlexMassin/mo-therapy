@@ -3,6 +3,7 @@
 import { Building2 } from 'lucide-react';
 import GradientText from './GradientText';
 import Image from 'next/image';
+import { getImagePath } from '@/lib/assets';
 
 const sponsors = [
   {
@@ -68,7 +69,7 @@ export default function Sponsors() {
                   {/* Logo */}
                   <div className="w-full h-32 relative mb-6 flex items-center justify-center">
                     <Image
-                      src={sponsor.logo}
+                      src={getImagePath(sponsor.logo)}
                       alt={`${sponsor.name} logo`}
                       width={200}
                       height={128}
