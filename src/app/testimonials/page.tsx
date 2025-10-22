@@ -5,6 +5,8 @@ import BookingButton from '@/components/BookingButton';
 import { Quote, Star, Award, Users, Heart } from 'lucide-react';
 import GradientText from '@/components/GradientText';
 import VideoPlayer from '@/components/VideoPlayer';
+import Image from 'next/image';
+import { getImagePath } from '@/lib/assets';
 
 export const metadata: Metadata = {
   title: 'Patient Testimonials - M.O. Therapy Markham | Success Stories',
@@ -403,10 +405,12 @@ export default function TestimonialsPage() {
                     <div className="flex flex-col items-center text-center">
                       {/* Logo */}
                       <div className="w-full h-32 relative mb-6 flex items-center justify-center">
-                        <img
-                          src={partner.logo}
+                        <Image
+                          src={getImagePath(partner.logo)}
                           alt={`${partner.name} logo`}
-                          className="object-contain max-h-24 max-w-full"
+                          width={200}
+                          height={128}
+                          className="object-contain max-h-24"
                         />
                       </div>
 
