@@ -26,6 +26,16 @@ export const metadata: Metadata = {
   },
 };
 
+// Featured testimonial compilation
+const featuredTestimonial = {
+  name: "Patient Stories",
+  sport: "Community Testimonials",
+  videoUrl: "/testimonials/Testimonials.mp4",
+  quote: "Watch a collection of patient success stories from our community",
+  description: "Hear from multiple patients about their experiences, recoveries, and success stories with M.O. Therapy. This compilation showcases the diverse range of conditions we treat and the positive outcomes our patients achieve.",
+  summary: "Real Stories, Real Results"
+};
+
 const videoTestimonials = [
   {
     id: 1,
@@ -33,7 +43,7 @@ const videoTestimonials = [
     sport: "Patient Success Story",
     videoUrl: "/testimonials/Dj VO IG.mp4",
     quote: "Hear from DJ about their experience with M.O. Therapy",
-    rating: 5
+    summary: "From Pain to Performance"
   },
   {
     id: 2,
@@ -41,7 +51,7 @@ const videoTestimonials = [
     sport: "Running Athlete",
     videoUrl: "/testimonials/Jimmy Running Ad(1).mp4",
     quote: "Running performance improvement with M.O. Therapy",
-    rating: 5
+    summary: "Back to Running Strong"
   },
   {
     id: 3,
@@ -49,7 +59,7 @@ const videoTestimonials = [
     sport: "Athlete Recovery",
     videoUrl: "/testimonials/Josh Ad Final.mp4",
     quote: "Josh's journey to recovery and peak performance",
-    rating: 5
+    summary: "Complete Recovery Journey"
   },
   {
     id: 4,
@@ -57,7 +67,7 @@ const videoTestimonials = [
     sport: "Personal Perspective",
     videoUrl: "/testimonials/Josh POV Ad.mp4",
     quote: "A personal look at Josh's treatment experience",
-    rating: 5
+    summary: "Inside the Treatment Process"
   },
   {
     id: 5,
@@ -65,7 +75,7 @@ const videoTestimonials = [
     sport: "Treatment Success",
     videoUrl: "/testimonials/Nadeem Ron IG.mp4",
     quote: "Collaborative care and successful outcomes",
-    rating: 5
+    summary: "Expert Collaborative Care"
   },
   {
     id: 6,
@@ -73,7 +83,7 @@ const videoTestimonials = [
     sport: "SI Joint Pain Relief",
     videoUrl: "/testimonials/Nadeem SI Joint Pain IG.mp4",
     quote: "Overcoming SI joint pain with expert treatment",
-    rating: 5
+    summary: "Overcoming SI Joint Pain"
   },
   {
     id: 7,
@@ -81,7 +91,7 @@ const videoTestimonials = [
     sport: "Patient Testimonial",
     videoUrl: "/testimonials/Rivka.mp4",
     quote: "Rivka shares her recovery story",
-    rating: 5
+    summary: "A Patient's Recovery Story"
   },
   {
     id: 8,
@@ -89,15 +99,7 @@ const videoTestimonials = [
     sport: "Patient Journey",
     videoUrl: "/testimonials/Winnie POV IG.mp4",
     quote: "Winnie's perspective on treatment and recovery",
-    rating: 5
-  },
-  {
-    id: 9,
-    name: "Patient Stories",
-    sport: "Community Testimonials",
-    videoUrl: "/testimonials/Testimonials.mp4",
-    quote: "Collection of patient success stories",
-    rating: 5
+    summary: "Life-Changing Treatment"
   }
 ];
 
@@ -134,51 +136,46 @@ const textTestimonials = [
 
 const partners = [
   {
-    name: "Markham Sports Club",
-    logo: "/partners/placeholder-logo.png",
-    category: "Sports Organization"
+    name: "Orangetheory Markham",
+    category: "Fitness Partner",
+    logo: "/partners/orangetheory.png"
   },
   {
-    name: "Elite Performance Gym",
-    logo: "/partners/placeholder-logo.png",
-    category: "Fitness Center"
+    name: "F45 Jefferson",
+    category: "Training Partner",
+    logo: "/partners/jefferson.png"
   },
   {
-    name: "Markham Hockey League",
-    logo: "/partners/placeholder-logo.png",
-    category: "Sports League"
+    name: "BMW Autohaus",
+    category: "Corporate Partner",
+    logo: "/partners/bmw.png"
   },
   {
-    name: "CrossFit Markham",
-    logo: "/partners/placeholder-logo.png",
-    category: "Training Facility"
+    name: "Mercedes-Benz Markham",
+    category: "Corporate Partner",
+    logo: "/partners/mercedes.png"
   },
   {
-    name: "York Region Athletics",
-    logo: "/partners/placeholder-logo.png",
-    category: "Athletic Association"
+    name: "Function Pilates",
+    category: "Wellness Partner",
+    logo: "/partners/function.png"
   },
   {
-    name: "Markham Soccer Association",
-    logo: "/partners/placeholder-logo.png",
-    category: "Sports Organization"
+    name: "Soul Martial Arts",
+    category: "Athletic Partner",
+    logo: "/partners/soul.png"
   },
   {
-    name: "Local Insurance Partners",
-    logo: "/partners/placeholder-logo.png",
-    category: "Insurance Provider"
-  },
-  {
-    name: "Community Health Network",
-    logo: "/partners/placeholder-logo.png",
-    category: "Healthcare Network"
+    name: "Markham Stouffville Hospital",
+    category: "Healthcare Partner",
+    logo: "/partners/markham-hospital.png"
   }
 ];
 
 const stats = [
   { number: '500+', label: 'Happy Patients' },
   { number: '4.9/5', label: 'Average Rating' },
-  { number: '9+', label: 'Video Testimonials' },
+  { number: '8+', label: 'Video Testimonials' },
   { number: '10+', label: 'Years of Trust' }
 ];
 
@@ -196,7 +193,7 @@ export default function TestimonialsPage() {
                 Patient Success Stories
               </div>
               <h1 className="heading-xl text-white mb-6">
-                Real <GradientText animationSpeed={3} colors={['#0ea5e9', '#40c6e5', '#5ce3fa', '#0284c7', '#000000']} className="inline font-bold">Success Stories</GradientText> from Our Patients
+                Real <GradientText animationSpeed={3} colors={['#0ea5e9', '#40c6e5', '#5ce3fa', '#0284c7']} className="inline font-bold">Success Stories</GradientText> from Our Patients
               </h1>
               <p className="text-xl text-primary-100 leading-relaxed mb-8">
                 Don&apos;t just take our word for it. Hear directly from the athletes and active individuals we&apos;ve helped recover, 
@@ -228,41 +225,115 @@ export default function TestimonialsPage() {
           </div>
         </section>
 
-        {/* Video Testimonials Section */}
-        <section className="section-padding bg-gray-50">
+        {/* Featured Testimonial Compilation */}
+        <section className="section-padding bg-gradient-to-br from-primary-900 via-primary-800 to-primary-400">
           <div className="container-custom">
-            <div className="text-center max-w-3xl mx-auto mb-16">
-              <h2 className="heading-lg text-gray-900 mb-6">
-                Watch <GradientText animationSpeed={3} colors={['#0ea5e9', '#40c6e5', '#5ce3fa', '#0284c7', '#000000']} className="inline font-bold">Patient Stories</GradientText>
+            <div className="text-center max-w-3xl mx-auto mb-12">
+              <h2 className="heading-lg text-white mb-6">
+                <GradientText animationSpeed={3} colors={['#0ea5e9', '#40c6e5', '#5ce3fa', '#0284c7']} className="inline font-bold">Patient Stories</GradientText>
               </h2>
-              <p className="text-xl text-gray-600">
-                Hear directly from our patients about their recovery journey and experience with M.O. Therapy
+              <p className="text-xl text-primary-100 leading-relaxed mb-4">
+                {featuredTestimonial.description}
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="mx-auto" style={{ maxWidth: '26rem' }}>
+              <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-4 md:p-6">
+                <VideoPlayer
+                  videoUrl={featuredTestimonial.videoUrl}
+                  name={featuredTestimonial.name}
+                  sport={featuredTestimonial.sport}
+                />
+                <div className="mt-6 text-center">
+                  <h3 className="text-white font-bold text-xl mb-3">
+                    {featuredTestimonial.summary}
+                  </h3>
+                  <p className="text-primary-100 text-base italic">
+                    &ldquo;{featuredTestimonial.quote}&rdquo;
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Individual Video Testimonials Section */}
+        <section className="py-20 md:py-32 bg-gradient-to-br from-gray-50 via-white to-primary-50">
+          <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center max-w-4xl mx-auto mb-20">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-8">
+                Individual <GradientText animationSpeed={3} colors={['#0ea5e9', '#40c6e5', '#5ce3fa', '#0284c7']} className="inline font-bold">Patient Journeys</GradientText>
+              </h2>
+              <p className="text-xl md:text-2xl text-gray-600 leading-relaxed">
+                Watch real recovery stories from our patients and see the transformative impact of personalized care
+              </p>
+            </div>
+
+            {/* Video Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 lg:gap-10">
               {videoTestimonials.map((testimonial) => (
                 <div key={testimonial.id} className="group">
-                  {/* Video Player */}
-                  <div className="mb-4">
-                    <VideoPlayer
-                      videoUrl={testimonial.videoUrl}
-                      name={testimonial.name}
-                      sport={testimonial.sport}
-                    />
-                  </div>
-
-                  {/* Testimonial Content */}
-                  <div className="bg-white rounded-xl p-6 shadow-md">
-                    <div className="flex items-center gap-1 mb-3">
-                      {[...Array(testimonial.rating)].map((_, i) => (
-                        <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-                      ))}
+                  {/* Video Card */}
+                  <div className="bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-shadow duration-500 overflow-hidden">
+                    {/* Video Player */}
+                    <div className="relative isolate">
+                      <VideoPlayer
+                        videoUrl={testimonial.videoUrl}
+                        name={testimonial.name}
+                        sport={testimonial.sport}
+                      />
+                      {/* Title Badge */}
+                      <div className="absolute top-6 left-6 right-6 z-20 pointer-events-none">
+                        <div className="bg-gradient-to-br from-primary-600 to-primary-800 backdrop-blur-lg rounded-2xl px-5 py-4 border border-white/30 shadow-xl will-change-auto">
+                          <h3 className="text-white font-bold text-xl md:text-2xl mb-1 leading-tight drop-shadow-lg">
+                            {testimonial.name}
+                          </h3>
+                          <p className="text-primary-100 text-sm md:text-base font-semibold drop-shadow-md">
+                            {testimonial.sport}
+                          </p>
+                        </div>
+                      </div>
                     </div>
-                    <p className="text-gray-600 italic">&ldquo;{testimonial.quote}&rdquo;</p>
+
+                    {/* Testimonial Content */}
+                    <div className="p-6 md:p-8">
+                      {/* Summary Header */}
+                      <div className="mb-4 text-center">
+                        <h4 className="text-primary-600 font-bold text-lg md:text-xl mb-1">
+                          {testimonial.summary}
+                        </h4>
+                      </div>
+                      
+                      {/* Quote */}
+                      <blockquote className="text-gray-700 text-base md:text-lg leading-relaxed text-center">
+                        <Quote className="h-5 w-5 text-primary-300 inline-block mb-2" />
+                        <p className="italic">
+                          {testimonial.quote}
+                        </p>
+                      </blockquote>
+                    </div>
                   </div>
                 </div>
               ))}
+            </div>
+
+            {/* Add More CTA */}
+            <div className="mt-20 text-center">
+              <div className="inline-flex flex-col items-center gap-4 bg-white rounded-3xl px-8 py-10 shadow-lg">
+                <Users className="h-12 w-12 text-primary-600" />
+                <p className="text-xl font-semibold text-gray-900">
+                  Want to share your story?
+                </p>
+                <p className="text-gray-600 max-w-md">
+                  We&apos;re always looking to feature more patient success stories. Contact us to be part of our testimonials.
+                </p>
+                <a
+                  href="/contact"
+                  className="btn-primary text-lg px-8 py-4 flex items-center gap-2"
+                >
+                  Get in Touch
+                </a>
+              </div>
             </div>
           </div>
         </section>
@@ -272,7 +343,7 @@ export default function TestimonialsPage() {
           <div className="container-custom">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <h2 className="heading-lg text-gray-900 mb-6">
-                More <GradientText animationSpeed={3} colors={['#0ea5e9', '#40c6e5', '#5ce3fa', '#0284c7', '#000000']} className="inline font-bold">Patient Reviews</GradientText>
+                More <GradientText animationSpeed={3} colors={['#0ea5e9', '#40c6e5', '#5ce3fa', '#0284c7']} className="inline font-bold">Patient Reviews</GradientText>
               </h2>
               <p className="text-xl text-gray-600">
                 Read what our patients have to say about their experience
@@ -310,48 +381,67 @@ export default function TestimonialsPage() {
         </section>
 
         {/* Partners & Supporters Section */}
-        <section className="section-padding bg-gray-50">
+        <section className="section-padding bg-gradient-to-br from-white via-gray-50 to-primary-50">
           <div className="container-custom">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <h2 className="heading-lg text-gray-900 mb-6">
-                Trusted <GradientText animationSpeed={3} colors={['#0ea5e9', '#40c6e5', '#5ce3fa', '#0284c7', '#000000']} className="inline font-bold">Partners & Supporters</GradientText>
+                Our <GradientText animationSpeed={3} colors={['#0ea5e9', '#40c6e5', '#5ce3fa', '#0284c7']} className="inline font-bold">Partners & Supporters</GradientText>
               </h2>
               <p className="text-xl text-gray-600">
-                Proud to work with leading sports organizations, fitness centers, and healthcare partners in the community
+                Proud to collaborate with leading organizations in our community
               </p>
             </div>
 
-            {/* Partners Grid */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
-              {partners.map((partner, index) => (
-                <div 
-                  key={index} 
-                  className="bg-white rounded-xl p-8 flex flex-col items-center justify-center text-center hover:shadow-lg transition-all duration-300 group"
-                >
-                  {/* Placeholder logo - replace with actual logos */}
-                  <div className="w-24 h-24 bg-gray-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary-50 transition-colors duration-300">
-                    <Heart className="h-12 w-12 text-gray-400 group-hover:text-primary-600 transition-colors duration-300" />
+            {/* Sponsors Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-8">
+              {partners.map((partner, index) => {
+                return (
+                  <div
+                    key={index}
+                    className="group bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-primary-200 hover:-translate-y-1"
+                  >
+                    <div className="flex flex-col items-center text-center">
+                      {/* Logo */}
+                      <div className="w-full h-32 relative mb-6 flex items-center justify-center">
+                        <img
+                          src={partner.logo}
+                          alt={`${partner.name} logo`}
+                          className="object-contain max-h-24 max-w-full"
+                        />
+                      </div>
+
+                      {/* Name */}
+                      <h3 className="font-bold text-lg text-gray-900 mb-2">
+                        {partner.name}
+                      </h3>
+
+                      {/* Category */}
+                      <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary-100 text-primary-700">
+                        {partner.category}
+                      </span>
+                    </div>
                   </div>
-                  <h3 className="font-semibold text-gray-900 mb-1">{partner.name}</h3>
-                  <p className="text-sm text-gray-500">{partner.category}</p>
-                </div>
-              ))}
+                );
+              })}
             </div>
 
             {/* Partnership CTA */}
-            <div className="bg-gradient-to-r from-primary-900 to-primary-400 rounded-3xl p-8 md:p-12 text-center text-white">
-              <h3 className="text-2xl md:text-3xl font-bold mb-4">
-                Interested in Partnering with Us?
-              </h3>
-              <p className="text-primary-100 text-lg mb-8 max-w-2xl mx-auto">
-                We&apos;re always looking to collaborate with organizations that share our commitment to athletic excellence and community health.
-              </p>
-              <a 
-                href="/contact" 
-                className="inline-flex items-center gap-2 bg-white text-primary-600 px-8 py-4 rounded-lg font-semibold hover:bg-primary-50 transition-colors duration-200"
-              >
-                Get in Touch
-              </a>
+            <div className="mt-16 text-center">
+              <div className="inline-flex flex-col items-center gap-4 bg-gradient-to-br from-primary-900 to-primary-700 rounded-3xl px-10 py-12 shadow-xl text-white max-w-2xl">
+                <Heart className="h-12 w-12 text-primary-200" />
+                <h3 className="text-2xl font-bold">
+                  Interested in Partnering with Us?
+                </h3>
+                <p className="text-primary-100 text-lg">
+                  We&apos;re always looking to collaborate with organizations that share our commitment to health, wellness, and community support.
+                </p>
+                <a
+                  href="/contact"
+                  className="inline-flex items-center gap-2 bg-white text-primary-600 px-8 py-4 rounded-lg font-semibold hover:bg-primary-50 transition-colors duration-200 shadow-lg"
+                >
+                  Get in Touch
+                </a>
+              </div>
             </div>
           </div>
         </section>
@@ -361,7 +451,7 @@ export default function TestimonialsPage() {
           <div className="container-custom text-center">
             <div className="max-w-3xl mx-auto">
               <h2 className="heading-lg text-gray-900 mb-6">
-                Ready to Write <GradientText animationSpeed={3} colors={['#0ea5e9', '#40c6e5', '#5ce3fa', '#0284c7', '#000000']} className="inline font-bold">Your Success Story?</GradientText>
+                Ready to Write <GradientText animationSpeed={3} colors={['#0ea5e9', '#40c6e5', '#5ce3fa', '#0284c7']} className="inline font-bold">Your Success Story?</GradientText>
               </h2>
               <p className="text-xl text-gray-600 mb-8">
                 Join the hundreds of athletes and active individuals who have achieved their health and performance goals with M.O. Therapy.

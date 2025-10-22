@@ -135,24 +135,6 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           </div>
         </section>
 
-        {/* Featured Image */}
-        <section className="py-8 bg-white">
-          <div className="container-custom">
-            <div className="max-w-4xl mx-auto">
-              <div className="relative h-96 rounded-2xl overflow-hidden shadow-2xl">
-                <BlogImageWithFallback
-                  src={post.image}
-                  alt={post.title}
-                  fill
-                  priority
-                  category={post.category}
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
-                />
-              </div>
-            </div>
-          </div>
-        </section>
-
         {/* Article Content */}
         <section className="pb-16 md:pb-24 bg-white">
           <div className="container-custom">

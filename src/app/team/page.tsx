@@ -156,7 +156,7 @@ export default function TeamPage() {
                 Meet Our Team
               </div>
               <h1 className="heading-xl text-white mb-6">
-                Expert <GradientText animationSpeed={3} colors={['#0ea5e9', '#40c6e5', '#5ce3fa', '#0284c7', '#000000']} className="inline font-bold">Healthcare Professionals</GradientText> Dedicated to Your Recovery
+                Expert <GradientText animationSpeed={3} colors={['#0ea5e9', '#40c6e5', '#5ce3fa', '#0284c7']} className="inline font-bold">Healthcare Professionals</GradientText> Dedicated to Your Recovery
               </h1>
               <p className="text-xl text-primary-100 leading-relaxed mb-8">
                 Our multidisciplinary team of licensed physiotherapists, registered massage therapists, and chiropractors 

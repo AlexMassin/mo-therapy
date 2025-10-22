@@ -209,7 +209,7 @@ export default function ConditionsPage() {
                 Comprehensive Care
               </div>
               <h1 className="heading-xl text-white mb-6">
-                <GradientText animationSpeed={3} colors={['#0ea5e9', '#40c6e5', '#5ce3fa', '#0284c7', '#000000']} className="inline font-bold">Conditions We Treat</GradientText> & Specialized Care
+                <GradientText animationSpeed={3} colors={['#0ea5e9', '#40c6e5', '#5ce3fa', '#0284c7']} className="inline font-bold">Conditions We Treat</GradientText> & Specialized Care
               </h1>
               <p className="text-xl text-primary-100 leading-relaxed mb-8">
                 From acute sports injuries to chronic pain management, our expert team provides targeted treatment 

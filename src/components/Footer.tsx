@@ -8,21 +8,15 @@ const quickLinks = [
   { name: 'About Us', href: '/about' },
   { name: 'Our Services', href: '/services' },
   { name: 'Our Team', href: '/team' },
+  { name: 'Testimonials', href: '/testimonials' },
   { name: 'Blog', href: '/blog' },
 ];
 
 const services = [
-  { name: 'Physiotherapy', href: '/services/physiotherapy' },
-  { name: 'Massage Therapy', href: '/services/massage-therapy' },
-  { name: 'Chiropractic Care', href: '/services/chiropractic' },
-  { name: 'Osteopathy', href: '/services/osteopathy' },
-];
-
-const conditions = [
-  { name: 'Sports Injuries', href: '/conditions/sports-injuries' },
-  { name: 'Back Pain', href: '/conditions/back-pain' },
-  { name: 'Neck Pain', href: '/conditions/neck-pain' },
-  { name: 'Joint Pain', href: '/conditions/joint-pain' },
+  { name: 'Physiotherapy', href: '/services' },
+  { name: 'Massage Therapy', href: '/services' },
+  { name: 'Chiropractic Care', href: '/services' },
+  { name: 'Osteopathy', href: '/services' },
 ];
 
 const hours = [
@@ -130,16 +124,14 @@ export default function Footer() {
             
             <h3 className="text-lg font-semibold mb-4 mt-8">Common Conditions</h3>
             <ul className="space-y-2">
-              {conditions.map((condition) => (
-                <li key={condition.name}>
-                  <Link
-                    href={condition.href}
-                    className="text-gray-300 hover:text-white transition-colors duration-200 text-sm"
-                  >
-                    {condition.name}
-                  </Link>
-                </li>
-              ))}
+              <li>
+                <Link
+                  href="/conditions"
+                  className="text-gray-300 hover:text-white transition-colors duration-200 text-sm"
+                >
+                  View All Conditions
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -182,17 +174,19 @@ export default function Footer() {
             </div>
             <div className="flex items-center gap-6 text-sm">
               <Link
-                href="/privacy-policy"
+                href="/contact"
                 className="text-gray-400 hover:text-white transition-colors duration-200"
               >
-                Privacy Policy
+                Contact Us
               </Link>
-              <Link
-                href="/terms-of-service"
+              <a
+                href="https://www.instagram.com/m.o.therapy"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white transition-colors duration-200"
               >
-                Terms of Service
-              </Link>
+                Instagram
+              </a>
               <div className="text-gray-400">
                 Made with ❤️ for athletes
               </div>

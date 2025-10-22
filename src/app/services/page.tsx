@@ -177,7 +177,7 @@ export default function ServicesPage() {
           <div className="container-custom">
             <div className="text-center max-w-4xl mx-auto">
               <h1 className="heading-xl text-white mb-6">
-                Comprehensive <GradientText animationSpeed={3} colors={['#0ea5e9', '#40c6e5', '#5ce3fa', '#0284c7', '#000000']} className="inline font-bold">Athletic Care</GradientText> Services
+                Comprehensive <GradientText animationSpeed={3} colors={['#0ea5e9', '#40c6e5', '#5ce3fa', '#0284c7']} className="inline font-bold">Athletic Care</GradientText> Services
               </h1>
               <p className="text-xl text-primary-100 leading-relaxed">
                 Our integrated approach combines multiple therapeutic disciplines to provide comprehensive care 

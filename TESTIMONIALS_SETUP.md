@@ -129,7 +129,7 @@ The page includes:
 ### Change Colors
 The gradient colors used match your global brand colors:
 ```typescript
-colors={['#0ea5e9', '#40c6e5', '#5ce3fa', '#0284c7', '#000000']}
+colors={['#0ea5e9', '#40c6e5', '#5ce3fa', '#0284c7']}
 ```
 
 ### Modify Stats

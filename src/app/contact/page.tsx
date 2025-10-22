@@ -91,7 +91,7 @@ export default function ContactPage() {
           <div className="container-custom">
             <div className="text-center max-w-4xl mx-auto">
               <h1 className="heading-xl text-white mb-6">
-                Contact <GradientText animationSpeed={3} colors={['#0ea5e9', '#40c6e5', '#5ce3fa', '#0284c7', '#000000']} className="inline font-bold">M.O. Therapy</GradientText>
+                Contact <GradientText animationSpeed={3} colors={['#0ea5e9', '#40c6e5', '#5ce3fa', '#0284c7']} className="inline font-bold">M.O. Therapy</GradientText>
               </h1>
               <p className="text-xl text-primary-100 leading-relaxed mb-8">
                 Ready to start your journey to better health and performance? We&apos;re here to help you every step of the way.
@@ -195,7 +195,7 @@ export default function ContactPage() {
             <div className="max-w-4xl mx-auto">
               <div className="text-center mb-12">
                 <h2 className="heading-lg text-gray-900 mb-6">
-                  Send Us a <GradientText animationSpeed={3} colors={['#0ea5e9', '#40c6e5', '#5ce3fa', '#0284c7', '#000000']} className="inline font-bold">Message</GradientText>
+                  Send Us a <GradientText animationSpeed={3} colors={['#0ea5e9', '#40c6e5', '#5ce3fa', '#0284c7']} className="inline font-bold">Message</GradientText>
                 </h2>
                 <p className="text-xl text-gray-600">
                   Have a question about our services? We&apos;d love to hear from you.

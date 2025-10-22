@@ -43,7 +43,7 @@ export default function WhyChooseUs() {
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="heading-lg text-gray-900 mb-6">
-            Why Athletes Choose <GradientText animationSpeed={3} colors={['#0ea5e9', '#40c6e5', '#5ce3fa', '#0284c7', '#000000']} className="inline font-bold">M.O. Therapy</GradientText>
+            Why Athletes Choose <GradientText animationSpeed={3} colors={['#0ea5e9', '#40c6e5', '#5ce3fa', '#0284c7']} className="inline font-bold">M.O. Therapy</GradientText>
           </h2>
           <p className="text-xl text-gray-600">
             We understand the unique demands placed on your body. Our specialized approach goes beyond traditional therapy 

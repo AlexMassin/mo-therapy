@@ -89,7 +89,7 @@ export default function AboutPage() {
             <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 xl:gap-24 items-center">
               <div>
                 <h1 className="heading-xl text-white mb-6">
-                  About <GradientText animationSpeed={3} colors={['#0ea5e9', '#40c6e5', '#5ce3fa', '#0284c7', '#000000']} className="inline font-bold">M.O. Therapy</GradientText>
+                  About <GradientText animationSpeed={3} colors={['#0ea5e9', '#40c6e5', '#5ce3fa', '#0284c7']} className="inline font-bold">M.O. Therapy</GradientText>
                 </h1>
                 <p className="text-xl text-primary-100 leading-relaxed mb-8">
                   Founded with a passion for helping athletes and active individuals achieve their peak potential, 
@@ -165,7 +165,7 @@ export default function AboutPage() {
           <div className="container-custom">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <h2 className="heading-lg text-gray-900 mb-6">
-                Our <GradientText animationSpeed={3} colors={['#0ea5e9', '#40c6e5', '#5ce3fa', '#0284c7', '#000000']} className="inline font-bold">Core Values</GradientText>
+                Our <GradientText animationSpeed={3} colors={['#0ea5e9', '#40c6e5', '#5ce3fa', '#0284c7']} className="inline font-bold">Core Values</GradientText>
               </h2>
               <p className="text-xl text-gray-600">
                 These principles guide everything we do and ensure every patient receives the highest quality care.

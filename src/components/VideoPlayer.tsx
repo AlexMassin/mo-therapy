@@ -138,11 +138,6 @@ export default function VideoPlayer({ videoUrl, name, sport }: VideoPlayerProps)
         </div>
       )}
 
-      {/* Video Info Overlay */}
-      <div className="absolute top-0 left-0 right-0 bg-gradient-to-b from-black/60 to-transparent p-4">
-        <h3 className="font-semibold text-white text-sm">{name}</h3>
-        <p className="text-xs text-primary-200">{sport}</p>
-      </div>
     </div>
   );
 }

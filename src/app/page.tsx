@@ -3,6 +3,8 @@ import Hero from '@/components/Hero';
 import Services from '@/components/Services';
 import WhyChooseUs from '@/components/WhyChooseUs';
 import Conditions from '@/components/Conditions';
+import InstagramFeed from '@/components/InstagramFeed';
+import Sponsors from '@/components/Sponsors';
 import Footer from '@/components/Footer';
 import { Metadata } from 'next';
 
@@ -59,6 +61,8 @@ export default function Home() {
         <Services />
         <WhyChooseUs />
         <Conditions />
+        <InstagramFeed />
+        <Sponsors />
       </main>
       <Footer />
     </>

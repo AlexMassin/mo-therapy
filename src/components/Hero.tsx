@@ -26,7 +26,7 @@ export default function Hero() {
         <GradientBlinds
           className=""
           dpr={typeof window !== 'undefined' ? window.devicePixelRatio || 1 : 1}
-          gradientColors={['#0ea5e9', '#40c6e5', '#5ce3fa', '#0284c7', '#000000']}
+          gradientColors={['#0ea5e9', '#40c6e5', '#5ce3fa', '#0284c7']}
           angle={0}
           noise={0.25}
           blindCount={12}
