@@ -3,6 +3,8 @@ import Hero from '@/components/Hero';
 import Services from '@/components/Services';
 import WhyChooseUs from '@/components/WhyChooseUs';
 import Conditions from '@/components/Conditions';
+import WellnessRelaxation from '@/components/WellnessRelaxation';
+import InsuranceBenefits from '@/components/InsuranceBenefits';
 import InstagramFeed from '@/components/InstagramFeed';
 import Sponsors from '@/components/Sponsors';
 import Footer from '@/components/Footer';
@@ -61,6 +63,8 @@ export default function Home() {
         <Services />
         <WhyChooseUs />
         <Conditions />
+        <WellnessRelaxation />
+        <InsuranceBenefits />
         <InstagramFeed />
         <Sponsors />
       </main>
