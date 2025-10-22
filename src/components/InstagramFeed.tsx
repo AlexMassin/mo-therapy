@@ -2,6 +2,7 @@
 
 import { Instagram, Play, Heart, MessageCircle } from 'lucide-react';
 import GradientText from './GradientText';
+import Image from 'next/image';
 
 // Latest Instagram reels from @motherapy
 const instagramReels = [
@@ -94,10 +95,12 @@ export default function InstagramFeed() {
 
                 {/* Thumbnail Image */}
                 {reel.thumbnail ? (
-                  <img
+                  <Image
                     src={reel.thumbnail}
                     alt={reel.caption}
-                    className="absolute inset-0 w-full h-full object-cover"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   />
                 ) : (
                   <div className="absolute inset-0 flex items-center justify-center">
