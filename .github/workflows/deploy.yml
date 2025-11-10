@@ -33,6 +33,19 @@ jobs:
       - name: Install dependencies
         run: npm ci
         
+      - name: Check Google env vars
+        run: |
+          if [ -z "$GOOGLE_PLACES_API_KEY" ]; then
+            echo "::warning::GOOGLE_PLACES_API_KEY is empty"
+          else
+            echo "::notice::GOOGLE_PLACES_API_KEY detected"
+          fi
+          if [ -z "$GOOGLE_PLACE_ID" ]; then
+            echo "::warning::GOOGLE_PLACE_ID is empty"
+          else
+            echo "::notice::GOOGLE_PLACE_ID detected"
+          fi
+        
       - name: Build with Next.js
         run: npm run build
         
