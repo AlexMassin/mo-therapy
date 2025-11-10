@@ -139,7 +139,7 @@ const conditionCategories = [
       'Meniscus Tears',
       'Patellar Tendinopathy',
       'Knee Osteoarthritis',
-      'Runner&apos;s Knee (PFPS)'
+      'Runner\'s Knee (PFPS)'
     ]
   },
   {

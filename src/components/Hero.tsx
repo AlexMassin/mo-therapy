@@ -80,7 +80,6 @@ export default function Hero() {
                 layout
               >
                 <motion.span
-                  className="pt-0.5 sm:pt-1 md:pt-2"
                   layout
                   transition={{ type: 'spring', damping: 40, stiffness: 400 }}
                 >
