@@ -15,7 +15,7 @@ export default function OptimizedImage({ src, priority = false, ...rest }: Optim
       src={resolvedSrc}
       loading={priority ? 'eager' : 'lazy'}
       decoding="async"
-      fetchpriority={priority ? 'high' : 'auto'}
+      fetchPriority={priority ? 'high' : 'auto'}
     />
   );
 }

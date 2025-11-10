@@ -55,6 +55,7 @@ export const metadata: Metadata = {
 };
 
 import TeamPreview from '@/components/TeamPreview';
+import GoogleReviews from '@/components/GoogleReviews';
 
 export default function Home() {
   return (
@@ -64,6 +65,7 @@ export default function Home() {
         <Hero />
         <Services />
         <WhyChooseUs />
+        <GoogleReviews />
         <TeamPreview />
         <Conditions />
         <WellnessRelaxation />
