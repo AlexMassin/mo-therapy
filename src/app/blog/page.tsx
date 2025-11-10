@@ -1,10 +1,53 @@
+import { Metadata } from 'next';
 import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import BlogList from '@/components/BlogList';
 import { getAllPosts, getAllCategories, getAllTags } from '../../../lib/blog';
 import { BookOpen, User } from 'lucide-react';
-import GradientText from '@/components/GradientText';
+import { getImagePath } from '@/lib/assets';
+
+export const metadata: Metadata = {
+  title: 'Health & Sports Medicine Blog - M.O. Therapy | Expert Insights',
+  description: 'Expert insights on sports injuries, physiotherapy, recovery techniques, and performance optimization from licensed healthcare professionals at M.O. Therapy in Markham.',
+  keywords: [
+    'sports medicine blog',
+    'physiotherapy tips',
+    'injury prevention',
+    'recovery techniques',
+    'athletic performance',
+    'sports injury advice',
+    'rehabilitation guides',
+    'Markham physiotherapy blog',
+    'exercise therapy tips',
+    'pain management advice'
+  ],
+  alternates: {
+    canonical: '/blog',
+  },
+  openGraph: {
+    title: 'Health & Sports Medicine Blog - M.O. Therapy',
+    description: 'Expert insights on sports injuries, recovery, and performance optimization from our licensed healthcare team.',
+    type: 'website',
+    locale: 'en_CA',
+    url: 'https://motherapy.ca/blog',
+    siteName: 'M.O. Therapy',
+    images: [
+      {
+        url: '/og-blog.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'M.O. Therapy Health & Sports Medicine Blog',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Health & Sports Medicine Blog - M.O. Therapy',
+    description: 'Expert insights on sports injuries, recovery, and performance from our healthcare team.',
+    images: ['/og-blog.jpg'],
+  },
+};
 
 export default function BlogPage() {
   const posts = getAllPosts();
@@ -24,7 +67,7 @@ export default function BlogPage() {
                 Expert Insights
               </div>
               <h1 className="heading-xl text-white mb-6">
-                Health & <GradientText animationSpeed={3} colors={['#0ea5e9', '#40c6e5', '#5ce3fa', '#0284c7']} className="inline font-bold">Sports Medicine Blog</GradientText>
+                Health & <span className="text-primary-400 font-bold">Sports Medicine Blog</span>
               </h1>
               <p className="text-xl text-primary-100 leading-relaxed mb-8">
                 Get expert insights on sports injuries, recovery techniques, injury prevention, and performance 
@@ -78,31 +121,54 @@ export default function BlogPage() {
           </div>
         </section>
 
-        {/* CTA Section */}
+        {/* CTA Section with Team Images */}
         <section className="section-padding bg-white">
-          <div className="container-custom text-center">
-            <div className="max-w-3xl mx-auto">
-              <h2 className="heading-lg text-gray-900 mb-6">
-                Have Questions About <span className="text-primary-600 font-bold">Your Health?</span>
-              </h2>
-              <p className="text-xl text-gray-600 mb-8">
-                Our expert team is here to help. Don&apos;t let questions about your health go unanswered.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link
-                  href="/contact"
-                  className="btn-primary text-lg px-8 py-4 flex items-center justify-center gap-2"
-                >
-                  <User className="h-5 w-5" />
-                  Ask Our Experts
-                </Link>
-                <Link
-                  href="/conditions"
-                  className="btn-secondary flex items-center justify-center gap-2 text-lg px-8 py-4"
-                >
-                  <BookOpen className="h-5 w-5" />
-                  View Conditions We Treat
-                </Link>
+          <div className="container-custom">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              {/* Team Images Collage */}
+              <div className="order-2 lg:order-1">
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-lg">
+                    <img 
+                      src={getImagePath("/team/DSC00489.JPG")}
+                      alt="M.O. Therapy healthcare professionals"
+                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                  <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-lg mt-8">
+                    <img 
+                      src={getImagePath("/team/DSC00498.JPG")}
+                      alt="M.O. Therapy team members"
+                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              {/* CTA Content */}
+              <div className="order-1 lg:order-2 text-center lg:text-left">
+                <h2 className="heading-lg text-gray-900 mb-6">
+                  Have Questions About <span className="text-primary-600 font-bold">Your Health?</span>
+                </h2>
+                <p className="text-xl text-gray-600 mb-8">
+                  Our expert team is here to help. Don&apos;t let questions about your health go unanswered.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 lg:justify-start justify-center">
+                  <Link
+                    href="/contact"
+                    className="btn-primary text-lg px-8 py-4 flex items-center justify-center gap-2"
+                  >
+                    <User className="h-5 w-5" />
+                    Ask Our Experts
+                  </Link>
+                  <Link
+                    href="/conditions"
+                    className="btn-secondary flex items-center justify-center gap-2 text-lg px-8 py-4"
+                  >
+                    <BookOpen className="h-5 w-5" />
+                    View Conditions We Treat
+                  </Link>
+                </div>
               </div>
             </div>
           </div>

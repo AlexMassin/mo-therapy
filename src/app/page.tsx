@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     siteName: 'M.O. Therapy',
     images: [
       {
-        url: '/og-image.jpg',
+        url: '/og-about.jpg',
         width: 1200,
         height: 630,
         alt: 'M.O. Therapy - Premier Sports Medicine & Physiotherapy in Markham',
@@ -50,9 +50,11 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'M.O. Therapy - Premier Sports Medicine & Physiotherapy',
     description: 'Expert care for athletes. Same-day appointments available in Markham.',
-    images: ['/og-image.jpg'],
+    images: ['/og-about.jpg'],
   },
 };
+
+import TeamPreview from '@/components/TeamPreview';
 
 export default function Home() {
   return (
@@ -62,6 +64,7 @@ export default function Home() {
         <Hero />
         <Services />
         <WhyChooseUs />
+        <TeamPreview />
         <Conditions />
         <WellnessRelaxation />
         <InsuranceBenefits />

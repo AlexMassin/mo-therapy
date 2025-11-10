@@ -3,7 +3,6 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import BookingButton from '@/components/BookingButton';
 import { Quote, Star, Award, Users, Heart } from 'lucide-react';
-import GradientText from '@/components/GradientText';
 import VideoPlayer from '@/components/VideoPlayer';
 import Image from 'next/image';
 import { getImagePath } from '@/lib/assets';
@@ -21,9 +20,22 @@ export const metadata: Metadata = {
     'athletic care reviews',
     'sports medicine testimonials'
   ],
+  alternates: {
+    canonical: '/testimonials',
+  },
   openGraph: {
     title: 'Patient Testimonials - M.O. Therapy Markham',
     description: 'Hear from our satisfied patients about their recovery journey at M.O. Therapy.',
+    type: 'website',
+    locale: 'en_CA',
+    url: 'https://motherapy.ca/testimonials',
+    siteName: 'M.O. Therapy',
+    images: ['/og-team.jpg'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Patient Testimonials - M.O. Therapy Markham',
+    description: 'Real success stories from our patients.',
     images: ['/og-team.jpg'],
   },
 };
@@ -195,7 +207,7 @@ export default function TestimonialsPage() {
                 Patient Success Stories
               </div>
               <h1 className="heading-xl text-white mb-6">
-                Real <GradientText animationSpeed={3} colors={['#0ea5e9', '#40c6e5', '#5ce3fa', '#0284c7']} className="inline font-bold">Success Stories</GradientText> from Our Patients
+                Real <span className="text-primary-400 font-bold">Success Stories</span> from Our Patients
               </h1>
               <p className="text-xl text-primary-100 leading-relaxed mb-8">
                 Don&apos;t just take our word for it. Hear directly from the athletes and active individuals we&apos;ve helped recover, 
@@ -232,7 +244,7 @@ export default function TestimonialsPage() {
           <div className="container-custom">
             <div className="text-center max-w-3xl mx-auto mb-12">
               <h2 className="heading-lg text-white mb-6">
-                <GradientText animationSpeed={3} colors={['#0ea5e9', '#40c6e5', '#5ce3fa', '#0284c7']} className="inline font-bold">Patient Stories</GradientText>
+                <span className="text-primary-400 font-bold">Patient Stories</span>
               </h2>
               <p className="text-xl text-primary-100 leading-relaxed mb-4">
                 {featuredTestimonial.description}
@@ -264,7 +276,7 @@ export default function TestimonialsPage() {
           <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-4xl mx-auto mb-20">
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-8">
-                Individual <GradientText animationSpeed={3} colors={['#0ea5e9', '#40c6e5', '#5ce3fa', '#0284c7']} className="inline font-bold">Patient Journeys</GradientText>
+                Individual <span className="text-primary-600 font-bold">Patient Journeys</span>
               </h2>
               <p className="text-xl md:text-2xl text-gray-600 leading-relaxed">
                 Watch real recovery stories from our patients and see the transformative impact of personalized care
@@ -345,7 +357,7 @@ export default function TestimonialsPage() {
           <div className="container-custom">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <h2 className="heading-lg text-gray-900 mb-6">
-                More <GradientText animationSpeed={3} colors={['#0ea5e9', '#40c6e5', '#5ce3fa', '#0284c7']} className="inline font-bold">Patient Reviews</GradientText>
+                More <span className="text-primary-600 font-bold">Patient Reviews</span>
               </h2>
               <p className="text-xl text-gray-600">
                 Read what our patients have to say about their experience
@@ -387,7 +399,7 @@ export default function TestimonialsPage() {
           <div className="container-custom">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <h2 className="heading-lg text-gray-900 mb-6">
-                Our <GradientText animationSpeed={3} colors={['#0ea5e9', '#40c6e5', '#5ce3fa', '#0284c7']} className="inline font-bold">Partners & Supporters</GradientText>
+                Our <span className="text-primary-600 font-bold">Partners & Supporters</span>
               </h2>
               <p className="text-xl text-gray-600">
                 Proud to collaborate with leading organizations in our community
@@ -455,7 +467,7 @@ export default function TestimonialsPage() {
           <div className="container-custom text-center">
             <div className="max-w-3xl mx-auto">
               <h2 className="heading-lg text-gray-900 mb-6">
-                Ready to Write <GradientText animationSpeed={3} colors={['#0ea5e9', '#40c6e5', '#5ce3fa', '#0284c7']} className="inline font-bold">Your Success Story?</GradientText>
+                Ready to Write <span className="text-primary-600 font-bold">Your Success Story?</span>
               </h2>
               <p className="text-xl text-gray-600 mb-8">
                 Join the hundreds of athletes and active individuals who have achieved their health and performance goals with M.O. Therapy.

@@ -2,10 +2,10 @@ import { Metadata } from 'next';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import BookingButton from '@/components/BookingButton';
-import { Users, Award, Heart, Star, Mail } from 'lucide-react';
+import { Users, Award, Heart, Star, Mail, Camera } from 'lucide-react';
 import Image from 'next/image';
 import { getImagePath } from '@/lib/assets';
-import GradientText from '@/components/GradientText';
+import TeamGalleryCreative from '@/components/TeamGalleryCreative';
 
 export const metadata: Metadata = {
   title: 'Our Expert Team - M.O. Therapy Markham | Physiotherapists & RMTs',
@@ -102,14 +102,6 @@ const teamMembers = [
     bookingLink: "https://modeofoperation.janeapp.com/#/staff_member/29"
   },
   {
-    name: "Leo Huang",
-    title: "Resident Physiotherapist",
-    description: "Leo is a Resident Physiotherapist committed to helping clients recover, restore movement, and optimize their physical health. He tailors each treatment plan to address individual needs, focusing on injury rehabilitation, pain management, and performance enhancement.",
-    image: "/team/leo.png",
-    specialty: "Performance Enhancement",
-    bookingLink: "https://modeofoperation.janeapp.com/#/staff_member/31"
-  },
-  {
     name: "Nadeem Mamajiwalla",
     title: "Resident Physiotherapist", 
     description: "Nadeem is a Resident Physiotherapist who prioritizes personalized care to support recovery and improve overall function. He takes a hands-on approach to treatment, focusing on injury rehabilitation, mobility restoration, and long-term physical wellness tailored to each client's goals.",
@@ -136,15 +128,97 @@ const teamMembers = [
 ];
 
 const teamStats = [
-  { number: '10+', label: 'Expert Practitioners' },
+  { number: '9+', label: 'Expert Practitioners' },
   { number: '15+', label: 'Years Combined Experience' },
   { number: '100%', label: 'Licensed Professionals' },
   { number: '500+', label: 'Happy Clients' }
 ];
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://motherapy.ca"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Our Team",
+      "item": "https://motherapy.ca/team"
+    }
+  ]
+};
+
+// Team collaboration photos
+const teamCollaborationPhotos = [
+  {
+    src: '/team/DSC00428.JPG',
+    alt: 'M.O. Therapy team collaborating on patient care strategies',
+    caption: 'Team collaboration meeting'
+  },
+  {
+    src: '/team/DSC00429.JPG',
+    alt: 'M.O. Therapy healthcare professionals during team meeting',
+    caption: 'Professional development session'
+  },
+  {
+    src: '/team/DSC00441.JPG',
+    alt: 'M.O. Therapy physiotherapists, RMTs, and chiropractors working together',
+    caption: 'Multidisciplinary team approach'
+  },
+  {
+    src: '/team/DSC00467.JPG',
+    alt: 'M.O. Therapy team in modern clinic facility',
+    caption: 'Our modern treatment space'
+  },
+  {
+    src: '/team/DSC00475.JPG',
+    alt: 'M.O. Therapy staff demonstrating teamwork',
+    caption: 'Excellence in teamwork'
+  },
+  {
+    src: '/team/DSC00489.JPG',
+    alt: 'M.O. Therapy healthcare team at Markham clinic',
+    caption: 'Your healthcare partners'
+  },
+  {
+    src: '/team/DSC00498.JPG',
+    alt: 'M.O. Therapy practitioners in clinic environment',
+    caption: 'Professional care environment'
+  },
+  {
+    src: '/team/DSC00525.JPG',
+    alt: 'M.O. Therapy team gathering',
+    caption: 'Team building and culture'
+  },
+  {
+    src: '/team/DSC00534.JPG',
+    alt: 'M.O. Therapy licensed professionals at work',
+    caption: 'Dedicated professionals'
+  },
+  {
+    src: '/team/DSC00546.JPG',
+    alt: 'M.O. Therapy team commitment to care',
+    caption: 'Patient-centered philosophy'
+  },
+  {
+    src: '/team/DSC00557.JPG',
+    alt: 'M.O. Therapy complete healthcare team',
+    caption: 'Stronger together'
+  }
+];
+
 export default function TeamPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <Header />
       <main className="pt-24">
         {/* Hero Section */}
@@ -156,7 +230,7 @@ export default function TeamPage() {
                 Meet Our Team
               </div>
               <h1 className="heading-xl text-white mb-6">
-                Expert <GradientText animationSpeed={3} colors={['#0ea5e9', '#40c6e5', '#5ce3fa', '#0284c7']} className="inline font-bold">Healthcare Professionals</GradientText> Dedicated to Your Recovery
+                Expert <span className="text-primary-400 font-bold">Healthcare Professionals</span> Dedicated to Your Recovery
               </h1>
               <p className="text-xl text-primary-100 leading-relaxed mb-8">
                 Our multidisciplinary team of licensed physiotherapists, registered massage therapists, and chiropractors 
@@ -236,6 +310,34 @@ export default function TeamPage() {
                   </div>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Team Collaboration Gallery */}
+        <section className="section-padding bg-gradient-to-br from-gray-50 to-white">
+          <div className="container-custom">
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary-100 text-primary-800 rounded-full text-sm font-medium mb-6">
+                <Camera className="h-4 w-4" />
+                Team in Action
+              </div>
+              <h2 className="heading-lg text-gray-900 mb-6">
+                Behind the <span className="text-primary-600 font-bold">Scenes</span>
+              </h2>
+              <p className="text-xl text-gray-600">
+                See our team collaborating, learning, and creating a welcoming environment 
+                where your health and recovery are our top priorities.
+              </p>
+            </div>
+
+            <TeamGalleryCreative photos={teamCollaborationPhotos} />
+
+            <div className="mt-12 text-center">
+              <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
+                Our collaborative approach means you benefit from the combined expertise of multiple healthcare 
+                professionals working together for your optimal outcome.
+              </p>
             </div>
           </div>
         </section>

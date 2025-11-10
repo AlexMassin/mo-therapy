@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     siteName: 'M.O. Therapy',
     images: [
       {
-        url: '/og-image.jpg',
+        url: '/og-about.jpg',
         width: 1200,
         height: 630,
         alt: 'M.O. Therapy - Physiotherapy and Sports Medicine Clinic',
@@ -63,7 +63,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'M.O. Therapy - Physiotherapy & Sports Medicine Markham',
     description: 'Expert care for athletes. Physiotherapy, massage therapy, chiropractic & osteopathy services.',
-    images: ['/og-image.jpg'],
+    images: ['/og-about.jpg'],
   },
   robots: {
     index: true,

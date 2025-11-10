@@ -2,16 +2,28 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Menu, X, Phone, Calendar } from 'lucide-react';
+import { Menu, X, Phone, Calendar, ChevronDown } from 'lucide-react';
 import { trackEvent } from '@/components/Analytics';
 import Logo from '@/components/Logo';
 
-const navigation = [
+type NavigationItem = {
+  name: string;
+  href: string;
+  dropdown?: { name: string; href: string }[];
+};
+
+const navigation: NavigationItem[] = [
   { name: 'About', href: '/about' },
-  { name: 'Services', href: '/services' },
-  { name: 'Conditions', href: '/conditions' },
-  { name: 'Our Team', href: '/team' },
-  { name: 'Testimonials', href: '/testimonials' },
+  { 
+    name: 'Services', 
+    href: '/services',
+    dropdown: [
+      { name: 'All Services', href: '/services' },
+      { name: 'Wellness Programs', href: '/wellness' },
+      { name: 'Conditions We Treat', href: '/conditions' },
+    ]
+  },
+  { name: 'Team', href: '/team' },
   { name: 'Blog', href: '/blog' },
   { name: 'Contact', href: '/contact' },
 ];
@@ -19,6 +31,7 @@ const navigation = [
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -74,11 +87,11 @@ export default function Header() {
     <>
       <header className={`fixed w-full top-0 z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'bg-white/95 backdrop-blur-md shadow-medium' 
-          : 'bg-white/90 backdrop-blur-sm'
+          ? 'bg-white shadow-sm border-b border-gray-100' 
+          : 'bg-white'
       }`}>
         <nav className="container-custom" aria-label="Global">
-          <div className="flex items-center justify-between py-4 lg:py-6">
+          <div className="flex items-center justify-between py-4 lg:py-5">
             {/* Logo */}
             <div className="flex lg:flex-1">
               <Link href="/" className="-m-1.5 p-1.5">
@@ -99,31 +112,62 @@ export default function Header() {
             </div>
 
             {/* Desktop navigation */}
-            <div className="hidden lg:flex lg:gap-x-8">
+            <div className="hidden lg:flex lg:items-center lg:gap-x-6 xl:gap-x-8">
               {navigation.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className="text-sm font-medium leading-6 text-gray-900 hover:text-primary-600 transition-colors duration-200"
-                >
-                  {item.name}
-                </Link>
+                item.dropdown ? (
+                  <div
+                    key={item.name}
+                    className="relative group"
+                    onMouseEnter={() => setOpenDropdown(item.name)}
+                    onMouseLeave={() => setOpenDropdown(null)}
+                  >
+                    <button
+                      className="flex items-center gap-1 text-sm font-semibold leading-6 text-gray-900 hover:text-primary-600 transition-colors duration-200 px-1 py-2"
+                    >
+                      {item.name}
+                      <ChevronDown className="h-3.5 w-3.5" />
+                    </button>
+                    {openDropdown === item.name && (
+                      <div className="absolute top-full left-0 pt-2 z-50">
+                        <div className="w-56 bg-white rounded-lg shadow-lg border border-gray-100 py-2">
+                          {item.dropdown.map((subItem) => (
+                            <Link
+                              key={subItem.name}
+                              href={subItem.href}
+                              className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors duration-150"
+                            >
+                              {subItem.name}
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                ) : (
+                  <Link
+                    key={item.name}
+                    href={item.href}
+                    className="flex items-center text-sm font-semibold leading-6 text-gray-900 hover:text-primary-600 transition-colors duration-200 px-1 py-2"
+                  >
+                    {item.name}
+                  </Link>
+                )
               ))}
             </div>
 
             {/* Desktop CTA buttons */}
-            <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-x-4">
+            <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-x-3">
               <a
                 href="tel:+19052015827"
                 onClick={handlePhoneClick}
-                className="flex items-center gap-2 text-sm font-medium text-gray-900 hover:text-primary-600 transition-colors duration-200"
+                className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-700 hover:text-primary-600 transition-colors duration-200 rounded-lg hover:bg-gray-50"
               >
                 <Phone className="h-4 w-4" />
-                (905) 201-5827
+                <span className="hidden xl:inline">(905) 201-5827</span>
               </a>
               <button
                 onClick={handleBookNowClick}
-                className="btn-primary flex items-center gap-2"
+                className="btn-primary flex items-center gap-2 shadow-sm"
               >
                 <Calendar className="h-4 w-4" />
                 Book Now
@@ -161,14 +205,34 @@ export default function Header() {
                 <div className="-my-6 divide-y divide-gray-500/10">
                   <div className="space-y-2 py-6">
                     {navigation.map((item) => (
-                      <Link
-                        key={item.name}
-                        href={item.href}
-                        className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                        onClick={() => setMobileMenuOpen(false)}
-                      >
-                        {item.name}
-                      </Link>
+                      item.dropdown ? (
+                        <div key={item.name} className="-mx-3">
+                          <div className="px-3 py-2 text-base font-bold text-gray-900">
+                            {item.name}
+                          </div>
+                          <div className="ml-4 space-y-1">
+                            {item.dropdown.map((subItem) => (
+                              <Link
+                                key={subItem.name}
+                                href={subItem.href}
+                                className="block rounded-lg px-3 py-2 text-sm leading-7 text-gray-700 hover:bg-gray-50"
+                                onClick={() => setMobileMenuOpen(false)}
+                              >
+                                {subItem.name}
+                              </Link>
+                            ))}
+                          </div>
+                        </div>
+                      ) : (
+                        <Link
+                          key={item.name}
+                          href={item.href}
+                          className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                          onClick={() => setMobileMenuOpen(false)}
+                        >
+                          {item.name}
+                        </Link>
+                      )
                     ))}
                   </div>
                   <div className="py-6 space-y-4">

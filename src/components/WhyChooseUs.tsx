@@ -1,7 +1,7 @@
 'use client';
 
 import { CheckCircle, Clock, Award, Heart, Users, Shield } from 'lucide-react';
-import GradientText from '@/components/GradientText';
+import OptimizedImage from '@/components/OptimizedImage';
 
 const features = [
   {
@@ -22,12 +22,12 @@ const features = [
   {
     icon: Heart,
     title: 'Personalized Care Plans',
-    description: 'Every treatment plan is tailored to your specific goals, sport, and lifestyle requirements.'
+    description: 'Every treatment plan is tailored to your specific goals - whether that\'s peak athletic performance, stress relief, ergonomic optimization, or preventative wellness.'
   },
   {
     icon: Users,
     title: 'Multidisciplinary Approach',
-    description: 'Our integrated team approach ensures comprehensive care addressing all aspects of your health.'
+    description: 'Our integrated team approach ensures comprehensive care addressing all aspects of your health - from injury treatment to workplace ergonomics and stress management.'
   },
   {
     icon: Shield,
@@ -40,34 +40,72 @@ export default function WhyChooseUs() {
   return (
     <section className="section-padding bg-white">
       <div className="container-custom">
-        {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="heading-lg text-gray-900 mb-6">
-            Why Athletes Choose <GradientText animationSpeed={3} colors={['#0ea5e9', '#40c6e5', '#5ce3fa', '#0284c7']} className="inline font-bold">M.O. Therapy</GradientText>
-          </h2>
-          <p className="text-xl text-gray-600">
-            We understand the unique demands placed on your body. Our specialized approach goes beyond traditional therapy 
-            to optimize your performance and prevent future injuries.
-          </p>
-        </div>
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-16">
+          {/* Content Side */}
+          <div>
+            {/* Header */}
+            <div className="mb-12">
+              <h2 className="heading-lg text-gray-900 mb-6">
+                Why Active Professionals & Athletes Choose <span className="text-primary-600 font-bold">M.O. Therapy</span>
+              </h2>
+              <p className="text-xl text-gray-600">
+                We understand the demands placed on your body - whether you&apos;re an athlete, a busy professional, or someone prioritizing wellness. 
+                Our specialized approach optimizes performance, relieves stress, and prevents future issues through evidence-based care.
+              </p>
+            </div>
 
-        {/* Features Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-          {features.map((feature, index) => {
-            const Icon = feature.icon;
-            return (
-              <div 
-                key={feature.title} 
-                className="text-center group hover:scale-105 transition-transform duration-300"
-              >
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-primary-50 rounded-2xl mb-6 group-hover:bg-primary-100 transition-colors duration-300">
-                  <Icon className="h-8 w-8 text-primary-600" />
-                </div>
-                <h3 className="heading-sm text-gray-900 mb-4">{feature.title}</h3>
-                <p className="text-body">{feature.description}</p>
+            {/* Features Grid */}
+            <div className="grid md:grid-cols-2 gap-6">
+              {features.map((feature) => {
+                const Icon = feature.icon;
+                return (
+                  <div 
+                    key={feature.title} 
+                    className="group"
+                  >
+                    <div className="flex items-start gap-4">
+                      <div className="flex-shrink-0 flex items-center justify-center w-12 h-12 bg-primary-50 rounded-xl group-hover:bg-primary-100 transition-colors duration-300">
+                        <Icon className="h-6 w-6 text-primary-600" />
+                      </div>
+                      <div>
+                        <h3 className="font-semibold text-gray-900 mb-2">{feature.title}</h3>
+                        <p className="text-sm text-gray-600">{feature.description}</p>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Team Images Side */}
+          <div className="relative">
+            <div className="grid grid-cols-2 gap-4">
+              {/* Large team photo */}
+              <div className="col-span-2 aspect-[16/9] rounded-2xl overflow-hidden shadow-lg">
+                <OptimizedImage 
+                  src="/team/DSC00525.JPG"
+                  alt="M.O. Therapy team collaborating on patient care"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                />
               </div>
-            );
-          })}
+              {/* Two smaller photos */}
+              <div className="aspect-square rounded-2xl overflow-hidden shadow-lg">
+                <OptimizedImage 
+                  src="/team/DSC00534.JPG"
+                  alt="M.O. Therapy healthcare professionals"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <div className="aspect-square rounded-2xl overflow-hidden shadow-lg">
+                <OptimizedImage 
+                  src="/team/DSC00546.JPG"
+                  alt="M.O. Therapy team at work"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Stats Section */}

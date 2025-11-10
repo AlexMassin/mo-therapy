@@ -28,6 +28,9 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
     title: `${post.title} - M.O. Therapy Blog | Sports Medicine Insights`,
     description: post.excerpt,
     keywords: [...post.tags, 'sports medicine', 'physiotherapy', 'M.O. Therapy', 'Markham'],
+    alternates: {
+      canonical: `/blog/${slug}`,
+    },
     openGraph: {
       title: post.title,
       description: post.excerpt,
@@ -35,13 +38,15 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
       publishedTime: post.date,
       authors: [post.author],
       tags: post.tags,
-      images: post.image ? [{ url: post.image, alt: post.title }] : [],
+      siteName: 'M.O. Therapy',
+      url: `https://motherapy.ca/blog/${slug}`,
+      images: post.image ? [{ url: post.image, alt: post.title, width: 1200, height: 630 }] : [{ url: '/og-blog.jpg', alt: 'M.O. Therapy Blog', width: 1200, height: 630 }],
     },
     twitter: {
       card: 'summary_large_image',
       title: post.title,
       description: post.excerpt,
-      images: post.image ? [post.image] : [],
+      images: post.image ? [post.image] : ['/og-blog.jpg'],
     },
   };
 }
@@ -65,8 +70,71 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     .filter((p) => p.slug !== post.slug && p.category === post.category)
     .slice(0, 3);
 
+  // Article schema markup for SEO
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": post.title,
+    "description": post.excerpt,
+    "image": post.image ? `https://motherapy.ca${post.image}` : "https://motherapy.ca/og-blog.jpg",
+    "datePublished": post.date,
+    "dateModified": post.date,
+    "author": {
+      "@type": "Organization",
+      "name": post.author,
+      "url": "https://motherapy.ca"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "M.O. Therapy",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://motherapy.ca/logo.png"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": `https://motherapy.ca/blog/${slug}`
+    },
+    "articleSection": post.category,
+    "keywords": post.tags.join(", ")
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://motherapy.ca"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://motherapy.ca/blog"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": post.title,
+        "item": `https://motherapy.ca/blog/${slug}`
+      }
+    ]
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <Header />
       <main className="pt-24">
         {/* Hero Section */}

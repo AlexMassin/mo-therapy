@@ -2,9 +2,11 @@ import { Metadata } from 'next';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import BookingButton from '@/components/BookingButton';
-import { Shield, Award, Users, Target, Heart, CheckCircle } from 'lucide-react';
+import { Shield, Award, Users, Target, Heart, CheckCircle, Camera } from 'lucide-react';
 import { getImagePath } from '@/lib/assets';
-import GradientText from '@/components/GradientText';
+import Image from 'next/image';
+import Link from 'next/link';
+import TeamGalleryCreative from '@/components/TeamGalleryCreative';
 
 export const metadata: Metadata = {
   title: 'About M.O. Therapy - Expert Athletic Care Team in Markham',
@@ -78,9 +80,91 @@ const stats = [
   { number: '4.9/5', label: 'Patient Satisfaction' }
 ];
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://motherapy.ca"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "About",
+      "item": "https://motherapy.ca/about"
+    }
+  ]
+};
+
+// Team group photos
+const teamPhotos = [
+  {
+    src: '/team/DSC00428.JPG',
+    alt: 'M.O. Therapy team collaborating on patient care strategies in Markham clinic',
+    caption: 'Our team working together for your best care'
+  },
+  {
+    src: '/team/DSC00429.JPG',
+    alt: 'M.O. Therapy healthcare professionals during team meeting at Markham location',
+    caption: 'Continuous learning and development'
+  },
+  {
+    src: '/team/DSC00441.JPG',
+    alt: 'M.O. Therapy physiotherapists, RMTs, and chiropractors in group discussion',
+    caption: 'Collaborative multidisciplinary approach'
+  },
+  {
+    src: '/team/DSC00467.JPG',
+    alt: 'M.O. Therapy team members in modern clinic facility on Apple Creek Blvd',
+    caption: 'Modern facilities for optimal care'
+  },
+  {
+    src: '/team/DSC00475.JPG',
+    alt: 'M.O. Therapy staff demonstrating teamwork and professional excellence',
+    caption: 'Excellence through teamwork'
+  },
+  {
+    src: '/team/DSC00489.JPG',
+    alt: 'M.O. Therapy healthcare team at their Markham sports medicine clinic',
+    caption: 'Your trusted healthcare partners'
+  },
+  {
+    src: '/team/DSC00498.JPG',
+    alt: 'M.O. Therapy practitioners showcasing clinic environment and team culture',
+    caption: 'A welcoming, professional environment'
+  },
+  {
+    src: '/team/DSC00525.JPG',
+    alt: 'M.O. Therapy team gathering showcasing clinic culture and values',
+    caption: 'Building a culture of care'
+  },
+  {
+    src: '/team/DSC00534.JPG',
+    alt: 'M.O. Therapy licensed professionals at work in their practice',
+    caption: 'Dedicated to your recovery'
+  },
+  {
+    src: '/team/DSC00546.JPG',
+    alt: 'M.O. Therapy team demonstrating commitment to patient-centered care',
+    caption: 'Patient-first approach'
+  },
+  {
+    src: '/team/DSC00557.JPG',
+    alt: 'M.O. Therapy complete healthcare team at their Markham facility',
+    caption: 'Together, we achieve more'
+  }
+];
+
 export default function AboutPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <Header />
       <main className="pt-20">
         {/* Hero Section */}
@@ -89,7 +173,7 @@ export default function AboutPage() {
             <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 xl:gap-24 items-center">
               <div>
                 <h1 className="heading-xl text-white mb-6">
-                  About <GradientText animationSpeed={3} colors={['#0ea5e9', '#40c6e5', '#5ce3fa', '#0284c7']} className="inline font-bold">M.O. Therapy</GradientText>
+                  About <span className="text-primary-400 font-bold">M.O. Therapy</span>
                 </h1>
                 <p className="text-xl text-primary-100 leading-relaxed mb-8">
                   Founded with a passion for helping athletes and active individuals achieve their peak potential, 
@@ -105,8 +189,8 @@ export default function AboutPage() {
                 <div className="aspect-[4/3] bg-gradient-to-br from-primary-800 to-primary-400 rounded-2xl p-6 shadow-soft">
                   <div className="w-full h-full bg-white rounded-xl shadow-soft overflow-hidden relative">
                     <img 
-                      src={getImagePath("/team/mo-team-celebration.jpg")}
-                      alt="M.O. Therapy team celebrating together in the clinic"
+                      src={getImagePath("/team/DSC00428.JPG")}
+                      alt="M.O. Therapy team collaborating and working together in the clinic"
                       className="w-full h-full object-cover"
                     />
                     {/* Overlay with team info */}
@@ -165,7 +249,7 @@ export default function AboutPage() {
           <div className="container-custom">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <h2 className="heading-lg text-gray-900 mb-6">
-                Our <GradientText animationSpeed={3} colors={['#0ea5e9', '#40c6e5', '#5ce3fa', '#0284c7']} className="inline font-bold">Core Values</GradientText>
+                Our <span className="text-primary-600 font-bold">Core Values</span>
               </h2>
               <p className="text-xl text-gray-600">
                 These principles guide everything we do and ensure every patient receives the highest quality care.
@@ -238,17 +322,100 @@ export default function AboutPage() {
               </div>
               <div className="relative">
                 <div className="aspect-square bg-gradient-to-br from-primary-800 to-primary-400 rounded-2xl p-8 shadow-soft">
-                  <div className="w-full h-full bg-white rounded-xl shadow-soft flex items-center justify-center">
-                    <div className="text-center space-y-4">
-                      <div className="w-20 h-20 bg-green-600 rounded-full mx-auto flex items-center justify-center">
-                        <Users className="h-10 w-10 text-white" />
+                  <div className="w-full h-full bg-white rounded-xl shadow-soft overflow-hidden relative">
+                    <img 
+                      src={getImagePath("/team/DSC00467.JPG")}
+                      alt="M.O. Therapy team excellence - dedicated healthcare professionals in modern Markham clinic"
+                      className="w-full h-full object-cover"
+                    />
+                    {/* Overlay with team info */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent">
+                      <div className="absolute bottom-6 left-6 right-6">
+                        <div className="flex items-center gap-3 mb-3">
+                          <div className="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center">
+                            <Users className="h-6 w-6 text-white" />
+                          </div>
+                        </div>
+                        <h3 className="text-2xl font-bold text-white mb-2">Team Excellence</h3>
+                        <p className="text-white text-sm">Dedicated professionals committed to your success</p>
                       </div>
-                      <h3 className="text-xl font-semibold text-gray-900">Team Excellence</h3>
-                      <p className="text-gray-600">Dedicated professionals committed to your success</p>
                     </div>
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Team Culture & Gallery Section */}
+        <section className="section-padding bg-gradient-to-br from-gray-50 to-white">
+          <div className="container-custom">
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary-100 text-primary-800 rounded-full text-sm font-medium mb-6">
+                <Camera className="h-4 w-4" />
+                Behind the Scenes
+              </div>
+              <h2 className="heading-lg text-gray-900 mb-6">
+                Our Team <span className="text-primary-600 font-bold">In Action</span>
+              </h2>
+              <p className="text-xl text-gray-600">
+                Get a glimpse into our collaborative, patient-focused environment where excellence meets compassion. 
+                These photos showcase our team culture and the dedication we bring to every patient interaction.
+              </p>
+            </div>
+
+            <TeamGalleryCreative photos={teamPhotos} />
+          </div>
+        </section>
+
+        {/* Team Member Grid Section */}
+        <section className="section-padding bg-white">
+          <div className="container-custom">
+            <div className="text-center max-w-3xl mx-auto mb-12">
+              <h2 className="heading-lg text-gray-900 mb-6">
+                Meet Your <span className="text-primary-600 font-bold">Care Team</span>
+              </h2>
+              <p className="text-xl text-gray-600">
+                Our diverse team of licensed professionals is here to support your health journey.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 mb-12">
+              {[
+                { name: "Dillon", title: "RMT", image: "/team/dillon.png" },
+                { name: "Damian", title: "RMT", image: "/team/damian.png" },
+                { name: "Carrie", title: "PT", image: "/team/carrie.png" },
+                { name: "Smit", title: "DC", image: "/team/smit.png" },
+                  { name: "Jeremy", title: "RMT", image: "/team/jeremy.png" },
+                  { name: "Shruti", title: "RMT", image: "/team/shruti.png" },
+                  { name: "Nadeem", title: "PT", image: "/team/nadeem.png" },
+                  { name: "Nathan", title: "PT", image: "/team/nathan.png" },
+                { name: "Taylor", title: "DC", image: "/team/taylor.png" },
+              ].map((member) => (
+                <div key={member.name} className="group text-center">
+                  <div className="aspect-square relative overflow-hidden rounded-2xl mb-3 bg-gradient-to-br from-primary-100 to-primary-50 shadow-lg">
+                    <Image
+                      src={getImagePath(member.image)}
+                      alt={`${member.name} - ${member.title} at M.O. Therapy`}
+                      fill
+                      className="object-cover group-hover:scale-110 transition-transform duration-500"
+                      sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 20vw"
+                    />
+                  </div>
+                  <h3 className="font-semibold text-gray-900 text-sm">{member.name}</h3>
+                  <p className="text-primary-600 text-xs font-medium">{member.title}</p>
+                </div>
+              ))}
+            </div>
+
+            <div className="text-center">
+              <Link
+                href="/team"
+                className="inline-flex items-center gap-2 text-primary-600 hover:text-primary-700 font-semibold text-lg"
+              >
+                <Users className="h-5 w-5" />
+                Learn More About Our Team
+              </Link>
             </div>
           </div>
         </section>

@@ -3,16 +3,17 @@
 import Link from 'next/link';
 import { Activity, Heart, Zap, Compass, ArrowRight } from 'lucide-react';
 import { trackEvent } from '@/components/Analytics';
-import GradientText from '@/components/GradientText';
 
 const services = [
   {
     icon: Activity,
     title: 'Physiotherapy',
-    description: 'Comprehensive movement assessment and targeted treatment to restore function, strength, and mobility for optimal athletic performance.',
+    description: 'Comprehensive movement assessment and targeted treatment to restore function, strength, and mobility for optimal performance and daily living.',
     features: [
       'Sports injury rehabilitation',
+      'Postural dysfunction from desk work',
       'Movement pattern analysis', 
+      'Repetitive strain injuries',
       'Performance optimization',
       'Post-surgical recovery'
     ],
@@ -21,13 +22,15 @@ const services = [
   },
   {
     icon: Heart,
-    title: 'Sports Massage Therapy',
-    description: 'Specialized massage techniques designed to enhance circulation, reduce muscle tension, and accelerate recovery for active individuals.',
+    title: 'Massage Therapy',
+    description: 'Therapeutic massage techniques for recovery, relaxation, and wellness—from sports performance to stress relief and preventative care.',
     features: [
       'Deep tissue massage',
+      'Stress and tension relief',
+      'Workplace ergonomic support',
       'Pre/post-event massage',
       'Trigger point therapy',
-      'Myofascial release'
+      'Preventative wellness care'
     ],
     href: '/services/massage-therapy',
     color: 'green'
@@ -98,11 +101,11 @@ export default function Services() {
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="heading-lg text-gray-900 mb-6">
-            Comprehensive Care for <GradientText animationSpeed={3} colors={['#0ea5e9', '#40c6e5', '#5ce3fa', '#0284c7']} className="inline font-bold">Peak Athletic Performance</GradientText>
+            Comprehensive Care for <span className="text-primary-600 font-bold">Performance & Wellness</span>
           </h2>
           <p className="text-xl text-gray-600">
-            Our integrated approach combines multiple therapeutic disciplines to address the root cause of your concerns 
-            and optimize your athletic potential.
+            Our integrated approach combines multiple therapeutic disciplines to address the root cause of your concerns—whether you're 
+            optimizing athletic performance, seeking stress relief, or prioritizing preventative wellness care.
           </p>
         </div>
 

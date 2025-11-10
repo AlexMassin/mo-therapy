@@ -1,6 +1,6 @@
-'use client';
+import Script from 'next/script';
 
-import { useEffect } from 'react';
+const GA_MEASUREMENT_ID = 'G-9D2S09F346';
 
 declare global {
   interface Window {
@@ -10,49 +10,47 @@ declare global {
 }
 
 export function Analytics() {
-  useEffect(() => {
-    // Only load Google Analytics in production
-    if (process.env.NODE_ENV === 'production' && process.env.NEXT_PUBLIC_GA_ID) {
-      // Load Google Analytics script
-      const script = document.createElement('script');
-      script.src = `https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`;
-      script.async = true;
-      document.head.appendChild(script);
-
-      // Initialize Google Analytics
-      window.gtag = function gtag() {
-        window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push(arguments);
-      };
-
-      window.gtag('js', new Date().toString());
-      window.gtag('config', process.env.NEXT_PUBLIC_GA_ID, {
-        page_title: document.title,
-        page_location: window.location.href,
-      });
-
-      return () => {
-        // Cleanup script on unmount
-        const existingScript = document.querySelector(
-          `script[src*="googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}"]`
-        );
-        if (existingScript) {
-          document.head.removeChild(existingScript);
-        }
-      };
-    }
-  }, []);
-
-  return null;
+  return (
+    <>
+      {/* Google Analytics - gtag.js */}
+      <Script
+        strategy="afterInteractive"
+        src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+      />
+      <Script
+        id="google-analytics"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_MEASUREMENT_ID}', {
+              page_path: window.location.pathname,
+            });
+          `,
+        }}
+      />
+    </>
+  );
 }
 
-// Helper function to track events
+// Helper function to track custom events
 export const trackEvent = (action: string, category: string, label?: string, value?: number) => {
   if (typeof window !== 'undefined' && window.gtag) {
     window.gtag('event', action, {
       event_category: category,
       event_label: label,
       value: value,
+    });
+  }
+};
+
+// Helper function to track page views (useful for client-side navigation)
+export const trackPageView = (url: string) => {
+  if (typeof window !== 'undefined' && window.gtag) {
+    window.gtag('config', GA_MEASUREMENT_ID, {
+      page_path: url,
     });
   }
 };

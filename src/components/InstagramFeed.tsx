@@ -1,7 +1,6 @@
 'use client';
 
 import { Instagram, Play, Heart, MessageCircle } from 'lucide-react';
-import GradientText from './GradientText';
 import Image from 'next/image';
 import { getImagePath } from '@/lib/assets';
 
@@ -57,7 +56,7 @@ export default function InstagramFeed() {
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="heading-lg text-white mb-6">
-            Latest from <GradientText animationSpeed={3} colors={['#0ea5e9', '#40c6e5', '#5ce3fa', '#0284c7']} className="inline font-bold">@m.o.therapy</GradientText>
+            Latest from <span className="text-primary-400 font-bold">@m.o.therapy</span>
           </h2>
           <p className="text-xl text-gray-300 mb-6">
             Stay up to date with tips, success stories, and behind-the-scenes content

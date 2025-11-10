@@ -5,18 +5,25 @@ import Services from '@/components/Services';
 import BookingButton from '@/components/BookingButton';
 import { Activity, Heart, Zap, Compass, Shield, Target } from 'lucide-react';
 import { getImagePath } from '@/lib/assets';
-import GradientText from '@/components/GradientText';
+import Image from 'next/image';
+import OptimizedImage from '@/components/OptimizedImage';
 
 export const metadata: Metadata = {
   title: 'Our Services - Physiotherapy, Massage & Chiropractic Care | M.O. Therapy',
-  description: 'Comprehensive therapeutic services for athletes in Markham. Physiotherapy, registered massage therapy, chiropractic care, and osteopathy for peak performance. Book your appointment today.',
+  description: 'Comprehensive therapeutic services for athletes and wellness clients in Markham. Physiotherapy, massage therapy, chiropractic care for peak performance, stress relief, and preventative wellness. Book your appointment today.',
   keywords: [
     'physiotherapy services Markham',
     'massage therapy services Markham',
+    'wellness massage Markham',
+    'relaxation therapy Markham',
+    'corporate wellness Markham',
     'chiropractic care Markham',
     'osteopathy services Markham',
     'sports therapy Markham',
     'athletic treatment services',
+    'ergonomic assessment Markham',
+    'stress relief massage',
+    'preventative care Markham',
     'MMA physiotherapy Markham',
     'BJJ injury treatment',
     'Muay Thai therapy services',
@@ -79,19 +86,23 @@ const serviceDetails = [
   {
     icon: Heart,
     title: 'Registered Massage Therapy',
-    description: 'Therapeutic massage designed to enhance recovery, reduce muscle tension, and improve circulation for optimal athletic performance.',
+    description: 'Therapeutic massage for recovery, relaxation, and wellness. From sports performance to stress relief and preventative care—insurance coverage available.',
     treatments: [
       'Deep tissue massage',
       'Sports massage therapy',
+      'Stress relief and relaxation massage',
       'Trigger point release',
       'Myofascial release',
       'Lymphatic drainage',
-      'Pre and post-event massage'
+      'Pre and post-event massage',
+      'Workplace ergonomic support'
     ],
     conditions: [
       'Muscle tension and stiffness',
       'Sports-related muscle injuries',
       'Stress and anxiety management',
+      'Workplace stress and desk posture',
+      'Repetitive strain prevention',
       'Circulation improvement',
       'Recovery enhancement',
       'Performance maintenance'
@@ -177,11 +188,11 @@ export default function ServicesPage() {
           <div className="container-custom">
             <div className="text-center max-w-4xl mx-auto">
               <h1 className="heading-xl text-white mb-6">
-                Comprehensive <GradientText animationSpeed={3} colors={['#0ea5e9', '#40c6e5', '#5ce3fa', '#0284c7']} className="inline font-bold">Athletic Care</GradientText> Services
+                Comprehensive <span className="text-primary-400 font-bold">Performance & Wellness</span> Services
               </h1>
               <p className="text-xl text-primary-100 leading-relaxed">
-                Our integrated approach combines multiple therapeutic disciplines to provide comprehensive care 
-                that addresses the root cause of your concerns and optimizes your athletic potential.
+                Our integrated approach combines multiple therapeutic disciplines to provide comprehensive care—whether 
+                you're optimizing athletic performance, seeking stress relief, or prioritizing preventative wellness.
               </p>
             </div>
           </div>
@@ -202,26 +213,26 @@ export default function ServicesPage() {
                       <div className="aspect-square bg-gradient-to-br from-primary-800 to-primary-400 rounded-2xl p-6 shadow-soft">
                         <div className="w-full h-full bg-white rounded-xl shadow-soft overflow-hidden relative">
                           {service.title === 'Physiotherapy' ? (
-                            <img 
-                              src={getImagePath("/services/physiotherapy.png")}
+                            <OptimizedImage 
+                              src="/services/physiotherapy.png"
                               alt="Professional physiotherapy treatment session at M.O. Therapy"
                               className="w-full h-full object-cover"
                             />
                           ) : service.title === 'Registered Massage Therapy' ? (
-                            <img 
-                              src={getImagePath("/services/massage-therapy.png")}
+                            <OptimizedImage 
+                              src="/services/massage-therapy.png"
                               alt="Professional registered massage therapy session at M.O. Therapy"
                               className="w-full h-full object-cover"
                             />
                           ) : service.title === 'Chiropractic Care' ? (
-                            <img 
-                              src={getImagePath("/services/chiropractor.png")}
+                            <OptimizedImage 
+                              src="/services/chiropractor.png"
                               alt="Professional chiropractic care treatment at M.O. Therapy"
                               className="w-full h-full object-cover"
                             />
                           ) : service.title === 'Osteopathy' ? (
-                            <img 
-                              src={getImagePath("/services/osteopath.png")}
+                            <OptimizedImage 
+                              src="/services/osteopath.png"
                               alt="Professional osteopathy treatment session at M.O. Therapy"
                               className="w-full h-full object-cover"
                             />
@@ -303,8 +314,8 @@ export default function ServicesPage() {
               <div className="order-1 lg:order-2">
                 <div className="aspect-[4/3] bg-gradient-to-br from-primary-800 to-primary-400 rounded-2xl p-6 shadow-soft">
                   <div className="w-full h-full bg-white rounded-xl shadow-soft overflow-hidden relative">
-                    <img 
-                      src={getImagePath("/services/combat-sports-treatment.jpg")}
+                    <OptimizedImage 
+                      src="/services/combat-sports-treatment.jpg"
                       alt="MMA, BJJ, and Muay Thai fighter receiving specialized physiotherapy treatment at M.O. Therapy in Markham"
                       className="w-full h-full object-cover"
                     />
@@ -372,6 +383,191 @@ export default function ServicesPage() {
                 >
                   Book Fighter Assessment
                 </BookingButton>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Corporate Wellness & Preventative Care Section */}
+        <section className="section-padding bg-white">
+          <div className="container-custom">
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 xl:gap-20 items-center">
+              {/* Content */}
+              <div className="order-1 px-4 sm:px-6 lg:px-0">
+                <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary-100 text-primary-800 rounded-full text-sm font-medium mb-6">
+                  <Shield className="h-4 w-4" />
+                  Corporate Wellness Programs
+                </div>
+                <h2 className="heading-lg text-gray-900 mb-6">
+                  <span className="text-primary-600 font-bold">Workplace Wellness</span> & Preventative Care
+                </h2>
+                <p className="text-xl text-gray-600 mb-6">
+                  Designed for busy professionals seeking stress relief, injury prevention, and optimal work-life balance. 
+                  Our clinical wellness approach focuses on <strong>ergonomics</strong>, <strong>preventative care</strong>, and <strong>stress management</strong>.
+                </p>
+                <p className="text-lg text-gray-600 mb-8">
+                  No injury required—use your extended health benefits for regular self-care and wellness maintenance. 
+                  Our team provides targeted care to address workplace stress, postural dysfunction, and repetitive strain injuries.
+                </p>
+
+                <div className="space-y-4 mb-8">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-4">Corporate Wellness Benefits:</h3>
+                  <div className="grid gap-3">
+                    {[
+                      'Ergonomic desk assessments and posture correction',
+                      'Stress relief and tension management',
+                      'Repetitive strain injury prevention',
+                      'Headache and neck pain relief',
+                      'Regular maintenance and preventative care',
+                      'Workplace productivity optimization',
+                      'Insurance-covered wellness massage',
+                      'Flexible appointment scheduling for professionals'
+                    ].map((benefit, index) => (
+                      <div key={index} className="flex items-start gap-3">
+                        <div className="w-1.5 h-1.5 rounded-full bg-primary-600 mt-2.5 flex-shrink-0"></div>
+                        <p className="text-gray-700">{benefit}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="bg-gradient-to-br from-primary-50 to-blue-50 rounded-xl p-6 mb-8 border border-primary-100">
+                  <h4 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
+                    <Shield className="h-5 w-5 text-primary-600" />
+                    Insurance Coverage for Wellness Care
+                  </h4>
+                  <p className="text-gray-700 text-sm mb-4">
+                    Many extended health plans cover massage therapy and physiotherapy for general wellness and preventative care—not just injury treatment.
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="px-3 py-1 bg-white rounded-full text-xs font-medium text-gray-700 border border-primary-100">Direct Billing</span>
+                    <span className="px-3 py-1 bg-white rounded-full text-xs font-medium text-gray-700 border border-primary-100">Most Plans Accepted</span>
+                    <span className="px-3 py-1 bg-white rounded-full text-xs font-medium text-gray-700 border border-primary-100">Wellness Coverage</span>
+                  </div>
+                </div>
+
+                <BookingButton
+                  className="bg-primary-600 hover:bg-primary-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 shadow-soft hover:shadow-medium"
+                  trackingLabel="corporate_wellness_booking"
+                >
+                  Book Wellness Assessment
+                </BookingButton>
+              </div>
+
+              {/* Image */}
+              <div className="order-2">
+                <div className="aspect-square bg-gradient-to-br from-primary-800 to-primary-400 rounded-2xl p-8 shadow-soft">
+                  <div className="w-full h-full bg-white rounded-xl shadow-soft overflow-hidden relative">
+                    <OptimizedImage 
+                      src="/team/DSC00525.JPG"
+                      alt="Professional wellness care at M.O. Therapy for corporate clients in Markham"
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent">
+                      <div className="absolute bottom-4 left-4 right-4">
+                        <div className="flex items-center gap-3">
+                          <div className="w-10 h-10 bg-primary-400 rounded-full flex items-center justify-center">
+                            <Heart className="h-5 w-5 text-white" />
+                          </div>
+                          <div>
+                            <h3 className="text-lg font-bold text-white">Wellness Focused</h3>
+                            <p className="text-primary-100 text-sm">Preventative Care Expertise</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Meet Your Practitioners Section with Team Photos */}
+        <section className="section-padding bg-gray-50">
+          <div className="container-custom">
+            <div className="grid lg:grid-cols-2 gap-12 items-center mb-12">
+              {/* Team Photos Collage */}
+              <div className="order-2 lg:order-1">
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="space-y-4">
+                    <div className="aspect-square rounded-2xl overflow-hidden shadow-lg">
+                      <OptimizedImage 
+                        src="/team/DSC00441.JPG"
+                        alt="M.O. Therapy team collaboration"
+                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                      />
+                    </div>
+                    <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-lg">
+                      <OptimizedImage 
+                        src="/team/DSC00475.JPG"
+                        alt="M.O. Therapy practitioners"
+                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                      />
+                    </div>
+                  </div>
+                  <div className="space-y-4 mt-8">
+                    <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-lg">
+                      <OptimizedImage 
+                        src="/team/DSC00429.JPG"
+                        alt="M.O. Therapy team meeting"
+                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                      />
+                    </div>
+                    <div className="aspect-square rounded-2xl overflow-hidden shadow-lg">
+                      <OptimizedImage 
+                        src="/team/mo-team-celebration.jpg"
+                        alt="M.O. Therapy team celebration"
+                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Content */}
+              <div className="order-1 lg:order-2">
+                <div className="text-center lg:text-left mb-8">
+                  <h2 className="heading-lg text-gray-900 mb-6">
+                    Meet Your <span className="text-primary-600 font-bold">Care Team</span>
+                  </h2>
+                  <p className="text-xl text-gray-600 mb-8">
+                    Our licensed practitioners bring specialized expertise to every treatment session.
+                  </p>
+                </div>
+
+                <div className="grid grid-cols-3 gap-4">
+                  {[
+                    { name: "Dillon", title: "RMT", image: "/team/dillon.png", specialty: "Massage Therapy" },
+                    { name: "Carrie", title: "PT", image: "/team/carrie.png", specialty: "Physiotherapy" },
+                    { name: "Smit", title: "DC", image: "/team/smit.png", specialty: "Chiropractic" },
+                    { name: "Jeremy", title: "RMT", image: "/team/jeremy.png", specialty: "Massage & FST" },
+                    { name: "Nathan", title: "PT", image: "/team/nathan.png", specialty: "Physiotherapy" },
+                  ].map((member) => (
+                    <div key={member.name} className="group text-center">
+                      <div className="aspect-square relative overflow-hidden rounded-xl mb-2 bg-gradient-to-br from-primary-100 to-primary-50">
+                        <Image
+                          src={getImagePath(member.image)}
+                          alt={`${member.name} - ${member.title} at M.O. Therapy`}
+                          fill
+                          className="object-cover group-hover:scale-110 transition-transform duration-500"
+                          sizes="(max-width: 768px) 33vw, (max-width: 1200px) 20vw, 15vw"
+                        />
+                      </div>
+                      <h3 className="font-bold text-gray-900 text-sm">{member.name}</h3>
+                      <p className="text-primary-600 text-xs font-medium">{member.title}</p>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="text-center lg:text-left mt-8">
+                  <a
+                    href="/team"
+                    className="inline-flex items-center gap-2 text-primary-600 hover:text-primary-700 font-semibold"
+                  >
+                    View Full Team <Target className="h-4 w-4" />
+                  </a>
+                </div>
               </div>
             </div>
           </div>

@@ -1,117 +1,104 @@
 'use client';
 
 import { Building2 } from 'lucide-react';
-import GradientText from './GradientText';
 import Image from 'next/image';
 import { getImagePath } from '@/lib/assets';
 
 const sponsors = [
   {
     name: "Orangetheory Markham",
-    category: "Fitness Partner",
-    logo: "/partners/orangetheory.png"
+    logo: "/partners/orangetheory.png",
+    category: "Fitness Partner"
   },
   {
-    name: "F45 Jefferson",
-    category: "Training Partner",
-    logo: "/partners/jefferson.png"
+    name: "Function Health Club",
+    logo: "/partners/function.png",
+    category: "Fitness Partner"
   },
   {
-    name: "BMW Autohaus",
-    category: "Corporate Partner",
-    logo: "/partners/bmw.png"
+    name: "Soul Asylum Gym",
+    logo: "/partners/soul.png",
+    category: "Training Partner"
   },
   {
-    name: "Mercedes-Benz Markham",
-    category: "Corporate Partner",
-    logo: "/partners/mercedes.png"
-  },
-  {
-    name: "Function Pilates",
-    category: "Wellness Partner",
-    logo: "/partners/function.png"
-  },
-  {
-    name: "Soul Martial Arts",
-    category: "Athletic Partner",
-    logo: "/partners/soul.png"
+    name: "Jefferson Fitness",
+    logo: "/partners/jefferson.png",
+    category: "Fitness Partner"
   },
   {
     name: "Markham Stouffville Hospital",
-    category: "Healthcare Partner",
-    logo: "/partners/markham-hospital.png"
+    logo: "/partners/markham-hospital.png",
+    category: "Healthcare Partner"
+  },
+  {
+    name: "BMW",
+    logo: "/partners/bmw.png",
+    category: "Corporate Partner"
+  },
+  {
+    name: "Mercedes-Benz",
+    logo: "/partners/mercedes.png",
+    category: "Corporate Partner"
   }
 ];
 
 export default function Sponsors() {
   return (
-    <section className="section-padding bg-gradient-to-br from-white via-gray-50 to-primary-50">
+    <section className="section-padding bg-white">
       <div className="container-custom">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-gray-50 rounded-full text-sm font-medium text-gray-600 mb-6">
+            <Building2 className="h-4 w-4" />
+            Trusted Partners
+          </div>
           <h2 className="heading-lg text-gray-900 mb-6">
-            Our <GradientText animationSpeed={3} colors={['#0ea5e9', '#40c6e5', '#5ce3fa', '#0284c7']} className="inline font-bold">Partners & Supporters</GradientText>
+            Collaborating with <span className="text-primary-600 font-bold">Leading Organizations</span>
           </h2>
           <p className="text-xl text-gray-600">
-            Proud to collaborate with leading organizations in our community
+            Proud to work with exceptional partners who share our commitment to health, wellness, and community
           </p>
         </div>
 
-        {/* Sponsors Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-8">
+        {/* Sponsors Grid - Minimalistic */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8 mb-12">
           {sponsors.map((sponsor, index) => {
             return (
               <div
                 key={index}
-                className="group bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-primary-200 hover:-translate-y-1"
+                className="group flex items-center justify-center p-8 bg-gray-50 rounded-xl hover:bg-white hover:shadow-lg transition-all duration-300"
               >
-                <div className="flex flex-col items-center text-center">
-                  {/* Logo */}
-                  <div className="w-full h-32 relative mb-6 flex items-center justify-center">
-                    <Image
-                      src={getImagePath(sponsor.logo)}
-                      alt={`${sponsor.name} logo`}
-                      width={200}
-                      height={128}
-                      className="object-contain max-h-24"
-                    />
-                  </div>
-
-                  {/* Name */}
-                  <h3 className="font-bold text-lg text-gray-900 mb-2">
-                    {sponsor.name}
-                  </h3>
-
-                  {/* Category */}
-                  <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary-100 text-primary-700">
-                    {sponsor.category}
-                  </span>
+                <div className="w-full h-24 relative flex items-center justify-center">
+                  <Image
+                    src={getImagePath(sponsor.logo)}
+                    alt={`${sponsor.name} logo`}
+                    width={180}
+                    height={96}
+                    className="object-contain max-h-20 grayscale group-hover:grayscale-0 transition-all duration-300 opacity-60 group-hover:opacity-100"
+                  />
                 </div>
               </div>
             );
           })}
         </div>
 
-        {/* Partnership CTA */}
-        <div className="mt-16 text-center">
-          <div className="inline-flex flex-col items-center gap-4 bg-gradient-to-br from-primary-900 to-primary-700 rounded-3xl px-10 py-12 shadow-xl text-white max-w-2xl">
-            <Building2 className="h-12 w-12 text-primary-200" />
-            <h3 className="text-2xl font-bold">
-              Interested in Partnering with Us?
-            </h3>
-            <p className="text-primary-100 text-lg">
-              We&apos;re always looking to collaborate with organizations that share our commitment to health, wellness, and community support.
-            </p>
-            <a
-              href="/contact"
-              className="inline-flex items-center gap-2 bg-white text-primary-600 px-8 py-4 rounded-lg font-semibold hover:bg-primary-50 transition-colors duration-200 shadow-lg"
-            >
-              Get in Touch
-            </a>
-          </div>
+        {/* Partnership CTA - Simplified */}
+        <div className="max-w-4xl mx-auto text-center bg-gray-50 rounded-2xl p-12">
+          <Building2 className="h-12 w-12 text-primary-600 mx-auto mb-6" />
+          <h3 className="text-2xl font-bold text-gray-900 mb-4">
+            Partner with M.O. Therapy
+          </h3>
+          <p className="text-gray-600 text-lg mb-8 max-w-2xl mx-auto">
+            We collaborate with organizations that share our commitment to health, wellness, and community support.
+          </p>
+          <a
+            href="/contact"
+            className="btn-primary inline-flex items-center gap-2"
+          >
+            Get in Touch
+          </a>
         </div>
       </div>
     </section>
   );
 }
-

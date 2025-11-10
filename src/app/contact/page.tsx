@@ -2,8 +2,9 @@ import { Metadata } from 'next';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import BookingButton from '@/components/BookingButton';
-import { Phone, Mail, MapPin, Clock, Calendar, MessageCircle } from 'lucide-react';
-import GradientText from '@/components/GradientText';
+import { Phone, Mail, MapPin, Clock, Calendar, MessageCircle, Users } from 'lucide-react';
+import Image from 'next/image';
+import { getImagePath } from '@/lib/assets';
 
 export const metadata: Metadata = {
   title: 'Contact M.O. Therapy - Book Your Appointment in Markham',
@@ -81,9 +82,32 @@ const hours = [
   { day: 'Sunday', time: '9:00 AM - 4:00 PM' },
 ];
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://motherapy.ca"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Contact",
+      "item": "https://motherapy.ca/contact"
+    }
+  ]
+};
+
 export default function ContactPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <Header />
       <main className="pt-20">
         {/* Hero Section */}
@@ -91,7 +115,7 @@ export default function ContactPage() {
           <div className="container-custom">
             <div className="text-center max-w-4xl mx-auto">
               <h1 className="heading-xl text-white mb-6">
-                Contact <GradientText animationSpeed={3} colors={['#0ea5e9', '#40c6e5', '#5ce3fa', '#0284c7']} className="inline font-bold">M.O. Therapy</GradientText>
+                Contact <span className="text-primary-400 font-bold">M.O. Therapy</span>
               </h1>
               <p className="text-xl text-primary-100 leading-relaxed mb-8">
                 Ready to start your journey to better health and performance? We&apos;re here to help you every step of the way.
@@ -189,13 +213,88 @@ export default function ContactPage() {
           </div>
         </section>
 
+        {/* Team Preview with Group Photo */}
+        <section className="section-padding bg-white">
+          <div className="container-custom">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              {/* Team Group Photo */}
+              <div className="order-2 lg:order-1">
+                <div className="relative">
+                  <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
+                    <img 
+                      src={getImagePath("/team/DSC00429.JPG")}
+                      alt="M.O. Therapy team ready to help"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  {/* Overlay with team stat */}
+                  <div className="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur-sm rounded-xl p-4 shadow-lg">
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <div className="text-2xl font-bold text-gray-900">9+ Professionals</div>
+                        <div className="text-sm text-gray-600">Ready to assist you</div>
+                      </div>
+                      <Users className="h-12 w-12 text-primary-600" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Team Grid */}
+              <div className="order-1 lg:order-2">
+                <div className="text-center lg:text-left mb-8">
+                  <h2 className="heading-lg text-gray-900 mb-6">
+                    Meet Our <span className="text-primary-600 font-bold">Care Team</span>
+                  </h2>
+                  <p className="text-xl text-gray-600 mb-8">
+                    When you contact us, you&apos;ll be greeted by our friendly, professional team.
+                  </p>
+                </div>
+
+                <div className="grid grid-cols-3 gap-4 mb-8">
+                  {[
+                    { name: "Dillon", image: "/team/dillon.png" },
+                    { name: "Carrie", image: "/team/carrie.png" },
+                      { name: "Smit", image: "/team/smit.png" },
+                      { name: "Jeremy", image: "/team/jeremy.png" },
+                      { name: "Taylor", image: "/team/taylor.png" },
+                  ].map((member) => (
+                    <div key={member.name} className="group text-center">
+                      <div className="aspect-square relative overflow-hidden rounded-xl mb-2 bg-gradient-to-br from-primary-100 to-primary-50">
+                        <Image
+                          src={getImagePath(member.image)}
+                          alt={`${member.name} at M.O. Therapy`}
+                          fill
+                          className="object-cover group-hover:scale-110 transition-transform duration-300"
+                          sizes="(max-width: 768px) 33vw, (max-width: 1200px) 20vw, 15vw"
+                        />
+                      </div>
+                      <p className="font-medium text-gray-900 text-sm">{member.name}</p>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="text-center lg:text-left">
+                  <a
+                    href="/team"
+                    className="inline-flex items-center gap-2 text-primary-600 hover:text-primary-700 font-semibold"
+                  >
+                    <Users className="h-4 w-4" />
+                    Meet the Full Team
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Contact Form */}
         <section className="section-padding bg-gray-50">
           <div className="container-custom">
             <div className="max-w-4xl mx-auto">
               <div className="text-center mb-12">
                 <h2 className="heading-lg text-gray-900 mb-6">
-                  Send Us a <GradientText animationSpeed={3} colors={['#0ea5e9', '#40c6e5', '#5ce3fa', '#0284c7']} className="inline font-bold">Message</GradientText>
+                  Send Us a <span className="text-primary-600 font-bold">Message</span>
                 </h2>
                 <p className="text-xl text-gray-600">
                   Have a question about our services? We&apos;d love to hear from you.

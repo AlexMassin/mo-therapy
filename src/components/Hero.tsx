@@ -56,6 +56,8 @@ export default function Hero() {
                   loop
                   playsInline
                   className="w-full h-full object-cover"
+                  aria-label="M.O. Therapy clinic showcase video featuring our expert team, modern facilities, and patient care services"
+                  title="M.O. Therapy - Expert Physiotherapy and Sports Medicine in Markham"
                 >
                   Your browser does not support the video tag.
                 </video>
@@ -85,7 +87,7 @@ export default function Hero() {
                   Your M.O. is{' '}
                 </motion.span>
                 <RotatingText
-                  texts={['your hustle', 'pain free', 'limitless', 'performance', 'here']}
+                  texts={['athletic', 'pain free', 'limitless', 'wellness', 'recovery', 'here']}
                   mainClassName="px-2 sm:px-2 md:px-3 bg-primary-300 text-black overflow-hidden py-1 sm:py-1 md:py-2 justify-center rounded-lg"
                   staggerFrom={'last'}
                   initial={{ y: '100%' }}
