@@ -34,11 +34,9 @@ export async function getGooglePlaceReviews(): Promise<GooglePlacesReviewData | 
   const placeId = process.env.GOOGLE_PLACE_ID;
 
   if (!apiKey || !placeId) {
-    if (process.env.NODE_ENV === 'development') {
-      console.warn(
-        '[googlePlaces] Missing GOOGLE_PLACES_API_KEY or GOOGLE_PLACE_ID environment variables.'
-      );
-    }
+    console.warn(
+      '[googlePlaces] Missing GOOGLE_PLACES_API_KEY or GOOGLE_PLACE_ID environment variables.'
+    );
     return null;
   }
 
@@ -55,24 +53,20 @@ export async function getGooglePlaceReviews(): Promise<GooglePlacesReviewData | 
     });
 
     if (!response.ok) {
-      if (process.env.NODE_ENV === 'development') {
-        console.warn(
-          `[googlePlaces] Google Places API request failed: ${response.status} ${response.statusText}`
-        );
-      }
+      console.warn(
+        `[googlePlaces] Google Places API request failed: ${response.status} ${response.statusText}`
+      );
       return null;
     }
 
     const data = (await response.json()) as GooglePlaceDetailsResponse;
 
     if (data.status !== 'OK' || !data.result) {
-      if (process.env.NODE_ENV === 'development') {
-        console.warn(
-          `[googlePlaces] Unexpected Google Places API response: ${data.status}${
-            data.error_message ? ` - ${data.error_message}` : ''
-          }`
-        );
-      }
+      console.warn(
+        `[googlePlaces] Unexpected Google Places API response: ${data.status}${
+          data.error_message ? ` - ${data.error_message}` : ''
+        }`
+      );
       return null;
     }
 
@@ -85,9 +79,7 @@ export async function getGooglePlaceReviews(): Promise<GooglePlacesReviewData | 
       url,
     };
   } catch (error) {
-    if (process.env.NODE_ENV === 'development') {
-      console.warn('[googlePlaces] Failed to fetch Google reviews', error);
-    }
+    console.warn('[googlePlaces] Failed to fetch Google reviews', error);
     return null;
   }
 }
