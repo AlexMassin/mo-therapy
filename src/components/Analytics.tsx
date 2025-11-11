@@ -1,5 +1,3 @@
-import Script from 'next/script';
-
 const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
 
 declare global {
@@ -21,14 +19,11 @@ export function Analytics() {
 
   return (
     <>
-      {/* Google Analytics - gtag.js */}
-      <Script
-        strategy="afterInteractive"
+      <script
+        async
         src={`https://www.googletagmanager.com/gtag/js?id=${measurementId}`}
       />
-      <Script
-        id="google-analytics"
-        strategy="afterInteractive"
+      <script
         dangerouslySetInnerHTML={{
           __html: `
             window.dataLayer = window.dataLayer || [];
@@ -44,7 +39,6 @@ export function Analytics() {
   );
 }
 
-// Helper function to track custom events
 export const trackEvent = (action: string, category: string, label?: string, value?: number) => {
   if (typeof window !== 'undefined' && window.gtag) {
     window.gtag('event', action, {
@@ -55,7 +49,6 @@ export const trackEvent = (action: string, category: string, label?: string, val
   }
 };
 
-// Helper function to track page views (useful for client-side navigation)
 export const trackPageView = (url: string) => {
   if (typeof window !== 'undefined' && window.gtag && GA_MEASUREMENT_ID) {
     window.gtag('config', GA_MEASUREMENT_ID, {
